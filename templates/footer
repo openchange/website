@@ -1,0 +1,16 @@
+<div id="footer">
+  <div id="copyright">
+  </div>
+
+  <div id="footerLeft">
+    <p>
+    Copyright OpenChange Project 2003-2012
+    </p>
+  </div>
+
+  <div id="footerRight">
+    <p>
+      <a href="#top">Go to Top</a>
+    </p>
+  </div>
+</div>
