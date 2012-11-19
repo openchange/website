@@ -12,6 +12,11 @@
 </thead>
 <tbody>
 <tr>
+<td>-</td>
+<td>1.5</td>
+<td><a href="/developers/roadmap.html">VOYAGER</a></td>
+</tr>
+<tr>
 <td>March 2012</td>
 <td>1.0</td>
 <td><a href="/developers/relnotes/1.0-borg.html">BORG</a></td>
