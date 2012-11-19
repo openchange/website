@@ -8,19 +8,14 @@ Donations go through the Software Freedom Conservancy and the full amount of eac
 <div align="center">
 <table width="80%" style="margin-top:2em;margin-bottom:2em;border:none;box-shadow: 1px 1px 4px #555;">
 <tr>
-<td width="50%" align="center"><h2>Paypal</h2></td>
 <td width="50%" align="center"><h2>Google Checkout</h2></td>
+<td width="50%" align="center"><h2>Paypal</h2></td>
 </tr>
 <tr>
 <td>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="SRDC3FFAC5XH2">
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-</td>
-<td>
+<p>The preferred method of donating is Google Checkout, using the amount
+field and "Donate" link below.</p>
+<br/>
 <script type="text/javascript"> 
 function validateAmount(amount){
         if(amount.value.match( /^[0-9]+(\.([0-9]+))?$/)){
@@ -50,6 +45,17 @@ function validateAmount(amount){
             </td>
         </tr>
     </table>
+</form>
+</td>
+<td>
+<p>Donations can also be made through PayPal, but the fees are higher. To
+use PayPal, click on the 'PayPal Donate' button below.</p>
+<br/>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="SRDC3FFAC5XH2">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 </td>
 </tr>
