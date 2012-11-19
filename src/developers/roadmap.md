@@ -41,3 +41,10 @@ purposes.
 Pending changes from other branches will be reviewed and merged within
 master to offer the higher level of compatibility with projects
 depending on OpenChange to provide Exchange compatibility.
+
+<br/>
+
+# openchange-2.0 OBSERVER #
+
+No public information is yet available for 2.0 OBSERVER release of
+openchange.
