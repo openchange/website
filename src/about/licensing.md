@@ -9,5 +9,3 @@ margin-left: 5px; margin-right: 5px; margin-bottom 5px; margin-top:
 The OpenChange project is released under the terms of the [GNU GPL
 v3 or later license](http://www.gnu.org/licenses/gpl-3.0-standalone.html).
 
-<div style="clear: both;"/>
-
