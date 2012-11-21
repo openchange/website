@@ -2,6 +2,7 @@
 - [Initializing the build environment](/developers/initializing.html)
 - [Downloading the Source](/developers/downloading.html)
 - [Building the Source](/developers/building.html)
+- [Configuring the Server](/developers/configuring.html)
 
 # Navigating the Source #
 - [Current Roadmap](/developers/roadmap.html)

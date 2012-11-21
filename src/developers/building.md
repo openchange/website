@@ -83,3 +83,9 @@ Compile and install OpenChange
     $ make
     $ sudo make install
     $ sudo ldconfig
+
+
+## Next: Configure the Server ##
+
+Your minimal build environment is now ready! Proceed to [Configuring
+the Server](/developers/configuring.html)
