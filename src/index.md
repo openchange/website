@@ -27,6 +27,8 @@ is a transparent Microsoft Exchange server replacement using native
 Exchange protocols and does not require any plugin installation in
 Outlook.
 
+OpenChange is a member project of the [Software Freedom Conservancy](http://sfconservancy.org).
+
 [Learn more »](about/index.html)
 
 <p>&nbsp;</p>
