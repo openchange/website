@@ -21,9 +21,9 @@ common installation prefix you chose for openchange and samba.
 
 If your prefix is `/usr/local/samba` and your python version is 2.7,
 then your openchange and samba python modules will have been installed
-into `/usr/local/samba/lib/python-2.7/site-packages/` directory.
+into `/usr/local/samba/lib/python2.7/site-packages/` directory.
 
-    PYTHONPATH=$PYTHONPATH:/usr/local/samba/lib/python-2.7/site-packages
+    PYTHONPATH=$PYTHONPATH:/usr/local/samba/lib/python2.7/site-packages
 
 ## Configure Samba4 ##
 
