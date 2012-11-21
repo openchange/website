@@ -18,6 +18,8 @@ your environment is compliant with OpenChange requirements.
 ## Ubuntu ##
 
 <br/>
+The instructions have been updated and tested with `12.04.1 LTS`.
+<br/>
 
 ### Compilation tools ###
 
@@ -66,10 +68,10 @@ up. This requires telling the system and dynamic linker about these
 location:
 
     # Teach ld.so about the non standard location of samba4 libraries
-    $ sudo echo '/usr/local/samba/lib' > /etc/ld.so.conf.d/samba4.conf’
+    $ echo '/usr/local/samba/lib' | sudo tee /etc/ld.so.conf.d/samba4.conf
     # update PKG_CONFIG_PATH and PYTHONPATH
-    $ sudo echo 'PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/samba/lib/pkgconfig; export PKG_CONFIG_PATH' > /etc/profile.d/samba4-env-build.sh
-    $ sudo echo 'PYTHONPATH=$PYTHONPATH:/usr/local/samba/lib/python2.7/site-packages;export PYTHONPATH' >> /etc/profile.d/samba4-env-build.sh
+    $ echo 'PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/samba/lib/pkgconfig; export PKG_CONFIG_PATH' | sudo tee /etc/profile.d/samba4-env-build.sh
+    $ echo 'PYTHONPATH=$PYTHONPATH:/usr/local/samba/lib/python2.7/site-packages;export PYTHONPATH' | sudo tee -a /etc/profile.d/samba4-env-build.sh
     $ . /etc/profile.d/samba4-env-build.sh
 
 # Next: Download the source #
