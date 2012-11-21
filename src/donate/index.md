@@ -68,6 +68,10 @@ Please note that there may be a noticeable delay before this page gets
 updated. We only receive Paypal reports once a month or every two
 months.
 
+If you would like to be listed, please write to
+[<openchange@sfconservancy.org>](mailto:openchange@sfconservancy.org)
+and tell us so.
+
 ## 2012 ##
 
 + **Mariya Klimentova** - 100 USD
