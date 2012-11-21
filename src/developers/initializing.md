@@ -21,7 +21,7 @@ your environment is compliant with OpenChange requirements.
 
 ### Compilation tools ###
 
-    $ sudo apt-get install build-essential autoconf2.59 ccache pkg-config python python-dev
+    $ sudo apt-get install build-essential autoconf2.59 ccache pkg-config python python-dev libacl1-dev
     $ sudo apt-get install git flex bison docbook-xsl xsltproc
 
 ### OpenChange dependencies ###
@@ -42,7 +42,7 @@ your environment is compliant with OpenChange requirements.
 ### Compilation Tools ###
 
     # yum groupinstall "Development Tools" "Legacy Software Development" 
-    # yum install ccache python-devel git-all docbook-style-xsl perl-ExtUtils-MakeMaker
+    # yum install ccache python-devel git-all docbook-style-xsl perl-ExtUtils-MakeMaker libacl-devel
 
 ### OpenChange dependencies ###
 
