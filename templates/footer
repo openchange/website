@@ -4,13 +4,41 @@
 
   <div id="footerLeft">
     <p>
-    Copyright OpenChange Project 2003-2012
+    Copyright &copy; OpenChange Project 2003-2012
     </p>
   </div>
 
   <div id="footerRight">
-    <p>
-      <a href="#top">Go to Top</a>
+    <table style="border:0pt;">
+        <tr style="border:0pt;">
+	    <td style="border:0pt;text-align:right;"></td>
+	    <td style="border:0pt;text-align:right;"><a href="#top">Go to Top</a></td>
+        <tr style="border:0pt;">
+            <td style="border:0pt;">
+	    	<div class="g-plusone" data-size="medium" data-href="http://www.openchange.org"></div>
+		<script type="text/javascript">
+  		(function() {
+    			    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    			    po.src = 'https://apis.google.com/js/plusone.js';
+    			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  			    })();
+		</script>
+    	    </td>
+    	    <td style="border:0pt;">
+	    	<div id="fb-root"></div>
+		<script>
+		(function(d, s, id) {
+  			     	    var js, fjs = d.getElementsByTagName(s)[0];
+  				    if (d.getElementById(id)) return;
+  				    js = d.createElement(s); js.id = id;
+  				    js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=171342346240430";
+  				    fjs.parentNode.insertBefore(js, fjs);
+				    }(document, 'script', 'facebook-jssdk'));
+		</script>
+		<div class="fb-like" data-href="http://www.openchange.org" data-send="true" data-layout="button_count" data-width="150" data-show-faces="false"></div>
+   	    </td>
+   	 </tr>
+   </table>
     </p>
   </div>
 </div>
