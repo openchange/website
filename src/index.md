@@ -67,5 +67,3 @@ The source code history can be seen in the [activity page on the tracker](http:/
 </div>
 
 [News archives &raquo;](/about/news_2012.html)
-
-<div style="clear: both;"/>
