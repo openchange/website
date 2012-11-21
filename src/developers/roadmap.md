@@ -11,12 +11,12 @@ API changes and associated features development.
 
 <br/>
 
-## libmapirops ##
+## mapirops ##
 
-This library packs and unpacks MAPI Rops and MAPI data. This will
-replace the MAPI NDR IDL auto-generated code, with a hand-written
-stack reviewed using Microsoft Exchange Protocols specifications and
-coupled to unit testing and documentation
+This stack packs and unpacks MAPI Rops and MAPI data. It will replace
+the MAPI NDR IDL auto-generated code, with new code reviewed using
+Microsoft Exchange Protocols specifications and coupled to unit
+testing and documentation.
 
 ## Unit testing ##
 
