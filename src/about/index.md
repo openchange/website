@@ -11,7 +11,7 @@ Exchange is a groupware server designed to work with Microsoft
 Outlook, and providing features such as a messaging server, shared
 calendars, contact databases, public folders, notes and tasks.
 
-<div style="clear: both;"/>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 ## Exchange Protocols Interoperability ##
@@ -27,7 +27,7 @@ with Exchange server and OpenChange server. Novell Gnome Evolution and
 KDE Akonadi (KMail, Mailody) are using the OpenChange MAPI library to
 access Microsoft Exchange servers natively.
 
-<div style="clear: both;"/>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 ## Transparent replacement to Microsoft Exchange Server ##
@@ -39,7 +39,7 @@ access Microsoft Exchange servers natively.
 The server is tighly linked to Samba4 since it is developed as an
 endpoint module for smbd (the samba server daemon).
 
-<div style="clear: both;"/>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 ## Who is behind OpenChange ##
@@ -54,3 +54,6 @@ and volunteered developers.
 Without the Samba4 folks and the amazing work they have been doing
 since past years, it would certainly not have been possible to achieve
 most of the work we have done.
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
