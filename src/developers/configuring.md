@@ -181,9 +181,12 @@ Samba4 internal DNS server:
     nameserver 192.168.102.48
 
 In current example:
-- `realm` is `oc.local` and domain `OC`
-- `precog` is the server's hostname
-- `192.168.102.48` is server's IP address
+
+Variable | Value
+-------- | -----
+`realm`  | `oc.local`
+`domain` | `OC`
+`IP`     | `192.168.102.48`
 
 While **samba is running**, ensure DNS resolution is working properly
 by running nslookup commands:
