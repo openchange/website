@@ -16,10 +16,11 @@ may result in connectivity issues.
 
 ### Set PYTHONPATH environment variable ###
 
-You will need to adjust your `PYTHONPATH` variable accordingly to the
-common installation prefix you chose for openchange and samba. 
+You will need to adjust your `PYTHONPATH` variable accordingly to your
+python version and to the common installation prefix you chose for
+openchange and samba.
 
-If your prefix is `/usr/local/samba` and your python version is 2.7,
+If your prefix is `/usr/local/samba` and your python version is `2.7`,
 then your openchange and samba python modules will have been installed
 into `/usr/local/samba/lib/python2.7/site-packages/` directory.
 
@@ -126,3 +127,144 @@ Perform the same steps for the Administrator user:
 
     $ sudo PYTHONPATH=$PYTHONPATH ./setup/openchange_newuser --create Administrator
     [+] User Administrator extended and enabled
+
+# Testing server connectivity #
+
+At this stage you have a working but limited OpenChange server. In
+fact we have not yet configured any backend, so we can't access one's
+user mailbox. However, it is already possible to test server's
+connectivity, MAPI profile creation and ensure setup is OK and
+working.
+
+## Starting Samba server ##
+
+In one terminal, execute samba daemon to run interactively and within
+a single process
+
+    $ sudo PYTHONPATH=$PYTHONPATH /usr/local/samba/sbin/samba -d3 -i -M single
+
+The sample output of this command is [available
+here](/developers/configuration/output-samba-4.0.0-rc5.html).
+
+If OpenChange started correctly, the following content should be
+available in your server's output:
+
+    42.    DCERPC endpoint server 'epmapper' registered
+
+    [...]
+
+    57.    DCERPC endpoint server 'dnsserver' registered
+    58.    DCERPC endpoint server 'exchange_emsmdb' registered
+    59.    DCERPC endpoint server 'exchange_nsp' registered
+    60.    DCERPC endpoint server 'exchange_ds_rfr' registered
+    61.    DCERPC endpoint server 'mapiproxy' registered
+
+    [...]
+
+    66.    MAPIPROXY server 'exchange_ds_rfr' registered
+    67.    MAPIPROXY server 'exchange_nsp' registered
+    68.    MAPIPROXY server 'exchange_emsmdb' registered
+    69.    MAPIPROXY server mode enabled
+    70.    MAPIPROXY proxy mode disabled
+    71.    mapiproxy_server_load 'exchange_nsp' (OpenChange NSPI server)
+    72.    dcesrv_exchange_nsp_init
+    73.    mapiproxy_server_load 'exchange_emsmdb' (OpenChange EMSMDB server)
+    74.    mapiproxy_server_load 'exchange_ds_rfr' (OpenChange RFR server)
+
+## Setting up DNS resolution ##
+
+On your Linux machine, adjust your `resolv.conf` file to point to
+Samba4 internal DNS server:
+
+    $ cat /etc/resolv.conf
+    search oc.local
+    nameserver 192.168.102.48
+
+In current example:
+- `realm` is `oc.local` and domain `OC`
+- `precog` is the server's hostname
+- `192.168.102.48` is server's IP address
+
+While **samba is running**, ensure DNS resolution is working properly
+by running nslookup commands:
+
+First on chosen `realm`:
+
+    $ nslookup oc.local
+    Server:             192.168.102.48
+    Address:            192.168.102.48#53
+
+    Name:   oc.local
+    Address: 192.168.102.48
+
+Next on server's hostname:
+
+    $ nslookup precog
+    Server:             192.168.102.48
+    Address:            192.168.102.48#53
+
+    Name:   precog.oc.local
+    Address: 192.168.102.48
+
+
+## Setting up mapiprofile ##
+
+<br/>
+
+### Creating the profile ###
+
+`mapiprofile` is a command line tool designed to provide
+administrative support for OpenChange MAPI profiles. 
+
+A profile in this context represents a single user's connection to a
+server. It can be thought of as a user's account information stored on
+the client side. Most OpenChange utilities make use of the profile
+information stored in the local profile database, often by referring
+to the name of the profile.
+
+We are now creating a MAPI profile for `JohnDoe` user. `mapiprofile`
+requires several arguments to be set up to start creating a profile:
+
+Command       | Description
+------------- | -----------
+`--create`    | MAPI profile creation operation
+`-P testing`  | Create a profile named *testing*
+`-S`          | Make this profile the default one
+`-I`	      | Specify openchange server IP address
+`--domain`    | Specify openchange domain
+`--realm`     | Specify openchange realm
+`--username`  | Specify OpenChange username
+`--password`  | Specify OpenChange user's password
+
+
+    $ /usr/local/samba/bin/mapiprofile --create -P testing -S   \
+    -I 192.168.102.48 --domain=OC --realm=oc.local              \
+    --username=JohnDoe --password=openchange 
+    Profile default completed and added to database /home/openchange/.openchange/profiles.ldb
+    Profile default is now set the default one
+
+The server side output matching the command above is [available here](/developers/configuration/output-openchangeserver-profile.html).
+
+### Listing profiles ###
+
+The profile is now available within mapiprofile's list:
+
+    $ /usr/local/samba/bin/mapiprofile --list
+    We have 1 profile in the database:
+	  Profile = testing [default]
+
+### Dumping profiles ###
+
+Profile information can be dumped using the command below:
+
+    $ /usr/local/samba/bin/mapiprofile --dump -P testing
+    Profile: testing
+	exchange server == exchange 2000
+	encryption      == no
+	username        == JohnDoe
+	password        == openchange
+	mailbox         == /o=First Organization/ou=First Administrative Group/cn=Recipients/cn=JohnDoe
+	workstation     == precog
+	domain          == OC
+	server          == 192.168.102.48
+
