@@ -23,15 +23,12 @@ The instructions have been updated and tested with `12.04.1 LTS`.
 
 ### Compilation tools ###
 
-    $ sudo apt-get install build-essential autoconf2.59 ccache pkg-config python python-dev libacl1-dev
+    $ sudo apt-get install build-essential autoconf ccache pkg-config python python-dev libacl1-dev
     $ sudo apt-get install git flex bison docbook-xsl xsltproc
 
 ### OpenChange dependencies ###
 
     $ sudo apt-get install libpopt-dev libical-dev libmagic-dev libboost-thread-dev zlib1g-dev
-
-**Note**: On ubuntu desktop edition you may need to install `autoconf`
-  and `zlib1g-dev` instead of `autoconf2.59` and `zlib-devel`.
 
 ### OpenChange documentation tools ###
 
