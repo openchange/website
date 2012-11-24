@@ -16,8 +16,6 @@ fixes we may supply in the future.
 OpenChange trunk repository is only available through git. The
 repository can be found at [git://git.openchange.org/openchange.git](git://git.openchange.org/openchange.git)
 
-    $ mkdir openchange
-    $ cd openchange
     $ git clone git://git.openchange.org/openchange.git
 
 # Next: Build the code #
