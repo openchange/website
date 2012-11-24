@@ -22,8 +22,8 @@ occurrences.
 + Change `yourhostname` to your IP address and change from `https` to
 `http` for `RequestHeader` fields:
 
-    RequestHeader set "x-webobjects-server-name" "192.168.102.48" 
-    RequestHeader set "x-webobjects-server-url" "http://192.168.102.48" 
+<pre><code>RequestHeader set "x-webobjects-server-name" "192.168.102.48" 
+RequestHeader set "x-webobjects-server-url" "http://192.168.102.48"</code></pre> 
 
 ## Enabling Apache modules ##
 
