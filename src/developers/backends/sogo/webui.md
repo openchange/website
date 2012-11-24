@@ -31,7 +31,6 @@ Turn `a2enmod` and restart `apache`:
 
     # a2enmod proxy
     # a2enmod proxy_http
-    # a2enmod proxy_html
     # a2enmod headers
     # a2enmod rewrite
 
