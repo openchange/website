@@ -71,6 +71,6 @@ location:
     $ echo 'PYTHONPATH=$PYTHONPATH:/usr/local/samba/lib/python2.7/site-packages;export PYTHONPATH' | sudo tee -a /etc/profile.d/samba4-env-build.sh
     $ . /etc/profile.d/samba4-env-build.sh
 
-# Next: Download the source #
+# Next: Download the Source #
 
 Your build environment is good to go! Proceed to [downloading the source](/developers/downloading.html)

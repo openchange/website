@@ -271,3 +271,8 @@ Profile information can be dumped using the command below:
 	domain          == OC
 	server          == 192.168.102.48
 
+# Next: Setting the Backends #
+
+OpenChange server up and running! It is now time to choose, install
+and configure backends and their dependencies. Proceed to [deploying
+the backends](/developers/backends/index.html)
