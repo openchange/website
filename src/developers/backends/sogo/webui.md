@@ -36,6 +36,14 @@ Turn `a2enmod` and restart `apache`:
 
     # service apache2 restart
 
+## Testing Web UI connectivity ##
+
+Run `sogod` in one terminal as normal user:
+
+    $ sogod
+
+Open a browser and navigate to `${IP_ADDRESS}/SOGo/`.
+If you can see the login form, move to next step.
 
 # Next: Configuring Postgresql #
 
