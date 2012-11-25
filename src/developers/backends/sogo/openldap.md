@@ -7,11 +7,26 @@
     $ sudo apt-get install -y slapd ldap-utils
     (Specify openchange as password when asked)
 
-In previous Ubuntu releases (10.04 and below), it was required to
-provision the schema (cosine, nis, inetorgperson) and the
-backend. Starting with 11.04 Natty, these steps are not mandatory
-anymore.
+## Provision core schema ##
 
+    $ sudo dpkg-reconfigure slapd
+
+Answer the configuration questions with the answers below and
+adjust to match your local requirements/configuration: 
+<br/>
+
+Questions                             | Answer
+--------------------------------------|--------
+Omit OpenLDAP server configuration    | No
+DNS domain name                       | oc.local
+Organization name                     | openchange
+Administrator password                | openchange
+Database backend to use               | HDB
+Do you want the database to be purged | no
+Move old database                     | yes
+Allow LDAPv2 protocol                 | no
+
+<br/>
 
 ## Provision the frontend ##
 
