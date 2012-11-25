@@ -2,23 +2,24 @@
 
 [TOC]
 
+## Barebone Postfix server ##
+
 This will pull in postfix along with postfix-ldap, simply select Local
-only for local mail only or use Internet site with smarthost if you
-want to relay mail through another smtp server. 
+only for local mail only or use Internet site otherwise.
 
 When it comes to enter the system mail name, make sure to select the
 FQDN that will match your AD configuration. In our case, we will use
 oc.local for the DOMAIN and REALM, so our System mail name is:
 **precog.oc.local**.
 
-    $ sudo apt-get install postfix-ldap dovecot-postfix
+    $ sudo apt-get install postfix postfix-ldap
 
 ## Edit Postfix configuration file ##
 
 If you chose *Local Site* setup, postfix won't bind on all
 interfaces. You will need to update the `inet_interfaces` parameter
 and change it from `loopback-only` to `all` in
-`/etc/postfix/conf.d/local.conf` file.
+`/etc/postfix/main.cf` file.
 
 We also need to remove `default_transport` and `relay_transport`
 default values and replace them with expected dovecot deliver
