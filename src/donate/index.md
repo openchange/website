@@ -8,8 +8,9 @@ Donations go through the Software Freedom Conservancy and the full amount of eac
 <div align="center">
 <table width="80%" style="margin-top:2em;margin-bottom:2em;border:none;box-shadow: 1px 1px 4px #555;">
 <tr>
-<td width="50%" align="center"><h2>Google Checkout</h2></td>
-<td width="50%" align="center"><h2>Paypal</h2></td>
+<td width="34%" align="center"><h2>Google Checkout</h2></td>
+<td width="33%" align="center"><h2>Flattr</h2></td>
+<td width="33%" align="center"><h2>Paypal</h2></td>
 </tr>
 <tr>
 <td>
@@ -47,6 +48,17 @@ function validateAmount(amount){
     </table>
 </form>
 </td>
+
+<td>
+<p>Flattr is a social micro-payment system that allows users to make
+donations via the web. If you are a Flattr user and you would like to
+<i>flattr</i> OpenChange with a donation, click on the button
+below:</p>
+<a href="https://flattr.com/thing/1033299/OpenChange-portable-Open-Source-implementation-of-Microsoft-Exchange-server-and-Exchange-protocols" target="_blank">
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
+</a>
+</td>
+
 <td>
 <p>Donations can also be made through PayPal, but the fees are higher. To
 use PayPal, click on the 'PayPal Donate' button below.</p>

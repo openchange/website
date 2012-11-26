@@ -13,8 +13,28 @@
         <tr style="border:0pt;">
 	    <td style="border:0pt;text-align:right;"></td>
 	    <td style="border:0pt;text-align:right;"></td>
+	    <td style="border:0pt;text-align:right;"></td>
 	    <td style="border:0pt;text-align:right;"><a href="#top">Go to Top</a></td>
         <tr style="border:0pt;">
+	    <td style="border:0pt;">
+		<!-- flattr -->
+		<script type="text/javascript">
+		     (function() {
+         	     var s = document.createElement('script'), t = 
+		     document.getElementsByTagName('script')[0];
+         	     s.type = 'text/javascript';
+         	     s.async = true;
+         	     s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+         	     t.parentNode.insertBefore(s, t);
+     		     })();
+		</script>
+		<a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://www.openchange.org"></a>
+		<noscript>
+			<a href="http://flattr.com/thing/1033299/OpenChange-portable-Open-Source-implementation-of-Microsoft-Exchange-server-and-Exchange-protocols" target="_blank">
+			<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
+			</a>
+		</noscript>
+	    </td>
 	    <td style="border:0pt;">
 
 		<!-- twitter -->
