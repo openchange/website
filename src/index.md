@@ -36,6 +36,23 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+  <h2>New OpenChange server guide released</h2>
+  <div class="date">Monday, 26th November 2012</div>
+
+<img border="0" width="96" height="96" style="border: 0pt none; margin: -5px 5px 5px; float: left;" alt="" src="/images/openchange_logo_v2.png" />
+
+An updated OpenChange server installation guide has been released on the
+website and is accessible through the [Developers section](/developers/index.html).
+<br/><br/>
+You will now find detailed instructions on how to build and run an
+OpenChange server from scratch, including step by step guide on how to
+setup SOGo backend and standard services it relies on.
+<br/><br/>
+[Read the guide here](/developers/initializing.html) &raquo; 
+
+</div>
+
+<div class="news">
   <h2>Repository migrated to GIT</h2>
   <div class="date">Friday, 9th November 2012</div>
 
