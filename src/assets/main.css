@@ -374,3 +374,27 @@ dd {
      -moz-border-radius: 4px;
           border-radius: 4px;
 }
+
+.button, .button a:active, a.button:active {
+    text-decoration: none;
+    font: 14px/19px Roboto, sans-serif;
+    background-color: #09C;
+    color: white;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid #3990AB;
+    margin-right: 16px;
+    font-weight: 400;
+    min-width: 54px;
+    outline: 0;
+    padding: 8px 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button:hover, a.button:hover {
+    background-color: #4CADCB;
+    color: white;
+}
+

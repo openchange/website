@@ -1,59 +1,46 @@
-# What is OpenChange? #
-<p>&nbsp;</p>
+<div class="wrap">
+<!-- Slideshow -->
+<div class="slideshow-container slideshow-home col-16">
+<a href="" class="slideshow-prev">Prev</a>
+<a href="" class="slideshow-next">Next</a>
+<div class="frame">
+<ul>
+  <li class="item carousel-home">
+  <div class="content-left col-10">
+   <img src="/images/slideshow-nutshell.png"/>
+  </div>
+  <div class="content-right col-5">
+   <div id="slideshow-title"><h1>In a Nutshell</h1></div>
+   <p>OpenChange provides a portable Open Source implementation of Microsoft Exchange Server and Exchange protocols.</p>
+  </div>
+  </li>
+  <li class="item carousel-home">
+   <div class="content-left col-10">
+    <img src="/images/slideshow-interop.png"/>
+   </div>
+   <div class="content-right col-5">
+   <div id="slideshow-title"><h1>Exchange Protocols<br> Interoperability</h1></div>
+   <p>The OpenChange implementation provides a client-side library which can be used in existing messaging clients and offer native compatibility with Exchange server and OpenChange server.</p>
+   </div>
+  </li>
+  <li class="item carousel-home">
+  <div class="content-left col-10">
+  <img src="/images/slideshow-server.png"/>
+  </div>
+  <div class="content-right col-5">
+  <div id="slideshow-title"><h1>Transparent Exchange <br> Compatible Server</h1></div>
+  <p>No Outlook plugin installation required to access OpenChange server.</p>
+  </li>
+</ul>
+</div>
+</div>
+<!-- End slideshow -->
+</div>
 
-## Quick overview ##
-<img border="0" width="96" height="96" style="border: 0pt none; margin-left: 5px; margin-right: 5px; margin-bottom 5px; margin-top: 5px; float: left;" alt="" src="/images/icon_unknown.png"/>
-
-**OpenChange provides a portable Open Source implementation of Microsoft
-Exchange Server and Exchange protocols.**
-
-Exchange is a groupware server designed to work with Microsoft
-Outlook, and providing features such as a messaging server, shared
-calendars, contact databases, public folders, notes and tasks.
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-## Exchange Protocols Interoperability ##
-<img border="0" width="96" height="96" style="border: 0pt none; margin-left: 5px; margin-right: 5px; margin-bottom 5px; margin-top:5px; float: left;" alt="" src="/images/icon_openchange_logo.png"/>
-
-This is the MAPI library development purpose (libmapi). MAPI stands
-for Messaging Application Programming Interface and is used within
-Microsoft Exchange.
-
-The OpenChange implementation provides a client-side library which can
-be used in existing messaging clients and offer native compatibility
-with Exchange server and OpenChange server. Novell Gnome Evolution and
-KDE Akonadi (KMail, Mailody) are using the OpenChange MAPI library to
-access Microsoft Exchange servers natively.
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-## Transparent replacement to Microsoft Exchange Server ##
-<img border="0" width="96" height="96" style="border: 0pt none; margin-left: 5px; margin-right: 5px; margin-bottom 5px; margin-top:5px; float: left;" alt="" src="/images/icon_mapiproxy_logo.png"/>
-
-** This basically means that OpenChange server doesn't need any plugin
-   installation in Outlook.**
-
-The server is tighly linked to Samba4 since it is developed as an
-endpoint module for smbd (the samba server daemon).
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-## Who is behind OpenChange ##
-
-<img border="0" width="96" height="96" style="border: 0pt none; margin-left: 5px; margin-right: 5px; margin-bottom 5px; margin-top:5px; float: left;" alt="" src="/images/icon_team_member.png"/>
-
-The project was founded in 2003 at EPITECH by Julien Kerihuel in the
-context of his Epitech Innovative Project. Julien is the project
-manager, lead developer. The OpenChange team is now made up Samba, KDE
-and volunteered developers.
-
-Without the Samba4 folks and the amazing work they have been doing
-since past years, it would certainly not have been possible to achieve
-most of the work we have done.
-
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<script type="text/javascript">
+$('.slideshow-container').dacSlideshow({
+auto: true,
+btnPrev: '.slideshow-prev',
+btnNext: '.slideshow-next'
+});
+</script>

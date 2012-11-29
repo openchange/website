@@ -1,0 +1,219 @@
+/* --------------------------------------------------------------------------
+Slideshow Controls & Next/Prev 
+*/
+
+.wrap {
+	display: block;
+	height: 520px;
+	width: 940px;
+	clear: both;
+}
+
+.slideshow-next, .slideshow-prev {	
+	width: 20px;
+	height: 36px;
+	text-indent: -1000em;
+}
+.slideshow-container {
+	margin: 2em 0;
+}
+.slideshow-container:before, .slideshow-container:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+a.slideshow-next, a.slideshow-next:visited {
+	float: right;
+	background: url(arrow-right.png) no-repeat 0 0
+}
+
+a.slideshow-prev, a.slideshow-prev:visited {
+	float: left;	
+	background: url(arrow-left.png) no-repeat 0 0
+}
+
+.slideshow-next:hover, .slideshow-prev:hover, .slideshow-next:focus, .slideshow-prev:focus {
+	background-position: 0 -36px	
+}
+
+.slideshow-next:active, .slideshow-prev:active {
+
+	background-position: 0 -72px	
+}
+.slideshow-nav {
+	width: 74px;
+	margin: 0 auto;		
+}
+.slideshow-nav a, .slideshow-nav a:visited {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin: 0 2px 20px 2px;
+	background: #ccc;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+.slideshow-nav a:hover, .slideshow-nav a:focus {
+
+	background: #33B5E5
+}
+
+.slideshow-nav a:active {
+	background: #1e799a;
+	background: #ebebeb;	
+	-webkit-box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, .05);
+	-moz-box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, .05);
+	box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, .05);
+}
+.slideshow-nav a.active, .slideshow-nav a.active:active, .slideshow-nav a.active:visited {
+	background: #33B5E5
+}
+
+
+/* MARQUEE */
+.slideshow-container {
+	width:100%;
+	overflow:hidden;
+	position:relative;
+}
+.slideshow-container .slideshow-prev {
+	position:absolute;
+	top:50%;
+	left:0px;
+	margin-top:-36px;
+	z-index:99;
+}
+.slideshow-container .slideshow-next {
+	position:absolute;
+	top:50%;
+	margin-top:-36px;
+	z-index:99;
+	right:0px;
+}
+
+.slideshow-container .pagination {
+	position:absolute;
+	bottom:20px;
+	width:100%;
+	text-align:center;
+	z-index:99;
+}
+.slideshow-container .pagination ul {
+	margin:0;
+	text-align: center;
+}
+.slideshow-container .pagination ul li{
+	display: inline-block;
+	width:12px;
+	height:12px;
+	text-indent:-8000px;
+	list-style:none;
+	margin: 0 2px;
+	border-radius:6px;
+	background-color:#ccc;
+	cursor:pointer;
+        -webkit-transition:color .5s ease-in;  
+        -moz-transition:color .5s ease-in;  
+        -o-transition:color .5ss ease-in;  
+        transition:color .5s ease-in;
+}
+.slideshow-container .pagination ul li:hover {
+	background-color:#999;
+}
+.slideshow-container .pagination ul li.active {
+	background-color:#33b5e5;
+}
+.slideshow-container .pagination ul li.active:hover {
+	background-color:#33b5e5;
+}
+.slideshow-container ul li {
+	display:inline;
+	list-style:none;
+}
+
+/************* HOME/LANDING PAGE *****************/
+
+.slideshow-home {
+  height: 500px;
+  width: 940px;
+  border-bottom: 1px solid #CCC;
+  position: relative;
+  margin: 0;
+}
+.slideshow-home .frame {
+  width: 940px;
+  height: 500px;
+}
+.slideshow-home .content-left {
+  float: left;
+  text-align: center;
+  vertical-align: center;
+  margin: 0 0 0 35px;
+}
+.slideshow-home .content-right {
+  margin: 80px 0 0 0;
+}
+.slideshow-home .content-right p {
+#    text-align: left;
+    color: #222;
+    font: 13px Roboto, sans-serif;
+    margin-bottom: 10px;
+}
+.slideshow-home .content-right p:last-child {
+  margin-top: 15px;
+}
+
+#slideshow-title h1 {
+    color: #333;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 20px 0 20px;
+    padding: 0;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+    line-height: 32px;
+}
+
+.slideshow-home .item {
+  height: 500px;
+  width: 940px;
+}
+
+.col-1 { width: 40px }
+.col-2 { width: 100px }
+.col-3 { width: 160px }
+.col-4 { width: 220px }
+.col-5 { width: 280px }
+.col-6 { width: 340px }
+.col-7 { width: 400px }
+.col-8 { width: 460px }
+.col-9 { width: 520px }
+.col-10 { width: 580px }
+.col-11 { width: 640px }
+.col-12 { width: 700px }
+.col-13 { width: 760px }
+.col-14 { width: 820px }
+.col-15 { width: 880px }
+.col-16 { width: 940px }
+}
+
+.col-right {
+  margin-right:0px;
+}
+
+@media screen and (max-width:772px) {
+.col-5, .col-6, .col-7 {
+    clear: both;
+    width: 97.0238096%}
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-13, .col-14, .col-15, .col-16 {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}

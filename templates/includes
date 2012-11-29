@@ -3,5 +3,11 @@
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico" />
   <title>$title | OpenChange Project</title>
 
+  <!-- STYLESHEETS -->
   <link href="/assets/main.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/slideshow.css" rel="stylesheet" type="text/css" />
+
+  <!-- JAVASCRIPT -->
+  <script src="/assets/js/global-libraries-combined.js" type="text/javascript"></script>
+  <script src="/assets/js/slideshow.js" type="text/javascript"></script>
 </head>
