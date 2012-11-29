@@ -19,6 +19,8 @@ ExchangeRPC protocols involved in Outlook-Exchange communications and
 finally details some of the fundamental concepts required to
 understand MAPI.
 
+<a href="/files/openchange_courses_001_understanding_mapi.pdf">Download here &raquo;</a>
+
 <div style="clear: both;"/>
 <p>&nbsp;</p>
  
@@ -31,5 +33,7 @@ This presentation provides an overview of MAPIProxy architecture,
 internals and the underlying concepts behind mapiproxy modules
 programming. The last part of this presentation focuses on MAPIProxy
 Security Project.
+
+<a href="/files/openchange_courses_002_understanding_mapiproxy.pdf">Download here &raquo;</a>
 
 <div style="clear: both;"/>
