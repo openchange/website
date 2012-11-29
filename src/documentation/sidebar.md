@@ -4,6 +4,8 @@
 - [Papers and Slides](/documentation/slides.html)
 
 # Conferences #
+- <img src="/images/uk.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [SambaXP 2012](/documentation/conferences/sambaxp_2012.html)
+- <img src="/images/uk.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [SambaXP 2011](/documentation/conferences/sambaxp_2011.html)
 - <img src="/images/uk.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [SambaXP 2010](/documentation/conferences/sambaxp_2010.html)
 - <img src="/images/uk.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [SambaXP 2009](/documentation/conferences/sambaxp_2009.html)
 - <img src="/images/fr.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [SolutionsLinux 2009](/documentation/conferences/solutionslinux_2009.html)
