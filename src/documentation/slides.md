@@ -21,7 +21,6 @@ understand MAPI.
 
 <a href="/files/openchange_courses_001_understanding_mapi.pdf">Download here &raquo;</a>
 
-<div style="clear: both;"/>
 <p>&nbsp;</p>
  
 
@@ -36,4 +35,3 @@ Security Project.
 
 <a href="/files/openchange_courses_002_understanding_mapiproxy.pdf">Download here &raquo;</a>
 
-<div style="clear: both;"/>
