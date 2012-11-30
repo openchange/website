@@ -13,7 +13,7 @@ fixes we may supply in the future.
 
 # Getting Source Code #
 
-OpenChange trunk repository is only available through git. The
+OpenChange master repository is only available through git. The
 repository can be found at [git://git.openchange.org/openchange.git](git://git.openchange.org/openchange.git)
 
     $ git clone git://git.openchange.org/openchange.git
