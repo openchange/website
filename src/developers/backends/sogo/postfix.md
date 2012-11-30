@@ -102,3 +102,45 @@ line:
 
     # service postfix restart
 
+## Testing messaging services ##
+
+You can either configure your messaging client or you can use the SOGo
+web UI. For the purpose of this guide, we will assume that you
+followed it thoroughly and followed the [web UI configuration page](webui.html).
+<br>
+
+### Run sogod ###
+
+If not already enabled, run `sogod` in one terminal as normal user:
+
+    $ sogod
+<br>
+
+### Login onto Web UI ###
+
+- Open a browser and navigate to `${IP_ADDRESS}/SOGo/`.
+- Enter your user credentials, here: `JohnDoe`/`JohnDoe` and click
+  `Connect` button.
+<br>
+
+### Write and Send an email ###
+
+- Click on `Write` button and wait for the popup window to show up
+- Starts writing JohnDoe as your `To` recipient and it should
+  autocomplete to `JohnDoe Account <JohnDoe@oc.local>`
+- Specify a subject, write some contents in the body, then click `Send` button.
+<br>
+
+### Test email reception ###
+
+- Click on `Get Mail` button
+- Refresh folder if new message doesn't display
+
+<br><br>
+
+# Conclusion #
+
+If you went through all these steps successfully, Congratulations! 
+
+You now have a fully working SOGo installation that OpenChange can use
+as a storage backend.
