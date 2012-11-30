@@ -98,6 +98,12 @@ ensure everything is setup and working properly before resetting it to
     # ln -s johndoe JohnDoe@oc.local
     # chown -R vmail:vmail *
 
+## Adjust `dovecot.message` permissions ##
+
+This will be required so that postfix can use dovecot delivery method.
+
+    # chown vmail:mail /var/log/dovecot.message
+
 ## Restart server and test setup ##
 
     $ sudo service dovecot restart
