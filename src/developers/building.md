@@ -81,7 +81,7 @@ You should have an output similar to the following:
 Compile and install OpenChange
 
     $ make
-    $ sudo make install
+    $ sudo PYTHONPATH=$PYTHONPATH make install
     $ sudo ldconfig
 
 
