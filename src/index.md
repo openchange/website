@@ -36,6 +36,24 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+  <h2>Samba-4.0.0 stable release and OpenChange</h2>
+  <div class="date">Wednesday, 12th December 2012</div>
+
+<img border="0" width="96" height="96" style="border: 0pt none; margin: -5px 5px 5px; float: left;" alt="" src="/images/samba_logo.png" />
+
+**Samba 4.0.0 stable release is Available for Download!**
+<br><br>
+
+This is a major step forward, a huge achievement and as of this
+afternoon, OpenChange GIT is now using this stable release as its
+Samba default version.
+
+<br><br>
+[See the Samba-4.0.0 Press release &raquo;](https://www.samba.org/samba/news/releases/4.0.0.html)
+
+</div>
+
+<div class="news">
   <h2>New OpenChange server guide released</h2>
   <div class="date">Monday, 26th November 2012</div>
 
