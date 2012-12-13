@@ -14,7 +14,7 @@ Donations go through the Software Freedom Conservancy and the full amount of eac
 </tr>
 <tr>
 <td>
-<p>The preferred method of donating is Google Checkout, using the amount
+<p>To donate through Google Checkout, use the amount
 field and "Donate" link below.</p>
 <br/>
 <script type="text/javascript"> 

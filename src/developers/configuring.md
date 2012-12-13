@@ -44,7 +44,7 @@ extend it in OpenChange. However we need to create other users. To
 perform this task, use the following command:
 
 
-    $ sudo PYTHONPATH=$PYTHONPATH /usr/local/samba/bin/samba-tool user add JohnDoe openchange
+    $ sudo PYTHONPATH=$PYTHONPATH /usr/local/samba/bin/samba-tool user add JohnDoe 'openchange2!'
     User 'JohnDoe' created successfully
 
 ### Edit Samba configuration ###
@@ -242,7 +242,7 @@ Command       | Description
 
     $ /usr/local/samba/bin/mapiprofile --create -P testing -S   \
     -I 192.168.102.48 --domain=OC --realm=oc.local              \
-    --username=JohnDoe --password=openchange 
+    --username=JohnDoe --password='openchange2!' 
     Profile default completed and added to database /home/openchange/.openchange/profiles.ldb
     Profile default is now set the default one
 
@@ -265,7 +265,7 @@ Profile information can be dumped using the command below:
 	exchange server == exchange 2000
 	encryption      == no
 	username        == JohnDoe
-	password        == openchange
+	password        == openchange2!
 	mailbox         == /o=First Organization/ou=First Administrative Group/cn=Recipients/cn=JohnDoe
 	workstation     == precog
 	domain          == OC
