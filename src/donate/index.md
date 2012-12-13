@@ -86,7 +86,8 @@ and tell us so.
 
 ## 2012 ##
 
-+ **Mariya Klimentova** - 100 USD
++ **Anonymous** - 50 USD
++ **Mariya Klimentova** - 200 USD
 
 ## 2010 ##
 
