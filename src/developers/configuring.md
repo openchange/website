@@ -14,7 +14,7 @@ is very important **NOT** to choose a realm which length is more or
 equal to 15 characters. This is a limit on Windows domain side which
 may result in connectivity issues.
 
-### Set PYTHONPATH environment variable ###
+## Set PYTHONPATH environment variable ##
 
 You will need to adjust your `PYTHONPATH` variable accordingly to your
 python version and to the common installation prefix you chose for
@@ -26,13 +26,23 @@ into `/usr/local/samba/lib/python2.7/site-packages/` directory.
 
     PYTHONPATH=$PYTHONPATH:/usr/local/samba/lib/python2.7/site-packages
 
-## Configure Samba4 ##
+<br>
+# Configure Samba4 #
 
-<br/>
+<br>
 
+OpenChange can be used with different Samba4 setups depending on
+infrastructure needs and availability. You can either use the Samba4
+internal DNS server or use bind9 with `DLZ` is supported and enabled.
+
+<div class="alert"> <p>If you are unsure or don't know what it means,
+follow the DNS server setup subsection below.</p> </div>
+
+## Configuration 1: Samba4 with internal DNS server ##
+<br>
 ### Provision the Server ###
 
-Provision Samba4 server as a domain controller:
+Provision Samba4 server as a domain controller.
 
     $ sudo PYTHONPATH=$PYTHONPATH /usr/local/samba/bin/samba-tool domain provision \
       --realm=oc.local --domain=OC --adminpass='openchange1!' --server-role='dc'
@@ -72,11 +82,71 @@ To enable the internal DNS server, edit your `smb.conf` file and add
 
     dcerpc endpoint servers = epmapper, mapiproxy, dnsserver
 
-## Configure OpenChange ##
+<br>
+## Configuration 2: Samba4 with Bind9 DNS server ##
+
+We assume here that you already have a named server installed and
+running properly with DLZ support enabled. If not, you can still
+generate DNS zone flat files for your bind9 server.
+
+### Provision the Server ###
+
+Provision Samba4 as a domain controller with bind9 DLZ support.
+
+    $ sudo PYTHONPATH=$PYTHONPATH /usr/local/samba/bin/samba-tool domain provision \
+      --realm=oc.local --domain=OC --adminpass='openchange1!' --server-role='dc'   \
+      --dna-backend=BIND9_DLZ
+
+### Setup apparmor ###
+
+You first need to create or edit `/etc/apparmor.d/usr.sbin.named` file
+as priviledged user, then add the following Samba4 records to the file
+- assumng your installation prefix is `/usr/local/samba/`
+
+     /usr/local/samba/lib/bind9/dlz_bind9.so mr,
+     /usr/local/samba/private/dns/sam.ldb.d/** k,
+     /usr/local/samba/private/dns/** kw,
+     /usr/local/samba/private/** rw,
+     /usr/local/samba/modules/ldb/* m,
+     /usr/local/samba/lib/** mr,
+     /usr/local/samba/** r,
+
+### Setup Bind9 folder permissions ###
+
+    $ sudo chown -R root:bind /usr/local/samba/private/
+    $ sudo chown bind:bind /usr/local/samba/private/dns
+    $ sudo chgrp bind /usr/local/samba/private/dns.keytab
+    $ sudo chmod g+x /usr/local/samba/private/dns.keytab
+    $ sudo chmod 755 /usr/local/samba/private/dns
+
+### Edit Bind9 configuration ###
+<br>
+#### named.conf ####
+
+Edit `/etc/bind/named.conf` and append at the end of the file:
+
+    include "/usr/local/samba/private/named.conf";
+
+#### named.conf.options ####
+
+Edit `/etc/bind/named.conf.options` and add to the options:
+
+    tkey-gssapi-keytab "/usr/local/samba/private/dns.keytab";
+
+### Restart services ###
+
+Restart apparmor, then bind9:
+
+    $ sudo /etc/init.d/apparmor restart
+    $ sudo /etc/init.d/bind9 restart
+
+
+<br>
+# Configure OpenChange #
 
 <br/>
 
-### Provision Active Directory with OpenChange schema ###
+## Provision Active Directory with OpenChange schema ##
 
 From master trunk directory run:
 
@@ -97,7 +167,7 @@ From master trunk directory run:
     [+] Step 13: Finalize Exchange configuration objects
     [SUCCESS] Done!
 
-### Create openchangedb database ###
+## Create openchangedb database ##
 
 OpenChange indexes user mailbox folder hierarchy within a dedicated
 database different from Samba4 active directory. Provision this
@@ -118,7 +188,7 @@ database with following command:
 	    * EX:/o=first organization/ou=first administrative group: 0x0800000000000001 (576460752303423489)
 	    * Events Root                             : 0x0900000000000001 (648518346341351425)
 
-### Create OpenChange users ###
+## Create OpenChange users ##
 
     $ sudo PYTHONPATH=$PYTHONPATH ./setup/openchange_newuser --create JohnDoe
     [+] User JohnDoe extended and enabled
