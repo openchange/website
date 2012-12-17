@@ -36,7 +36,7 @@ infrastructure needs and availability. You can either use the Samba4
 internal DNS server or use bind9 with `DLZ` is supported and enabled.
 
 <div class="alert"> <p>If you are unsure or don't know what it means,
-follow the DNS server setup subsection below.</p> </div>
+follow the internal DNS server setup subsection below.</p> </div>
 
 ## Configuration 1: Samba4 with internal DNS server ##
 <br>
