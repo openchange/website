@@ -130,3 +130,7 @@ the `push` and `dcerpc_ndr_request` routine but loop over
 the dispatch routine. This variable is for example in use within the
 cache module when we want to read a stream ahead from Exchange server
 to the remote MAPIProxy instance.
+
+# Next: Available Modules #
+
+Proceed to [Available Modules](available-modules.html)
