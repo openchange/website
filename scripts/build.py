@@ -33,6 +33,8 @@ def get_title(raw_file):
 
 # directory to compile the site to (will be clobbered during build!)
 HTML_DIR = 'out'
+# directory to look in for sources to download
+SOURCES_DIR= '_sources'
 # directory to look in for markdown source files
 SRC_DIR = 'src'
 # directory to look in for html templates
@@ -53,14 +55,28 @@ if os.path.exists(HTML_DIR):
 
 os.mkdir(HTML_DIR)
 
+# Step 2.1, Create the _sources dir in output dir
+srcdir = os.path.join(HTML_DIR, SOURCES_DIR)
+os.mkdir(srcdir)
+
 # Step 3, recursively mirror SRC_DIR to HTML_DIR, directory by directory, translating *.md
 category = 'home'
 parents = {}
 for curdir, subdirs, files in os.walk(SRC_DIR):
   def md(path):
+
+    # Create the output _sources hierarchy and copy md files to txt
+    stripped_path = os.path.dirname(path).replace(SRC_DIR, '', 1)
+    dst_src = srcdir + stripped_path
+    dst_file = os.path.join(dst_src, os.path.basename(path).replace('.md', '.txt'))
+
+    if not os.path.exists(dst_src):
+      os.mkdir(dst_src)
+    shutil.copy(path, dst_file)
+
     text = codecs.open(path, encoding='utf8').read()
     extensions = ['tables', 'def_list', 'toc(title=In This Document)']
-    return markdown.markdown(text, extensions)
+    return (markdown.markdown(text, extensions), dst_file.replace(HTML_DIR, '', 1))
 
   print 'Processing %s...'  % (curdir,),
   # Step A: split path, and update cached category name if needed
@@ -70,6 +86,8 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
   if len(outdir) == 2:
     category = outdir[-1]
   outdir = os.path.join(*outdir)
+
+  
 
   # Step B: mirror the hierarchy of immediate subdirectories
   for subdir in subdirs:
@@ -85,19 +103,19 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
     parent = ('', '', '')
 
   if 'sidebar.md' in files:
-    sidebar = md(os.path.join(curdir, 'sidebar.md'))
+    (sidebar, _) = md(os.path.join(curdir, 'sidebar.md'))
     del files[files.index('sidebar.md')]
   else:
     sidebar = parent[0]
 
   if 'sidebar2.md' in files:
-    sidebar2 = md(os.path.join(curdir, 'sidebar2.md'))
+    (sidebar2, _) = md(os.path.join(curdir, 'sidebar2.md'))
     del files[files.index('sidebar2.md')]
   else:
     sidebar2 = parent[1]
 
   if 'sidebar3.md' in files:
-    sidebar3 = md(os.path.join(curdir, 'sidebar3.md'))
+    (sidebar3, _) = md(os.path.join(curdir, 'sidebar3.md'))
     del files[files.index('sidebar3.md')]
   else:
     sidebar3 = parent[2]
@@ -111,9 +129,10 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
     absfilename = os.path.join(curdir, f)
 
     if f.endswith('.md'):
-      main = md(absfilename)
+      (main, srcpath) = md(absfilename)
       final = template.safe_substitute(main=main, sidebar=sidebar, sidebar2=sidebar2, \
-          sidebar3=sidebar3, category=category, title=get_title(absfilename))
+          sidebar3=sidebar3, category=category, title=get_title(absfilename), \
+          srcpath = srcpath)
 
       html = codecs.open(os.path.join(outdir, f.replace('.md', '.html')), 'w', encoding="utf8")
       html.write(final)

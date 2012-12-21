@@ -14,7 +14,11 @@
 	    <td style="border:0pt;text-align:right;"></td>
 	    <td style="border:0pt;text-align:right;"></td>
 	    <td style="border:0pt;text-align:right;"></td>
-	    <td style="border:0pt;text-align:right;"><a href="#top">Go to Top</a></td>
+	    <td style="border:0pt;text-align:right;">
+              <a href="$srcpath">View the source of this file</a>
+	      &nbsp;&nbsp;
+	      <a href="#top">Go to Top</a>
+	    </td>
         <tr style="border:0pt;">
 	    <td style="border:0pt;">
 		<!-- flattr -->
