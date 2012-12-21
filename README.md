@@ -6,11 +6,11 @@ Run the build script, from the same directory as this file:
 
     python scripts/build.py
 
-This generates the directory ./out, which is the fully built site.
+This generates the directory `./out`, which is the fully built site.
 
-The included scripts/micro-httpd.py script is helpful for testing the site on
-your own machine. Running it will start up a tiny HTTP server that you can hit
-to test changes in a browser:
+The included `scripts/micro-httpd.py` script is helpful for testing
+the site on your own machine. Running it will start up a tiny HTTP
+server that you can hit to test changes in a browser:
 
     cd ./out
     HTTP_PORT=8080 python ../scripts/micro-httpd.py
@@ -20,23 +20,15 @@ Markdown is a very simple markup format for plain-text that converts it to
 decent HTML. Useful docs:
 http://daringfireball.net/projects/markdown/syntax
 
-
-### Dependencies ###
-
-You need the Python markdown implementation. The original Perl impl probably
-will NOT work.
-
-For (Goo|U)buntu:
-% sudo apt-get install python-markdown
-
-For Mac:
-$ sudo easy_install ElementTree
-$ sudo easy_install Markdown
-
-More information here:
-http://www.freewisdom.org/projects/python-markdown/Installation
+OpenChange provides embeds its own version of the python markdown
+package (2.0.3) which allows embedding markdown code within `div`
+tags.
 
 ### Contents Included in Box ###
+
+Build system:
+
+    scripts/    tools to generate the site along with helpers scripts
 
 Necessary source files include:
 
@@ -46,6 +38,7 @@ Necessary source files include:
 and the following content which is copied directly:
 
     assets/     stylish things that make the page look pretty
+    assets/js	javascript code used on the site
     images/     exactly what it sounds like
 
 ### Structure of Site Source ###
@@ -53,7 +46,7 @@ and the following content which is copied directly:
 The build script assumes that
 - Every .md file under src/ is an individual page in markdown format.
 - Each directory under src/ is a tab of www.openchange.org and contains its
-  particular sidebar.  
+  particular sidebar (see `templates/header` and `src/assets/main.css` file).  
 - Please use .md if possible (because this will pick up the global site CSS
   and layout.) But the build.py script will indeed copy arbitrary files to the
   output dir, so it is possible to simply place .html, .pdf, and similar files
@@ -63,7 +56,10 @@ The build script assumes that
 
 ### News ###
 
-Only the 2 most recent news MUST appear on src/index.md main page. Older news must be moved from main page to their archives - classified by year - within src/about/news_YYYY.md where YYYY is the year of the news publication.
+Only the 2 or 3 most recent news MUST appear on src/index.md main
+page. Older news must be moved from main page to their archives -
+classified by year - within src/about/news_YYYY.md where YYYY is the
+year of the news publication.
 
 New archived news must be added to the top of news_YYYY.md file.
 
@@ -80,5 +76,11 @@ News template looks like the following code snipset:
 Sample text here
 
 </div>
-<div style="clear: both;"/>
+
+
+### Code Listing ###
+
+The listing script will take an input file and output a markdown
+version with numbered lines. Use this script to produce listing you
+push on the website.
 
