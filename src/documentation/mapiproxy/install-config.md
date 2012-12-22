@@ -1,4 +1,4 @@
-<div style="float: right; width: 35%;margin-left:2em;">
+<div style="float: right; width: 45%;margin-left:2em;">
 <img src="/images/mapiproxy/mapiproxy.png" alt="MAPIProxy Logo"/>
 </div>
 
