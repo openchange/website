@@ -50,7 +50,19 @@ focus on testing.
 <div class="news" style="width:90%;">
 <h2>OpenChange MAPIStore distributed storage </h2>
 <div class="date">May 9th - 11th, 2011</div>
-Coming soon
+
+With OpenCHange and its MAPIStore storage mechanism, users can
+aggregate data from multiple services and servers and transparently
+access them through their Microsoft Outlook interface.
+
+Imagine you can have your Inbox, Outboux and Sent Items folders
+accessing a remote IMAP server, that your Contact folder fetches your
+contacts from your Facebook account, that your calendar is stored on
+Google Calendar or that your Sticky Notes are turned into tweets.
+
+That is what OpenChange MAPIStore is about and what we will be
+discussed along with Outlook-OpenChange server demonstrations.
+
 </div>
 
 ## Links ##
