@@ -51,7 +51,7 @@ focus on testing.
 <h2>OpenChange MAPIStore distributed storage </h2>
 <div class="date">May 9th - 11th, 2011</div>
 
-With OpenCHange and its MAPIStore storage mechanism, users can
+With OpenChange and its MAPIStore storage mechanism, users can
 aggregate data from multiple services and servers and transparently
 access them through their Microsoft Outlook interface.
 
