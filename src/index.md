@@ -45,8 +45,12 @@ margin: -5px 5px 5px; float: left;" alt=""
 src="/images/openchange_logo_v2.png" />
 
 **The OpenChange project team is proud to announce the release of
-OpenChange 2.0 QUADRANT**. OpenChange is free software, and is the
-only drop-in replacement for Microsoft Exchange.
+OpenChange 2.0 QUADRANT**.  <br/><br/> This major release provides
+Outlook Anywhere support support for OpenChange server, formely known
+as RPC over HTTP. This service allows clients using Microsoft Outlook
+to connect to their Exchange servers from outside the corporate
+network.  <br/><br/> [See the release notes for more info
+&raquo;](/developers/relnotes/2.0-quadrant.html)
 
 </div>
 
