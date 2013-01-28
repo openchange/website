@@ -73,4 +73,4 @@ location:
 
 # Next: Download the Source #
 
-Your build environment is good to go! Proceed to [downloading the source](/developers/downloading.html)
+Your build environment is good to go! Proceed to [downloading the source](/cookbook/downloading.html)

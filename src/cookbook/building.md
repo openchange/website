@@ -88,4 +88,4 @@ Compile and install OpenChange
 ## Next: Configure the Server ##
 
 Your minimal build environment is now ready! Proceed to [Configuring
-the Server](/developers/configuring.html)
+the Server](/cookbook/configuring.html)

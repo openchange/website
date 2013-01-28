@@ -5,6 +5,7 @@
        <a href="/" tabindex="-1"><img src="/images/openchange_logo.png" alt="OpenChange Project" /></a>
        <ul class="$category">
        	   <li id="home-link"><a href="/index.html"><span>Home</span></a></li>
+	   <li id="cookbook-link"><a href="/cookbook/index.html" onClick="return loadLast('cookbook')"><span>Cookbook</span></a></li>
 	   <li id="developers-link"><a href="/developers/index.html" onClick="return loadLast('developers')"><span>Developers</span></a></li>
 	   <li id="documentation-link"><a href="/documentation/index.html" onClick="return loadLast('documentation')"><span>Docs</span></a></li>
 	   <li id="download-link"><a href="http://tracker.openchange.org/projects/openchange/files" onClick="return loadLast('download')"><span>Download</span></a></li>

@@ -214,7 +214,7 @@ a single process
     $ sudo PYTHONPATH=$PYTHONPATH /usr/local/samba/sbin/samba -d3 -i -M single
 
 The sample output of this command is [available
-here](/developers/configuration/output-samba-4.0.0-rc5.html).
+here](/cookbook/configuration/output-samba-4.0.0-rc5.html).
 
 If OpenChange started correctly, the following content should be
 available in your server's output:
@@ -316,7 +316,7 @@ Command       | Description
     Profile default completed and added to database /home/openchange/.openchange/profiles.ldb
     Profile default is now set the default one
 
-The server side output matching the command above is [available here](/developers/configuration/output-openchangeserver-profile.html).
+The server side output matching the command above is [available here](/cookbook/configuration/output-openchangeserver-profile.html).
 
 ### Listing profiles ###
 
@@ -345,4 +345,4 @@ Profile information can be dumped using the command below:
 
 OpenChange server up and running! It is now time to choose, install
 and configure backends and their dependencies. Proceed to [deploying
-the backends](/developers/backends/index.html)
+the backends](/cookbook/backends/index.html)

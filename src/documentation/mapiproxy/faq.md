@@ -42,7 +42,7 @@ Outlook, I keep having the following error message:
 This probably means Outlook is unable to lookup the resolved name of your MAPIProxy/samba4 server. You can either:
 
 
-1. Make your Windows workstation points to a domain name server able to resolve MAPIProxy fully qualified name. See the [Samba4 internal DNS setup](/developers/configuring.html#configuration-1-samba4-with-internal-dns-server) for a fix.
+1. Make your Windows workstation points to a domain name server able to resolve MAPIProxy fully qualified name. See the [Samba4 internal DNS setup](/cookbook/configuring.html#configuration-1-samba4-with-internal-dns-server) for a fix.
 
 2. Open `C:\WINDOWS\system32\etc\drivers\hosts` file and add an entry for mapiproxy. For example if I have `mapiproxy.openchange.local` pointing at `192.168.102.2`, then hosts file should hold the following line:<pre><code>192.168.102.2 mapiproxy.openchange.local mapiproxy</code></pre>
 

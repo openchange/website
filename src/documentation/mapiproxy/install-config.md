@@ -7,7 +7,7 @@
 # Installation #
 
 Instructions on how to build mapiproxy from sources are the same than
-the [OpenChange server installation guide](/developers/initiliazing.html) ones.
+the [OpenChange server installation guide](/cookbook/initiliazing.html) ones.
 
 This document only outlines relevant changes between server and proxy
 mode configuration.
@@ -22,7 +22,7 @@ three steps.
 ## Provision Samba ##
 
 Provision Samba as [described
-here](/developers/configuring.html#provision_the_server). 
+here](/cookbook/configuring.html#provision_the_server). 
 <br><br>
 If you don't have DNS resolution and your realm can't be resolved,
 samba will be unable to authenticate the user in its user
@@ -41,7 +41,7 @@ exchange server side. This is for convenience purpose only.
 Let say there is already a user named `JohnDoe` with its password set
 to `openchange2!` on the Exchange server, we will create the user with
 the `samba-tool` command as [exposed
-here](http://www.openchange.org/developers/configuring.html#create-new-user).
+here](http://www.openchange.org/cookbook/configuring.html#create-new-user).
 
 ## Configure MAPIProxy options ##
 

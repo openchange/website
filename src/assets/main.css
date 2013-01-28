@@ -108,7 +108,8 @@ th {
 .shop #shop-link a,
 .donate #donate-link a,
 .about #about-link a,
-.developers #developers-link a {
+.developers #developers-link a,
+.cookbook #cookbook-link a {
   background: blue url(bg_images_sprite.png) no-repeat 0 0;
   color: #fff;
   cursor:default;

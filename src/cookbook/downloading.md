@@ -20,4 +20,4 @@ repository can be found at [git://git.openchange.org/openchange.git](git://git.o
 
 # Next: Build the code #
 
-You now have a complete copy of the OpenChange codebase. Continue on to [building the source](/developers/building.html)
+You now have a complete copy of the OpenChange codebase. Continue on to [building the source](/cookbook/building.html)
