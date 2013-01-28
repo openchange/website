@@ -2,11 +2,11 @@
 
 [TOC]
 
-# openchange-1.5 VOYAGER #
+# openchange-2.5 VOYAGER #
 
-Forthcoming `openchange-1.5` release is a key step in OpenChange
+Forthcoming `openchange-2.5` release is a key step in OpenChange
 development. It will achieve and maintain current client and server
-code but will also provide the background required for openchange-2.0
+code but will also provide the background required for openchange-3.0
 API changes and associated features development.
 
 <br/>
@@ -44,7 +44,7 @@ depending on OpenChange to provide Exchange compatibility.
 
 <br/>
 
-# openchange-2.0 OBSERVER #
+# openchange-3.0 OBSERVER #
 
-No public information is yet available for 2.0 OBSERVER release of
+No public information is yet available for 3.0 OBSERVER release of
 openchange.
