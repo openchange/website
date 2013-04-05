@@ -37,6 +37,28 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+  <h2>OpenChange at SambaXp 2013</h2>
+  <div class="date">Friday, 5th April 2013</div>
+
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" alt=""
+src="/images/samba_logo.png" />
+
+** From May 14th to 17th, 2013 **, OpenChange will participate to the
+samba eXPerience conference in Göttingen (Germany). Julien Kerihuel
+will present a talk entitled OpenChange 2.0 Ecosystem.
+
+With OpenChange 2.0, small and medium businesses targetting complete
+interoperability with Microsoft Exchange server have started to
+evaluate and use OpenChange server and Samba4 AD in production. This
+talk will provide an overview of OpenChange latest features, pro and
+cons, current projects, collaboration and opportunities happening in
+OpenChange ecosystem. The last part of the presentation will focus on
+the 3.0 milestone and its potential benefits for final users and
+service providers.  </div>
+
+
+<div class="news">
   <h2>OpenChange 2.0 QUADRANT Released!</h2>
   <div class="date">Thursday, 28th January 2013</div>
 
@@ -54,22 +76,4 @@ connect to their Exchange servers from outside the corporate network.
 
 </div>
 
-
-<div class="news">
-  <h2>Easing OpenChange documentation contributions</h2>
-  <div class="date">Thursday, 4th January 2013</div>
-
-<img border="0" width="96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" alt=""
-src="/images/openchange_logo_v2.png" />
-
-Along with the explicit Creative Commons Attributation-ShareAlike 3.0
-Unported License applied to the website, we have also decided to make
-its source files available to the public and make our contributors
-life easier.<br/><br/> The Sources of each page of the website are now
-accessible through the *View the source of this file* link at the
-bottom right of each page.
-
-</div>
-
-[News archives &raquo;](/about/news_2012.html)
+[News archives &raquo;](/about/news_2013.html)
