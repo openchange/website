@@ -15,9 +15,10 @@ fixes we may supply in the future.
 
 OpenChange master repository is available through git. The repository
 can be found at
-[git://git.openchange.org/openchange.git](git://git.openchange.org/openchange.git)
 
-    $ git clone git://git.openchange.org/openchange.git
+[https://github.com/openchange/openchange.git](https://github.com/openchange/openchange.git)
+
+    $ git clone https://github.com/openchange/openchange.git
 
 # Next: Build the code #
 

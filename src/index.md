@@ -37,6 +37,27 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+  <h2>OpenChange on GitHub</h2>
+  <div class="date">Monday, 9th September 2013</div>
+
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" alt=""
+src="/images/openchange_logo_v2.png" />
+
+**The OpenChange project GIT repository has been migrated to GitHub to ease further development, collaborations and contributions.**
+
+The repository is available through the openchange organization page at
+the following URL:
+
+* [http://www.github.com/openchange/openchange/](http://www.github.com/openchange/openchange/)
+
+or directly through GIT:
+
+    git clone https://github.com/openchange/openchange.git
+</div>
+
+
+<div class="news">
   <h2>OpenChange 2.0 QUADRANT Released!</h2>
   <div class="date">Thursday, 28th January 2013</div>
 
@@ -51,24 +72,6 @@ over HTTP. This service allows clients using Microsoft Outlook to
 connect to their Exchange servers from outside the corporate network.
 <br/><br/> [See the release notes for more info
 &raquo;](/developers/relnotes/2.0-quadrant.html)
-
-</div>
-
-
-<div class="news">
-  <h2>Easing OpenChange documentation contributions</h2>
-  <div class="date">Thursday, 4th January 2013</div>
-
-<img border="0" width="96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" alt=""
-src="/images/openchange_logo_v2.png" />
-
-Along with the explicit Creative Commons Attributation-ShareAlike 3.0
-Unported License applied to the website, we have also decided to make
-its source files available to the public and make our contributors
-life easier.<br/><br/> The Sources of each page of the website are now
-accessible through the *View the source of this file* link at the
-bottom right of each page.
 
 </div>
 
