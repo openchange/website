@@ -24,7 +24,7 @@ If your prefix is `/usr/local/samba` and your python version is `2.7`,
 then your openchange and samba python modules will have been installed
 into `/usr/local/samba/lib/python2.7/site-packages/` directory.
 
-    PYTHONPATH=$PYTHONPATH:/usr/local/samba/lib/python2.7/site-packages
+    export PYTHONPATH=$PYTHONPATH:/usr/local/samba/lib/python2.7/site-packages
 
 <br>
 # Configure Samba4 #
@@ -44,7 +44,7 @@ follow the internal DNS server setup subsection below.</p> </div>
 
 Provision Samba4 server as a domain controller.
 
-    $ sudo PYTHONPATH=$PYTHONPATH /usr/local/samba/bin/samba-tool domain provision \
+    $ sudo PYTHONPATH=$PYTHONPATH samba-tool domain provision \
       --realm=oc.local --domain=OC --adminpass='openchange1!' --server-role='dc'
 
 ### Create new user ###
@@ -54,7 +54,7 @@ extend it in OpenChange. However we need to create other users. To
 perform this task, use the following command:
 
 
-    $ sudo PYTHONPATH=$PYTHONPATH /usr/local/samba/bin/samba-tool user add JohnDoe 'openchange2!'
+    $ sudo PYTHONPATH=$PYTHONPATH samba-tool user add JohnDoe 'openchange2!'
     User 'JohnDoe' created successfully
 
 ### Edit Samba configuration ###
@@ -66,7 +66,7 @@ For OpenChange server to run properly, we need to edit Samba
 Add the following lines within the `[global]` section of the file:
 
 	### Configuration required by OpenChange server ###
-	dcerpc endpoint servers = epmapper, mapiproxy
+	dcerpc endpoint servers += mapiproxy
 	dcerpc_mapiproxy:server = true
 	dcerpc_mapiproxy:interfaces = exchange_emsmdb, exchange_nsp, exchange_ds_rfr
 	### Configuration required by OpenChange server ###

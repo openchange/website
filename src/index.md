@@ -56,23 +56,26 @@ or directly through GIT:
     git clone https://github.com/openchange/openchange.git
 </div>
 
-
 <div class="news">
-  <h2>OpenChange 2.0 QUADRANT Released!</h2>
-  <div class="date">Thursday, 28th January 2013</div>
+  <h2>OpenChange at SambaXp 2013</h2>
+  <div class="date">Friday, 5th April 2013</div>
 
 <img border="0" width="96" height="96" style="border: 0pt none;
 margin: -5px 5px 5px; float: left;" alt=""
-src="/images/openchange_logo_v2.png" />
+src="/images/samba_logo.png" />
 
-**The OpenChange project team is proud to announce the release of
-OpenChange 2.0 QUADRANT**.  <br/><br/> This major release provides
-Outlook Anywhere support for OpenChange server, formely known as RPC
-over HTTP. This service allows clients using Microsoft Outlook to
-connect to their Exchange servers from outside the corporate network.
-<br/><br/> [See the release notes for more info
-&raquo;](/developers/relnotes/2.0-quadrant.html)
+** From May 14th to 17th, 2013 **, OpenChange will participate to the
+samba eXPerience conference in Göttingen (Germany). Julien Kerihuel
+will present a talk entitled OpenChange 2.0 Ecosystem.
 
-</div>
+With OpenChange 2.0, small and medium businesses targetting complete
+interoperability with Microsoft Exchange server have started to
+evaluate and use OpenChange server and Samba4 AD in production. This
+talk will provide an overview of OpenChange latest features, pro and
+cons, current projects, collaboration and opportunities happening in
+OpenChange ecosystem. The last part of the presentation will focus on
+the 3.0 milestone and its potential benefits for final users and
+service providers.  </div>
 
-[News archives &raquo;](/about/news_2012.html)
+[News archives &raquo;](/about/news_2013.html)
+
