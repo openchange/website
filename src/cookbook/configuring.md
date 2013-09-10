@@ -66,7 +66,7 @@ For OpenChange server to run properly, we need to edit Samba
 Add the following lines within the `[global]` section of the file:
 
 	### Configuration required by OpenChange server ###
-	dcerpc endpoint servers += mapiproxy
+	dcerpc endpoint servers = +epmapper, +mapiproxy
 	dcerpc_mapiproxy:server = true
 	dcerpc_mapiproxy:interfaces = exchange_emsmdb, exchange_nsp, exchange_ds_rfr
 	### Configuration required by OpenChange server ###
