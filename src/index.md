@@ -37,6 +37,45 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+  <h2>Deploy OpenChange in 3 minutes - Learn how at the Zentyal Summit 2013</h2>
+  <div class="date">Tuesday, 1st October 2013</div>
+
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" alt=""
+src="/images/zentyal_logo.png" />
+
+OpenChange has been integrated in the [Zentyal Linux small business
+server](http://www.zentyal.org)</a> project, making it possible to
+carry out an OpenChange deployment through Zentyal Server's graphical
+user interface in only 3 minutes. The first technology preview of this
+integration will be discussed and showcased at the [Zentyal Summit
+2013](http://summit.zentyal.com), that is to be held in Zaragoza
+(Spain) on the 3rd and 4th of October.
+
+<br/>
+During the event, Julien Kerihuel (CTO of Zentyal and Lead developer
+of OpenChange) will deliver a technical overview of the integration as
+well as a technical workshop of the OpenChange project. Moreover,
+Ignacio Correas (CEO of Zentyal) will discuss the commercial
+opportunities Zentyal-OpenChange integration offers. The first
+technology preview, that will be available for download since the 3rd
+of October, is also made available for testing in the demo space of
+the event. Check out the [program](http://summit.zentyal.com/program/)
+for further details.
+
+The Zentyal Summit 2013, held under the slogan "Keep Calm and Go
+Hybrid", will focus specially on how to seamlessly replace Microsoft
+Active Directory and Microsoft Exchange based solutions and what
+alternatives allow SMBs to keep their local IT infrastructure, while
+adapting cloud-solutions according to their needs. The event is aimed
+at current and potential Zentyal partners, customers, community
+members and Zentyal Server users. There is no registration fee and the
+event will be transmitted on-line, but
+[registration](http://summit.zentyal.com/register/) is compulsory.
+
+</div>
+
+<div class="news">
   <h2>OpenChange on GitHub</h2>
   <div class="date">Monday, 9th September 2013</div>
 
@@ -55,27 +94,6 @@ or directly through GIT:
 
     git clone https://github.com/openchange/openchange.git
 </div>
-
-<div class="news">
-  <h2>OpenChange at SambaXp 2013</h2>
-  <div class="date">Friday, 5th April 2013</div>
-
-<img border="0" width="96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" alt=""
-src="/images/samba_logo.png" />
-
-** From May 14th to 17th, 2013 **, OpenChange will participate to the
-samba eXPerience conference in Göttingen (Germany). Julien Kerihuel
-will present a talk entitled OpenChange 2.0 Ecosystem.
-
-With OpenChange 2.0, small and medium businesses targetting complete
-interoperability with Microsoft Exchange server have started to
-evaluate and use OpenChange server and Samba4 AD in production. This
-talk will provide an overview of OpenChange latest features, pro and
-cons, current projects, collaboration and opportunities happening in
-OpenChange ecosystem. The last part of the presentation will focus on
-the 3.0 milestone and its potential benefits for final users and
-service providers.  </div>
 
 [News archives &raquo;](/about/news_2013.html)
 
