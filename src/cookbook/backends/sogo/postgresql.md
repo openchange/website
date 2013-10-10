@@ -22,7 +22,7 @@ Adjust the access rights to the database. To do so, modify the
 configuration file `/etc/postgresql/9.1/main/pg_hba.conf` in order to
 add the following line at the very beginning of the file:
 
-    host     precog     precog    127.0.0.1/32     md5
+    host     openchange     openchange    127.0.0.1/32     md5
 
 # Next: Configuring OpenLDAP #
 
