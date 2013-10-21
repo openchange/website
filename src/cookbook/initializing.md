@@ -23,7 +23,7 @@ The instructions have been updated and tested with `12.04.1 LTS`.
 
 ### Compilation tools ###
 
-    $ sudo apt-get install build-essential autoconf ccache pkg-config python python-dev libacl1-dev
+    $ sudo apt-get install build-essential autoconf automake ccache pkg-config python python-dev libacl1-dev
     $ sudo apt-get install git flex bison docbook-xsl xsltproc
 
 ### OpenChange dependencies ###
