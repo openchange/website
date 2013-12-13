@@ -5,6 +5,8 @@
 
 Donations go through the Software Freedom Conservancy and the full amount of each donation goes to OpenChange. For example, there are substantial capital costs associated with creating and maintaining a test environment across all the versions of proprietary software OpenChange must interoperate with.
 
+Conservancy also accepts stock donations on behalf of OpenChange. If you would like to donate stock, please contact <a href="mailto:accounting@sfconservancy.org">accounting@sfconservancy.org</a> for instructions on how to initiate the transfer.
+
 <div align="center">
 <table width="80%" style="margin-top:2em;margin-bottom:2em;border:none;box-shadow: 1px 1px 4px #555;">
 <tr>
