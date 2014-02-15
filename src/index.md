@@ -2,6 +2,21 @@
 
 <div style="float: right; width: 35%;margin-left:2em;">
   <h2 style="margin-bottom: 1em;"> Quick Links </h2>
+
+  <div class="rebox" style="float: left; width: 90%; margin: 0em; margin-bottom: 1em;">
+    <h2 style="color: white; background-color: #95C0D0; border: 0px;">OpenChange Social Media</h2>
+    <table width="100%" style="border:none;" align="center">
+      <tr style="border:none;">
+        <td style="border:none;" width="33%"><div id="fb-root"></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=171342346240430";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script><div class="fb-follow" data-href="http://www.facebook.com/OpenChange" data-colorscheme="light" data-layout="button" data-show-faces="true"></div>
+        </td>
+        <td style="border:none;" width="33%"><a href="https://twitter.com/OpenChangeProj" class="twitter-follow-button" data-show-count="false">Follow @OpenChangeProj</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </td>
+        <td style="border:none;" width="33%"><script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/FollowCompany" data-id="5068283" data-counter="none"></script>
+        </td>
+      </tr>
+  </table>
+  </div>
   <div class="rebox" style="float: left; width: 90%; margin: 0em;"> 
     <h2 style="color: white; background-color: #95C0D0; border: 0px;">Download OpenChange 2.0 QUADRANT</h2>
     <div class="p" style="margin-left: 5px; margin-right: 5px"> 
@@ -35,6 +50,35 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 <p>&nbsp;</p>
 
 # Latest News #
+
+<div class="news">
+<h2>Follow us, Like us, Tweet us and spread the word</h2>
+<div class="date">Saturday, 15th February 2014</div>
+
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" alt=""
+src="/images/openchange_logo_v2.png" />
+
+OpenChange is now on [Facebook](https://www.facebook.com/OpenChange),
+[Twitter](https://twitter.com/OpenchangeProj),
+[LinkedIn](http://www.linkedin.com/company/openchange/) and have a lot
+of news and updates to share with you among next weeks. It is time to
+update your bookmarks.
+<br/><br/>
+**Follow us, Like us, Tweet us and spread the word!**
+<br/><br/>
+    <table style="border:none;" align="center">
+      <tr style="border:none;">
+        <td style="border:none;"><div id="fb-root"></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=171342346240430";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script><div class="fb-follow" data-href="http://www.facebook.com/OpenChange" data-colorscheme="light" data-layout="button" data-show-faces="true"></div>
+        </td>
+        <td style="border:none;"><a href="https://twitter.com/OpenChangeProj" class="twitter-follow-button" data-show-count="false">Follow @OpenChangeProj</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </td>
+        <td style="border:none;"><script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/FollowCompany" data-id="5068283" data-counter="none"></script>
+        </td>
+      </tr>
+  </table>
+</div>
 
 <div class="news">
   <h2>Deploy OpenChange in 3 minutes - Learn how at the Zentyal Summit 2013</h2>
