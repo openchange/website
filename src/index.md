@@ -56,7 +56,7 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 <div class="date">Thursday 20th February 2014</div>
 
 <img border="0" width="96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" alt=""
+margin: -5px 5px 20px; float: left;" alt=""
 src="/images/zentyal_logo.png" />
 
 Zentyal Server development is strongly focused on providing a native
