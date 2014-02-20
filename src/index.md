@@ -52,6 +52,33 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+<h2>Zentyal OpenChange Webmail</h2>
+<div class="date">Thursday 20th February 2014</div>
+
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" alt=""
+src="/images/zentyal_logo.png" />
+
+Zentyal Server development is strongly focused on providing a native
+replacement for both Microsoft® Active Directory and Microsoft®
+Exchange Server. The continuous integration of OpenChange in its
+product along with its regular contributions to the project have lead
+to major improvements in the area of webmail and usability.
+
+This fully new webmail user interface (UI) (based on the SOGo webmail)
+will be included in the Zentyal Server 3.4 version that will be
+released on March 15 and is available for beta testing as of
+today. For additional information and preview, check out this Zentyal
+Labs article that highlights the main changes and includes several
+screenshots.
+
+You can read the Zentyal Labs article at the following address:
+[http://labs.zentyal.org/zentyal-webmail-restyle/](http://labs.zentyal.org/zentyal-webmail-restyle/).
+
+
+</div>
+
+<div class="news">
 <h2>Follow us, Like us, Tweet us and spread the word</h2>
 <div class="date">Saturday, 15th February 2014</div>
 
@@ -117,26 +144,6 @@ members and Zentyal Server users. There is no registration fee and the
 event will be transmitted on-line, but
 [registration](http://summit.zentyal.com/register/) is compulsory.
 
-</div>
-
-<div class="news">
-  <h2>OpenChange on GitHub</h2>
-  <div class="date">Monday, 9th September 2013</div>
-
-<img border="0" width="96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" alt=""
-src="/images/openchange_logo_v2.png" />
-
-**The OpenChange project GIT repository has been migrated to GitHub to ease further development, collaborations and contributions.**
-
-The repository is available through the openchange organization page at
-the following URL:
-
-* [http://www.github.com/openchange/openchange/](http://www.github.com/openchange/openchange/)
-
-or directly through GIT:
-
-    git clone https://github.com/openchange/openchange.git
 </div>
 
 [News archives &raquo;](/about/news_2013.html)
