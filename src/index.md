@@ -52,6 +52,33 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+  <h2>OpenChange at SambaXp 2014</h2>
+  <div class="date">Friday, 10th March 2014</div>
+
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" alt=""
+src="/images/samba_logo.png" />
+
+** From May 13th to 16th, 2014 **, OpenChange will participate to the
+samba eXPerience conference in Göttingen (Germany). Julien Kerihuel
+will present a talk entitled *Beyond Technical Fulfillment*.
+
+In 2004 OpenChange was a few lines of code and no plan at all, and it
+might have all stopped there. Over the next decade OpenChange slowly
+gathered a contributor community and decided on a full implementation
+of MAPI, client and server.  
+
+Today in 2014, although there is plenty of enginering and polish to
+complete, this goal has been achieved. Microsoft clients and servers
+operate with full functionality against OpenChange without being able
+to tell the difference. But what should come next? This talk explains
+the kinds of interesting and new things that can be done when you
+implement the world's most popular groupware solution in open source
+code.
+
+</div>
+
+<div class="news">
 <h2>Zentyal OpenChange Webmail</h2>
 <div class="date">Thursday 20th February 2014</div>
 
@@ -107,44 +134,5 @@ update your bookmarks.
   </table>
 </div>
 
-<div class="news">
-  <h2>Deploy OpenChange in 3 minutes - Learn how at the Zentyal Summit 2013</h2>
-  <div class="date">Tuesday, 1st October 2013</div>
-
-<img border="0" width="96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" alt=""
-src="/images/zentyal_logo.png" />
-
-OpenChange has been integrated in the [Zentyal Linux small business
-server](http://www.zentyal.org)</a> project, making it possible to
-carry out an OpenChange deployment through Zentyal Server's graphical
-user interface in only 3 minutes. The first technology preview of this
-integration will be discussed and showcased at the [Zentyal Summit
-2013](http://summit.zentyal.com), that is to be held in Zaragoza
-(Spain) on the 3rd and 4th of October.
-
-<br/>
-During the event, Julien Kerihuel (CTO of Zentyal and Lead developer
-of OpenChange) will deliver a technical overview of the integration as
-well as a technical workshop of the OpenChange project. Moreover,
-Ignacio Correas (CEO of Zentyal) will discuss the commercial
-opportunities Zentyal-OpenChange integration offers. The first
-technology preview, that will be available for download since the 3rd
-of October, is also made available for testing in the demo space of
-the event. Check out the [program](http://summit.zentyal.com/program/)
-for further details.
-
-The Zentyal Summit 2013, held under the slogan "Keep Calm and Go
-Hybrid", will focus specially on how to seamlessly replace Microsoft
-Active Directory and Microsoft Exchange based solutions and what
-alternatives allow SMBs to keep their local IT infrastructure, while
-adapting cloud-solutions according to their needs. The event is aimed
-at current and potential Zentyal partners, customers, community
-members and Zentyal Server users. There is no registration fee and the
-event will be transmitted on-line, but
-[registration](http://summit.zentyal.com/register/) is compulsory.
-
-</div>
-
-[News archives &raquo;](/about/news_2013.html)
+[News archives &raquo;](/about/news_2014.html)
 
