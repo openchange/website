@@ -22,8 +22,10 @@ information](http://mailman.openchange.org/listinfo/devel) and the
 [archive of previous posts to the mailing
 list](http://mailman.openchange.org/pipermail/devel/) for more
 information)
-2. [Register](http://tracker.openchange.org/account/register) on the tracker and post your questions in the [Forums](http://tracker.openchange.org/projects/openchange/boards).
-3. and if possible, also join the [IRC](http://en.wikipedia.org/wiki/Internet_Relay_Chat) channel we use #openchange on [Freenode](http://freenode.net) (server: [irc.freenode.net](irc://irc.freenode.net), channel: [#openchange](irc://irc.freenode.net/openchange)).
+2. subscribing to the commits mailing list (see [subscription
+information](http://mailman.openchange.org/listinfo/commits))
+3. [Register](http://tracker.openchange.org/account/register) on the tracker and post your questions in the [Forums](http://tracker.openchange.org/projects/openchange/boards).
+4. and if possible, also join the [IRC](http://en.wikipedia.org/wiki/Internet_Relay_Chat) channel we use #openchange on [Freenode](http://freenode.net) (server: [irc.freenode.net](irc://irc.freenode.net), channel: [#openchange](irc://irc.freenode.net/openchange)).
 
 Your next stage is then to set up a development environment (either
 from scratch, or starting with a pre-build appliance). Guides on how
