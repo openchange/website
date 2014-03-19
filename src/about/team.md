@@ -5,3 +5,4 @@
 - [Jelmer Vernooij](mailto:jelmer@openchange.org), (Build System, Developer)
 - [Brad Hards](mailto:bradh@openchange.org), (Developer)
 - [Mathieu Patou](mailto:mat@samba.org) (Developer)
+- [Kamen Mazdrashki](mailto:kamenim@openchange.org) (Developer)
