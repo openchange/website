@@ -6,6 +6,7 @@ Date          | Version | Code name
 ------------- | ------- | ---------
  -	      |   3.0   | [OBSERVER](/developers/roadmap.html)
  -            |   2.5   | [PRECOG](/developers/roadmap.html)
+April 2014    |   2.1   | [QUADRANT](/developers/relnotes/2.1-quadrant.html)
 January 2013  |   2.0   | [QUADRANT](/developers/relnotes/2.0-quadrant.html)
 March 2012    |   1.0   | [BORG](/developers/relnotes/1.0-borg.html)
 July 2011     |   0.11  | [TRANSPORTER](/developers/relnotes/0.11-transporter.html)
