@@ -52,6 +52,26 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+  <h2>OpenChange 2.2 NANOPROBE roadmap</h2>
+  <div class="date">Monday, 28th April 2014</div>
+
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" alt=""
+src="/images/openchange_logo_v2.png" />
+
+
+The OpenChange project team will release a new version of OpenChange
+on June 2014. This version will primarily be focused on merging one
+large contribution from Zentyal, essential to our database storage
+consolidation vision and new architecture possibilities. This release
+will also improve NSPI addressbook stability, coverage of our unit
+testing, API documentation and non developer documentation.
+
+<br/><br/>
+[See the roadmap announcement &raquo;](/developers/roadmap.html)
+</div>
+
+<div class="news">
   <h2>OpenChange 2.1 QUADRANT Released!</h2>
   <div class="date">Wednesday, 23rd April 2014</div>
 

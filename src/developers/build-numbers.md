@@ -4,8 +4,9 @@
 
 Date          | Version | Code name
 ------------- | ------- | ---------
- -	      |   3.0   | [OBSERVER](/developers/roadmap.html)
- -            |   2.5   | [PRECOG](/developers/roadmap.html)
+ -	      |   3.0   | OBSERVER
+ -            |   2.5   | PRECOG
+June 2014     |   2.2   | [NANOPROBE](/developers/roadmap.html)
 April 2014    |   2.1   | [QUADRANT](/developers/relnotes/2.1-quadrant.html)
 January 2013  |   2.0   | [QUADRANT](/developers/relnotes/2.0-quadrant.html)
 March 2012    |   1.0   | [BORG](/developers/relnotes/1.0-borg.html)
