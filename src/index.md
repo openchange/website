@@ -53,7 +53,7 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 
 <div class="news">
   <h2>OpenChange 2.2 NANOPROBE roadmap</h2>
-  <div class="date">Monday, 28th April 2014</div>
+  <div class="date">Monday, 29th April 2014</div>
 
 <img border="0" width="96" height="96" style="border: 0pt none;
 margin: -5px 5px 5px; float: left;" alt=""
