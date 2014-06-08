@@ -11,7 +11,7 @@ repository. These commands can be run as normal user with sudo
 access. The current code in trunk works with latest release and should
 also work with latest git revisions unless specified otherwise.
 
-### Use latest Samba4 release (4.0.0) ###
+### Use latest Samba4 release (4.1.x) ###
 
     $ make samba
     $ sudo ldconfig
