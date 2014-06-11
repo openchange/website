@@ -4,6 +4,7 @@
 - [Setup Logging System](/documentation/openchangesim/logging.html)
 - [HowTo Use OpenChangeSim](/documentation/openchangesim/usage.html)
 - [Configuration file DTD](/documentation/openchangesim/dtd.html)
+- [Frequently Asked Questions](/documentation/openchangesim/faq.html)
 - [Limitations](/documentation/openchangesim/limitations.html)
 
 # Related #
