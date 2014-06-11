@@ -29,7 +29,7 @@ variables.
 
 ## Comments ##
 
-OCSIM files can contain comments embedded in normal C-style comment
+OpenChangeSim files can contain comments embedded in normal C-style comment
 markers. That is, a comment starts with a combination of `/` followed by
 `*`, and ends with combination of `*` followed by `/`.
 
@@ -66,7 +66,7 @@ the server to use.
 ## version parameter ##
 
 Specify the remote Exchange server version. Possible values for this
-parameter are 2010, 2007, 2003 and 2000.  
+parameter are 2010, 2007, 2003 and 2000.
 
 2010, 2007, 2003 will automatically enable libmapi use of
 `EcDoConnectEx`/`EcDoRpcExt2` (0xA/0xB) opnums while 2000 will

@@ -2,8 +2,8 @@
 
 [TOC]
 
-OpenChangeSim is using rsyslogd as its logging system. Instructions
-below help you setting up rsyslog to redirect openchangesim output in
+OpenChangeSim uses rsyslogd as its logging system. The instructions
+below help you to set up rsyslog to redirect openchangesim output to
 a specific file.
 
 ## Ubuntu Configuration ##
@@ -27,7 +27,7 @@ To enable openchangesim logs, you need to edit
         # OpenChangesim
         if $programname == 'openchangesim' then -/var/log/openchangesim.log
 
-* **Step 3**: Save `rsyslogd.conf` and restart the service:
+* **Step 3**: Save `/etc/rsyslog.conf` and restart the service:
 
         $ sudo /etc/init.d/rsyslog restart
         Shutting down system logger:                               [  OK  ]
@@ -43,7 +43,7 @@ To enable openchangesim logs, you need to edit **`/etc/rsyslogd.conf`**:
         # Don't log private authentication messages!
         *.info;mail.none;openchangesim.none;authpriv.none;cron.none                /var/log/messages
 
-* **Step 2**: OpenChangeSim logs needs to be redirected to a specific log file. Add the following lines to `rsyslog.conf`:
+* **Step 2**: OpenChangeSim logs needs to be redirected to a specific log file. Add the following lines to `rsyslogd.conf`:
 
         # OpenChangesim
         if $programname == 'openchangesim' then -/var/log/openchangesim.log
