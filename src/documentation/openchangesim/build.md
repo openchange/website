@@ -21,8 +21,8 @@ configure issue similar to:
 
         Checking for talloc 2.0.7                 : not found
 
-It probably means you need to adjust `PKG_CONFIG_PATH` environment
-variable. Assuming you have followed OpenChange cookbook and installed
+It probably means you need to adjust the `PKG_CONFIG_PATH` environment
+variable. Assuming you have followed the OpenChange cookbook and installed
 OpenChange and Samba within `/usr/local/samba@ prefix`:
 
         $ export PKG_CONFIG_PATH=/usr/local/samba/lib/pkgconfig:$PKG_CONFIG_PATH

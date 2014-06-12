@@ -6,14 +6,14 @@ In this guide, we assume you have followed [HowTo Setup Logging System](logging.
 
 # Setting up the Exchange server #
 
-OpenChangeSim is assuming your Exchange server is configured to use a
+OpenChangeSim assumes that your Exchange server is configured to use a
 generic naming for username and a single common password for all the
 accounts.
 
 Furthermore, openchangesim PLUGJUNE is assuming all the mailboxes are
 stored on the same Exchange server.
 
-A powerhsell script for Exchange 2007 is available in the script
+A powershell script for Exchange 2007 is available in the script
 folder of the openchangesim repository:
 [CreateMailbox.ps1](https://github.com/openchange/openchangesim/blob/master/script/CreateMailbox.ps1)
 
@@ -113,12 +113,12 @@ it 100 times. For each *run*, the sendmail scenario will execute *the
 utf8 case* and *case 1* (default if name parameter is missing for a
 case):
 
-* The utf8 case specifies we want to send an email with an utf8 body
-  specified inline and with an attachment stored on filesystem at
+* The utf8 case specifies that we want to send an email with an utf8 body
+  specified inline and with an attachment stored on the filesystem at
   `/path/to/attachment_1`.
 
 * The second case specifies we want to send an email with an HTML body
-  which contents is stored on filesystem at
+  which contents is stored on the file system at
   `/tmp/html_body.html`. Furthermore we also want to attach two files
   to this e-mail: `/path_to_atachment_2` and `/path_to_attachment_3`.
 
@@ -147,7 +147,7 @@ it 100 times.
 
 Before running openchangesim, you need to ensure your configuration
 file is OK. The `--confcheck` option will process the configuration
-file and tell if it is OK or not.
+file and report whether it is OK or not.
 
         $ ./bin/openchangesim --confcheck
         [*] Configuration file OK
@@ -159,7 +159,7 @@ file and tell if it is OK or not.
 
 If your configuration file has an incorrect syntax, confcheck will
 detect it and provide information on how to fix it. For example, I
-voluntarily removed a `;` for a variable in a scenario case:
+deliberately removed a `;` for a variable in a scenario case:
 
         ./bin/openchangesim --confcheck
         syntax error, unexpected EBRACE, expecting SEMICOLON: 39
@@ -180,92 +180,92 @@ For example if I have the following configuration file:
                    address            = 192.168.0.250;
                    domain             = EXCHANGE2007;
                    realm              = EXCHANGE2007.LOCAL;
-	           generic_user       = user;
-	           generic_user_range = 1-99;
-	           generic_password   = "^!OpenChange";
-	           ip_range           = 192.168.0.121 - 192.168.0.222;
+                   generic_user       = user;
+                   generic_user_range = 1-99;
+                   generic_password   = "^!OpenChange";
+                   ip_range           = 192.168.0.121 - 192.168.0.222;
         };
 
         server {
-	           name                    = EXCHANGE2003;
-	           version                 = 2003;
-	           address                 = 192.168.102.236;
-	           domain                  = OPENCHANGE2003;
-	           realm                   = OPENCHANGE2003.LOCAL;
-	           generic_user            = user;
-	           generic_user_range      = 1-4;
-	           generic_password        = "^!OpenChange";
-	           ip_range                = 192.168.0.121 - 192.168.0.124 ;
+                  name                    = EXCHANGE2003;
+                  version                 = 2003;
+                  address                 = 192.168.102.236;
+                  domain                  = OPENCHANGE2003;
+                  realm                   = OPENCHANGE2003.LOCAL;
+                  generic_user            = user;
+                  generic_user_range      = 1-4;
+                  generic_password        = "^!OpenChange";
+                  ip_range                = 192.168.0.121 - 192.168.0.124 ;
        };
 
        scenario {
-	           name         =       "sendmail";
-	           repeat       =       4;
+                  name         =       "sendmail";
+                  repeat       =       4;
 
-	           case {
-	   	        name            =       "utf8 case";
-		        inline_utf8     =       "Hello world, this is a very special case";
-		        attachment      =       "/home/openchansim/Pictures/plugfest.png";
-	           };
+                  case {
+                        name            =       "utf8 case";
+                        inline_utf8     =       "Hello world, this is a very special case";
+                        attachment      =       "/home/openchangesim/Pictures/plugfest.png";
+                  };
 
-	           case {
-		        file_html       =       "/tmp/html_body.html";
-		        attachment      =       "/home/openchangesim/Pictures/redmond.jpg";
-		        attachment      =       "/home/openchangesim/Pictures/test.png";
-	           };
+                  case {
+                        file_html       =       "/tmp/html_body.html";
+                        attachment      =       "/home/openchangesim/Pictures/redmond.jpg";
+                        attachment      =       "/home/openchangesim/Pictures/test.png";
+                  };
         };
 
         scenario {
-	           name		=	"fetchmail";
-	           repeat	=	2;
+                  name          =        "fetchmail";
+                  repeat        =        2;
         };
 
 `confdump` will process and display it:
 
         ./bin/openchangesim --confdump
         server {
-	        EXCHANGE2003 {
-		         version                = 2003                          
-		         address                = 192.168.102.236
-		         domain                 = OPENCHANGE2003
-		         realm                  = OPENCHANGE2003.LOCAL
-		         generic user           = user
-		         generic user range     = from 1 to 4
-		         generic password       = ^!OpenChange
-	        }
+               EXCHANGE2003 {
+                    version                = 2003
+                    address                = 192.168.102.236
+                    domain                 = OPENCHANGE2003
+                    realm                  = OPENCHANGE2003.LOCAL
+                    generic user           = user
+                    generic user range     = from 1 to 4
+                    generic password       = ^!OpenChange
+               }
 
-	        WINDOWS {
-		         version                = 2010                          
-		         address                = 192.168.0.250
-		         domain                 = EXCHANGE2007
-		         realm                  = EXCHANGE2007.LOCAL
-		         generic user           = user
-		         generic user range     = from 1 to 99
-		         generic password       = ^!OpenChange
-	       }
+               WINDOWS {
+                    version                = 2010
+                    address                = 192.168.0.250
+                    domain                 = EXCHANGE2007
+                    realm                  = EXCHANGE2007.LOCAL
+                    generic user           = user
+                    generic user range     = from 1 to 99
+                    generic password       = ^!OpenChange
+              }
 
          }
          scenario fetchmail {
-	        repeat		= 2
+               repeat                = 2
 
          }
          scenario sendmail {
-	        repeat		= 4
+               repeat                = 4
 
-	        case "utf8 case" {
-		         body                   = INLINE UTF8
-		         content = Hello world, this is a very special case
-		         attachments            = 1
-		         attachment             = /home/openchangesim/Pictures/plugfest.png
-	        };
+               case "utf8 case" {
+                    body                   = INLINE UTF8
+                    content = Hello world, this is a very special case
+                    attachments            = 1
+                    attachment             = /home/openchangesim/Pictures/plugfest.png
+               };
 
-	        case "scenario case 1" {
-		         body                   = HTML FILE
-		         filename               = /tmp/html_body.html
-		         attachments            = 2
-		         attachment             = /home/jkerihuel/Pictures/redmond.jpg
-		         attachment             = /home/jkerihuel/Pictures/test.png
-	        };
+               case "scenario case 1" {
+                    body                   = HTML FILE
+                    filename               = /tmp/html_body.html
+                    attachments            = 2
+                    attachment             = /home/jkerihuel/Pictures/redmond.jpg
+                    attachment             = /home/jkerihuel/Pictures/test.png
+               };
 
         }
 
@@ -277,8 +277,8 @@ servers and the number of users they are configured to use.
 
         $ ./bin/openchangesim --server-list
         Available servers:
-	        * EXCHANGE2003 (4 users)
-	        * WINDOWS (99 users)
+               * EXCHANGE2003 (4 users)
+               * WINDOWS (99 users)
 
 ### server option ###
 
@@ -298,8 +298,8 @@ command line:
 
         $ sudo ./bin/openchangesim --server=WINDOWS
         [*] Initializing modules
-	        [*] fetchmail           : Module loaded
-	        [*] sendmail            : Module loaded
+               [*] fetchmail           : Module loaded
+               [*] sendmail            : Module loaded
         [*] 98 User profiles ready
 
 On startup, openchangesim will check for the profile database,
