@@ -52,6 +52,27 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+   <h2>OpenChangeSim 1.0 released</h2>
+   <div class="date">Friday, 13th June 2014</div>
+
+<img border="0" width=96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" all=""
+src="/images/openchange_logo_v2.png" />
+
+The OpenChange project team has just released the first version of
+[OpenChangeSim](/documentation/openchangesim/index.html). It
+implements a simulator able to reproduce the behavior of thousands of
+Outlok clients talking to an Exchange server at the same time. The
+tool will be demonstrated during the [Outlook automation
+talk](http://blogs.msdn.com/b/officeinteroperability/archive/2014/05/30/redmond-interoperability-plugfest-agenda-available-now.aspx)
+of Julien Kerihuel at [Microsoft Redmond Protocols Interoperability
+Plugfest
+2014](http://channel9.msdn.com/Events/Open-Specifications-Plugfests/Redmond-Interoperability-Protocols-Plugfest-2014).
+<br/><br/>
+
+</div>
+
+<div class="news">
   <h2>OpenChange 2.2 NANOPROBE roadmap</h2>
   <div class="date">Monday, 29th April 2014</div>
 
@@ -110,33 +131,6 @@ to tell the difference. But what should come next? This talk explains
 the kinds of interesting and new things that can be done when you
 implement the world's most popular groupware solution in open source
 code.
-
-</div>
-
-<div class="news">
-<h2>Zentyal OpenChange Webmail</h2>
-<div class="date">Thursday 20th February 2014</div>
-
-<img border="0" width="96" height="96" style="border: 0pt none;
-margin: -5px 5px 20px; float: left;" alt=""
-src="/images/zentyal_logo.png" />
-
-Zentyal Server development is strongly focused on providing a native
-replacement for both Microsoft® Active Directory and Microsoft®
-Exchange Server. The continuous integration of OpenChange in its
-product along with its regular contributions to the project have lead
-to major improvements in the area of webmail and usability.
-
-This fully new webmail user interface (UI) (based on the SOGo webmail)
-will be included in the Zentyal Server 3.4 version that will be
-released on March 15 and is available for beta testing as of
-today. For additional information and preview, check out this Zentyal
-Labs article that highlights the main changes and includes several
-screenshots.
-
-You can read the Zentyal Labs article at the following address:
-[http://labs.zentyal.org/zentyal-webmail-restyle/](http://labs.zentyal.org/zentyal-webmail-restyle/).
-
 
 </div>
 
