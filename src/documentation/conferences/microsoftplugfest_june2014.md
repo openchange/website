@@ -17,12 +17,13 @@
 src="/images/conferences/plugfest-june-2014.png" />
 
 This presentation introduces OpenChangeSim, a MAPI stress testing tool
-leveraging OpenChange client libraries to generate MAPI traffic from
-multiple and unique IP addresses. The presentation first describes the
-objectives of this approach, then the challenges we faced with
-Exchange protocols automation. The last part of the presentation
-focuses on getting started with the tool: configuration, deployment,
-system logs and known limitations.
+leveraging OpenChange client libraries to implement a simulator able
+to reproduce the behavior of thousands of Outlok clients talking to an
+Exchange server. The presentation first describes the objectives of
+this approach, then the challenges we faced with Exchange protocols
+automation. The last part of the presentation focuses on getting
+started with the tool: configuration, deployment, system logs and
+known limitations.
 
 </div>
 
