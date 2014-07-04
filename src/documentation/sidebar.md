@@ -4,6 +4,7 @@
 - [Papers and Slides](/documentation/slides.html)
 
 # Conferences #
+- <img src="/images/uk.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [Microsoft Plugfest June 2014](/documentation/conferences/microsoftplugfest_june2014.html)
 - <img src="/images/uk.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [SambaXP 2014](/documentation/conferences/sambaxp_2014.html)
 - <img src="/images/uk.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [SambaXP 2012](/documentation/conferences/sambaxp_2012.html)
 - <img src="/images/uk.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [SambaXP 2011](/documentation/conferences/sambaxp_2011.html)
