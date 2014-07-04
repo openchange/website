@@ -85,7 +85,7 @@ src="/images/openchange_logo_v2.png" />
 
 The slides of the OpenChangeSim presentation (MAPI stress testing
 tool) given at Microsoft Redmond Protocols Interoperability plugfest (June 2014)
-are now available. You can download them either in ODP or PDF and from 2 different locations:
+are now available. You can download them either in ODP or PDF from 2 different locations:
 
 <div style="padding-left:8em;">
 
@@ -113,7 +113,9 @@ talk](http://blogs.msdn.com/b/officeinteroperability/archive/2014/05/30/redmond-
 of Julien Kerihuel at [Microsoft Redmond Protocols Interoperability
 Plugfest
 2014](http://channel9.msdn.com/Events/Open-Specifications-Plugfests/Redmond-Interoperability-Protocols-Plugfest-2014).
+
 <br/><br/>
+
 </div>
 
 <div class="news">
@@ -133,6 +135,7 @@ will also improve NSPI addressbook stability, coverage of our unit
 testing, API documentation and non developer documentation.
 
 <br/><br/>
+
 [See the roadmap announcement &raquo;](/developers/roadmap.html)
 </div>
 
