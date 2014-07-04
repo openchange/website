@@ -76,6 +76,27 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+   <h2>Microsoft Plugfest 2014 slides available</h2>
+   <div class="date">Friday, 4th July 2014</div>
+
+<img border="0" width=96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" all=""
+src="/images/openchange_logo_v2.png" />
+
+The slides of the OpenChangeSim presentation (MAPI stress testing
+tool) given at Microsoft Redmond Protocols Interoperability plugfest (June 2014)
+are now available. You can download them either in ODP or PDF and from 2 different locations:
+
+<div style="padding-left:8em;">
+
+* OpenOffice version directly from the [OpenChange Website](/documentation/conferences/microsoftplugfest_june2014.html)</li>
+* PDF version directly from [Microsoft
+Connect](https://connect.microsoft.com/site216/Downloads/DownloadDetails.aspx?DownloadID=53701)</li>
+
+</div>
+</div>
+
+<div class="news">
    <h2>OpenChangeSim 1.0 released</h2>
    <div class="date">Friday, 13th June 2014</div>
 
@@ -128,33 +149,6 @@ OpenChange 2.1 QUADRANT**.  <br/><br/> This maintenance release
 provides all latest fixes and builds against Samba 4.1.7.  <br/><br/>
 [See the release notes for more info
 &raquo;](/developers/relnotes/2.1-quadrant.html)
-</div>
-
-<div class="news">
-  <h2>OpenChange at SambaXp 2014</h2>
-  <div class="date">Friday, 10th March 2014</div>
-
-<img border="0" width="96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" alt=""
-src="/images/samba_logo.png" />
-
-** From May 13th to 16th, 2014 **, OpenChange will participate to the
-samba eXPerience conference in Göttingen (Germany). Julien Kerihuel
-will present a talk entitled *Beyond Technical Fulfillment*.
-
-In 2004 OpenChange was a few lines of code and no plan at all, and it
-might have all stopped there. Over the next decade OpenChange slowly
-gathered a contributor community and decided on a full implementation
-of MAPI, client and server.  
-
-Today in 2014, although there is plenty of enginering and polish to
-complete, this goal has been achieved. Microsoft clients and servers
-operate with full functionality against OpenChange without being able
-to tell the difference. But what should come next? This talk explains
-the kinds of interesting and new things that can be done when you
-implement the world's most popular groupware solution in open source
-code.
-
 </div>
 
 [News archives &raquo;](/about/news_2014.html)
