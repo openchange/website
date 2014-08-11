@@ -142,6 +142,25 @@ Restart apparmor, then bind9:
 
 
 <br>
+# Configure MySQL #
+
+<br/>
+
+## Prerequisites
+
+You need to have MySQL server installed:
+
+    $ sudo apt-get install mysql-server
+
+## Configure MySQL user to be used by Openchange
+
+    $ mysql -u root
+    mysql> CREATE USER 'openchange-user'@'localhost' IDENTIFIED BY 'openchange$123';
+    mysql> GRANT ALL PRIVILEGES ON `openchange`.* TO 'openchange-user'@'localhost' WITH GRANT OPTION;
+    mysql> FLUSH PRIVILEGES;
+
+
+<br>
 # Configure OpenChange #
 
 <br/>
@@ -202,13 +221,13 @@ Add the following lines within the `[global]` section of the file, using the pro
 MySQL credentials:
 
     mapistore:namedproperties = mysql
-    namedproperties:mysql_user = user
-    namedproperties:mysql_pass = password
+    namedproperties:mysql_user = openchange-user
+    namedproperties:mysql_pass = openchange$123
     namedproperties:mysql_host = hostname
     namedproperties:mysql_db = database
 
-    mapistore:indexing_backend = mysql://user:password@hostname/database
-    mapiproxy:openchangedb = mysql://user:password@hostname/database
+    mapistore:indexing_backend = mysql://openchange-user:openchange$123@hostname/database
+    mapiproxy:openchangedb = mysql://openchange-user:openchange$123@hostname/database
 
 
 ## Create OpenChange users ##
