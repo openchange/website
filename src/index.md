@@ -25,7 +25,7 @@
       <ul>
       <li><a href="/download/index.html">OpenChange 2.2 NANOPROBE platform packages for Linux hosts</a>
       <li><a href="http://tracker.openchange.org/attachments/download/246/openchange-2.2-NANOPROBE.tar.gz">OpenChange 2.2 NANOPROBE (gzipped) &raquo;</a></li>
-      <li><a href="http://tracker.openchange.org/attachments/download/247/openchange-2.2-NANOPROBE.tar.asc">GPG Signature &raquo;</a></li>
+      <li><a href="http://tracker.openchange.org/attachments/download/248/openchange-2.2-NANOPROBE.tar.asc">GPG Signature &raquo;</a></li>
       </ul></p> 
     </div> 
   </div>

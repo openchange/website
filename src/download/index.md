@@ -10,7 +10,7 @@ src="/images/openchange_logo_v2.png" />
 
 <br>
 
-### [&raquo; GPG Signature](http://tracker.openchange.org/attachments/download/247/openchange-2.2-NANOPROBE.tar.asc) ###
+### [&raquo; GPG Signature](http://tracker.openchange.org/attachments/download/248/openchange-2.2-NANOPROBE.tar.gz.asc) ###
 
 <br>
 
