@@ -18,14 +18,14 @@
   </table>
   </div>
   <div class="rebox" style="float: left; width: 90%; margin: 0em; margin-bottom: 1em;"> 
-    <h2 style="color: white; background-color: #95C0D0; border: 0px;">Download OpenChange 2.1 QUADRANT</h2>
+    <h2 style="color: white; background-color: #95C0D0; border: 0px;">Download OpenChange 2.2 NANOPROBE</h2>
     <div class="p" style="margin-left: 5px; margin-right: 5px"> 
       <p><img src="images/openchanGe.png" alt="" style="margin: 1em; margin-bottom: 2em; padding-right: 8px;"/>
-      OpenChange 2.1 QUADRANT is the latest release available for download. Download packages for your Linux distributions, sources and GPG signature: </p>
+      OpenChange 2.2 NANOPROBE is the latest release available for download. Download packages for your Linux distributions, sources and GPG signature: </p>
       <ul>
-      <li><a href="/download/index.html">OpenChange 2.1 QUADRANT platform packages for Linux hosts</a>
-      <li><a href="http://tracker.openchange.org/attachments/download/244/openchange-2.1-QUADRANT.tar.gz">OpenChange 2.1 QUADRANT (gzipped) &raquo;</a></li>
-      <li><a href="http://tracker.openchange.org/attachments/download/245/openchange-2.1-QUADRANT.tar.asc">GPG Signature &raquo;</a></li>
+      <li><a href="/download/index.html">OpenChange 2.2 NANOPROBE platform packages for Linux hosts</a>
+      <li><a href="http://tracker.openchange.org/attachments/download/246/openchange-2.2-NANOPROBE.tar.gz">OpenChange 2.2 NANOPROBE (gzipped) &raquo;</a></li>
+      <li><a href="http://tracker.openchange.org/attachments/download/247/openchange-2.2-NANOPROBE.tar.asc">GPG Signature &raquo;</a></li>
       </ul></p> 
     </div> 
   </div>
@@ -76,10 +76,28 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+     <h2>OpenChange 2.2 NANOPROBE Released!</h2>
+     <div class="date">Monday, 11th August 2014</div>
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" all=""
+src="/images/openchange_logo_v2.png" />
+
+**The OpenChange project team is happy to announce a new release [(2.2
+  &quot;Nanoprobe&quot;)](/download/index.html) is now available for
+  download.** <br/><br/>
+
+This release is a major OpenChange release. It is designed to work
+with &quot;4.1.11&quot; release of Samba4 and a version of SOGo
+strictly superior to 2.2.7. [See the release notes for more info
+&raquo;](/developers/relnotes/2.2-nanoprobe.html)
+
+</div>
+
+<div class="news">
    <h2>Microsoft Plugfest 2014 slides available</h2>
    <div class="date">Friday, 4th July 2014</div>
 
-<img border="0" width=96" height="96" style="border: 0pt none;
+<img border="0" width="96" height="96" style="border: 0pt none;
 margin: -5px 5px 5px; float: left;" all=""
 src="/images/openchange_logo_v2.png" />
 
@@ -116,42 +134,6 @@ Plugfest
 
 <br/><br/>
 
-</div>
-
-<div class="news">
-  <h2>OpenChange 2.2 NANOPROBE roadmap</h2>
-  <div class="date">Monday, 29th April 2014</div>
-
-<img border="0" width="96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" alt=""
-src="/images/openchange_logo_v2.png" />
-
-
-The OpenChange project team will release a new version of OpenChange
-on June 2014. This version will primarily be focused on merging one
-large contribution from Zentyal, essential to our database storage
-consolidation vision and new architecture possibilities. This release
-will also improve NSPI addressbook stability, coverage of our unit
-testing, API documentation and non developer documentation.
-
-<br/><br/>
-
-[See the roadmap announcement &raquo;](/developers/roadmap.html)
-</div>
-
-<div class="news">
-  <h2>OpenChange 2.1 QUADRANT Released!</h2>
-  <div class="date">Wednesday, 23rd April 2014</div>
-
-<img border="0" width="96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" alt=""
-src="/images/openchange_logo_v2.png" />
-
-**The OpenChange project team is proud to announce the release of
-OpenChange 2.1 QUADRANT**.  <br/><br/> This maintenance release
-provides all latest fixes and builds against Samba 4.1.7.  <br/><br/>
-[See the release notes for more info
-&raquo;](/developers/relnotes/2.1-quadrant.html)
 </div>
 
 [News archives &raquo;](/about/news_2014.html)
