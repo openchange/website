@@ -28,7 +28,7 @@ The instructions have been updated and tested with `12.04.1 LTS`.
 
 ### OpenChange dependencies ###
 
-    $ sudo apt-get install libpopt-dev libical-dev libmagic-dev libboost-thread-dev zlib1g-dev
+    $ sudo apt-get install libpopt-dev libical-dev libmagic-dev libboost-thread-dev zlib1g-dev libmysqlclient-dev
 
 ### OpenChange documentation tools ###
 
