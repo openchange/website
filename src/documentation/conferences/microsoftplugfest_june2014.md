@@ -34,3 +34,4 @@ known limitations.
 - [Plugfest Event page](http://channel9.msdn.com/Events/Open-Specifications-Plugfests/Redmond-Interoperability-Protocols-Plugfest-2014)
 - [OpenOffice presentation](/files/OutlookAutomationPlugfestJune2014.odp)
 - [PDF presentation (zip files)](https://connect.microsoft.com/site216/Downloads/DownloadDetails.aspx?DownloadID=53701)
+- [Video presentation](http://channel9.msdn.com/Events/Open-Specifications-Plugfests/Redmond-Interoperability-Protocols-Plugfest-2014/Outlook-Automation)
