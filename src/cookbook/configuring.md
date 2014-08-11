@@ -170,10 +170,12 @@ From master trunk directory run:
 ## Create openchangedb database ##
 
 OpenChange indexes user mailbox folder hierarchy within a dedicated
-database different from Samba4 active directory. Provision this
-database with following command:
+database different from Samba4 active directory. Since openchange 2.2 has support
+to use MySQL as the backend (and it's the recommended one). Provision this database
+with following command, replacing the *openchangedb-uri* parameter accordingly to your
+environment:
 
-    $ sudo PYTHONPATH=$PYTHONPATH ./setup/openchange_provision --openchangedb
+    $ sudo PYTHONPATH=$PYTHONPATH ./setup/openchange_provision --openchangedb --openchangedb-uri mysql://user:password@hostname/database
     Setting up openchange db
     Adding root DSE
     [+] Public Folders
@@ -187,6 +189,27 @@ database with following command:
 	    * SCHEDULE+ FREE BUSY                     : 0x0700000000000001 (504403158265495553)
 	    * EX:/o=first organization/ou=first administrative group: 0x0800000000000001 (576460752303423489)
 	    * Events Root                             : 0x0900000000000001 (648518346341351425)
+
+If you ommit *openchangedb-uri*, the old ldb backend will be used.
+
+### Edit Samba Configuration to use MySQL Backends ###
+
+Besides openchangedb, there are also an indexing backend and a named properties backend that
+use MySQL to improve performance. Edit Samba configuration file. In this guide is located at
+`/usr/local/samba/etc/smb.conf`.
+
+Add the following lines within the `[global]` section of the file, using the proper
+MySQL credentials:
+
+    mapistore:namedproperties = mysql
+    namedproperties:mysql_user = user
+    namedproperties:mysql_pass = password
+    namedproperties:mysql_host = hostname
+    namedproperties:mysql_db = database
+
+    mapistore:indexing_backend = mysql://user:password@hostname/database
+    mapiproxy:openchangedb = mysql://user:password@hostname/database
+
 
 ## Create OpenChange users ##
 
