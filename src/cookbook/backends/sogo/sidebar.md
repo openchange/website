@@ -4,7 +4,5 @@
 
 # Configuring Services #
 
-- [Postgresql Setup](postgresql.html)
-- [OpenLDAP Setup](openldap.html)
 - [Dovecot Setup](dovecot.html)
 - [Postfix Setup](postfix.html)

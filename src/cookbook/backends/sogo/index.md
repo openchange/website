@@ -26,7 +26,7 @@ Further information available on [SOGo website &raquo;](http://www.sogo.nu).
 
 Install the dependencies needed to build SOGo as superuser:
 
-    $ sudo apt-get install gnustep-make gnustep-base-runtime devscripts     \
+    sudo apt-get install gnustep-make gnustep-base-runtime devscripts       \
     debhelper libgnustep-base-dev gobjc libxml2-dev libldap2-dev libssl-dev \
     zlib1g-dev libmysqlclient-dev libmemcached-dev memcached libpq-dev      \
     libcurl4-openssl-dev
@@ -36,18 +36,18 @@ Install the dependencies needed to build SOGo as superuser:
 
 As the local user, checkout the latest SOGo sources:
 
-    $ git clone git://github.com/inverse-inc/sope
-    $ git clone git://github.com/inverse-inc/sogo
+    git clone git://github.com/inverse-inc/sope
+    git clone git://github.com/inverse-inc/sogo
 
 <br/>
 ### Install SOPE ###
 
 SOPE has to be installed first since SOGo depends on it:
 
-    $ cd sope
-    $ ./configure --with-gnustep --enable-debug --enable-strip
-    $ make
-    $ sudo make install
+    cd sope
+    ./configure --with-gnustep --enable-debug --enable-strip
+    make
+    sudo make install
 
 <br/>
 ### Install SOGo ###
@@ -56,33 +56,160 @@ SOPE has to be installed first since SOGo depends on it:
 
 #### Compile and install SOGo ####
 
-    $ cd sogo
-    $ ./configure --enable-debug --disable-strip
-    $ make
-    $ sudo make install
+    cd sogo
+    ./configure --enable-debug --disable-strip
+    make
+    sudo make install
 
 #### Install SOGo OpenChange plugin ####
 
-    $ cd sogo/OpenChange
-    $ make
-    $ sudo PKG_CONFIG_PATH=$PKG_CONFIG_PATH make install
+    cd sogo/OpenChange
+    make
+    sudo PKG_CONFIG_PATH=$PKG_CONFIG_PATH make install
 
 <br/>
-## Additional Configuration ##
 
-Run under the user account that will run SOGo server (in our case the
-openchange user):
+## SOGo Configuration ##
 
-    $ defaults write sogod SOGoTimeZone "Europe/Paris" 
-    $ defaults write sogod SOGoProfileURL "postgresql://openchange:openchange@localhost/openchange/sogo_user_profile" 
-    $ defaults write sogod OCSFolderInfoURL "postgresql://openchange:openchange@localhost/openchange/sogo_folder_info" 
-    $ defaults write sogod OCSSessionsFolderURL "postgresql://openchange:openchange@localhost/openchange/sogo_sessions_folder" 
-    $ defaults write sogod SOGoUserSources '({CNFieldName = cn; IDFieldName = uid; UIDFieldName = uid; IMAPHostFieldName =; 
-    baseDN = "ou=users,dc=oc,dc=local"; bindDN = "uid=Administrator,ou=users,dc=oc,dc=local"; bindPassword = Administrator; 
-    canAuthenticate = YES; displayName = "Shared Addresses"; hostname = "localhost"; id = public; isAddressBook = YES; port = 3389;})'
-    $ defaults write sogod WONoDetach YES
-    $ defaults write sogod WOLogFile -
-    $ defaults write sogod WOPidFile /tmp/sogo.pid
+This configuration assumes that you have a sogo user created in Samba
+which password is _NuzIgtKovyva04in8l02_. This user does not have any
+specific attributes and can be created with a regular `samba-tool`
+command.
+
+    sudo PYTHONPATH=$PYTHONPATH samba-tool user add sogo 'NuzIgtKovyva04in8l02'
+    User 'sogo' created successfully.
+
+The following guide also assume you have followed the cookbook and
+your domain is setup to oc.lan. If you have changed this in earlier
+part of the configuration, do not forget to update further
+configuration bits accordingly.
+
+Adjust the following commands to your environment where relevant and
+run them under the user account that will run SOGo server (in our case
+the openchange user):
+
+Edit `/etc/sogo/sogo.conf`:
+
+### General parameters ###
+
+    WOPort = 20000;
+    WOLogFile = /var/log/sogo/sogo.log;
+    WOPidFile = /var/run/sogo/sogo.pid;
+    SOGoTimeZone "Europe/Paris"
+    SOGoMailDomain = oc.lan;
+    SOGoPasswordChangeEnabled = NO;
+    SOGoLanguage = English;
+
+### Mail preferences ###
+
+    SOGoAppointmentSendEmailNotifications = YES;
+    SOGoACLsSendEMailNotifications = NO;
+
+### Database configuration ###
+
+    SOGoProfileURL "mysql://openchange:openchange@localhost/openchange/sogo_user_profile"
+    OCSFolderInfoURL "mysql://openchange:openchange@localhost/openchange/sogo_folder_info"
+    OCSSessionsFolderURL "mysql://openchange:openchange@localhost/openchange/sogo_sessions_folder"
+
+### Common IMAP and SMTP configuration ###
+
+    SOGoForceExternalLoginWithEmail = YES;
+
+### IMAP server configuration ###
+
+    NGImap4ConnectionStringSeparator = ".";
+    SOGoIMAPAclConformsToIMAPExt = NO;
+    SOGoMailSpoolPath = /var/spool/sogo;
+    SOGoIMAPServer = 127.0.0.1:143;
+    SOGoSieveServer = sieve://127.0.0.1:4190;
+    SOGoDraftsFolderName = Drafts;
+    SOGoSentFolderName = Sent;
+    SOGoTrashFolderName = Trash;
+    SOGoMailShowSubscribedFoldersOnly = NO;
+
+### SMTP server configuration ###
+
+    SOGoMailingMechanism = smtp;
+    SOGoSMTPServer = 127.0.0.1:25;
+
+### Sieve configuration ###
+
+    SOGoVacationEnabled = YES;
+    SOGoSieveScriptsEnabled = YES;
+    SOGoForwardEnabled = YES;
+
+### LDAP authentication ###
+
+We are going to use Samba4 Active Directory directly.
+
+    SOGoUserSources =  (
+        {
+            id = sambaLogin;
+            displayName = "SambaLogin";
+            canAuthenticate = YES;
+            type = ldap;
+            CNFieldName = cn;
+            IDFieldName = cn;
+            UIDFieldName = sAMAccountName;
+            hostname = "ldap://127.0.0.1";
+            baseDN = "CN=Users,DC=oc,DC=lan";
+            bindDN = "CN=sogo,CN=Users,DC=oc,DC=lan";
+            bindPassword = "NuzIgtKovyva04in8l02";
+            bindFields = (sAMAccountName);
+        },
+        {
+            id = sambaShared;
+            displayName = "Shared Addressbook";
+            canAuthenticate = NO;
+            isAddressBook = YES;
+            type = ldap;
+            CNFieldName = cn;
+            IDFieldName = mail;
+            UIDFieldName = mail;
+            hostname = "ldap://127.0.0.1";
+            baseDN = "DC=oc,DC=lan";
+            bindDN = "CN=sogo,CN=Users,DC=oc,DC=lan";
+            bindPassword = "NuzIgtKovyva04in8l02";
+            filter = "((NOT isCriticalSystemObject='TRUE') AND (mail=\'*\') AND (NOT objectClass=contact))";
+        },
+        {
+            id = sambaContacts;
+            displayName = "Shared Contacts";
+            canAuthenticate = NO;
+            isAddressBook = YES;
+            type = ldap;
+            CNFieldName = cn;
+            IDFieldName = mail;
+            UIDFieldName = mail;
+            hostname = "ldap://127.0.0.1";
+            baseDN = "DC=oc,DC=lan";
+            bindDN = "CN=sogo,CN=Users,DC=oc,DC=lan";
+            bindPassword = "NuzIgtKovyva04in8l02";
+            filter = "((((objectClass=person) AND (objectClass=contact) AND ((uidNumber>=2000) OR (mail=\'*\'))) AND (NOT isCriticalSystemObject='TRUE') AND (NOT showInAdvancedViewOnly='TRUE') AND (NOT uid
+=Guest)) OR (((objectClass=group) AND (gidNumber>=2000)) AND (NOT isCriticalSystemObject='TRUE') AND (NOT showInAdvancedViewOnly='TRUE')))";
+            mapping = {
+                displayname = ("cn");
+            };
+        }
+    );
+
+
+### Debug options ###
+
+    GCSFolderDebugEnabled = NO;
+    GCSFolderStoreDebugEnabled = NO;
+    LDAPDebugEnabled = NO;
+    MySQL4DebugEnabled = NO;
+    NGImap4DisableIMAP4Pooling = NO;
+    OCSFolderManagerSQLDebugEnabled = NO;
+    PGDebugEnabled = NO;
+    SOGoDebugRequests = NO;
+    SOGoMailKeepDraftsAfterSend = NO;
+    SOGoUIxDebugEnabled = NO;
+    SoDebugObjectTraversal = NO;
+    SoSecurityManagerDebugEnabled = NO;
+    WODontZipResponse = NO;
+    WODebugZipResponse = NO;
 
 <br/>
 ## Give root access to user's GNUstep environment ##
@@ -93,7 +220,7 @@ privileged user, so will the sogo code called from OpenChange
 server. SOGo backend and server are relying on the same configuration
 and so need to be accessible both from openchange and root user:
 
-    # ln -s ~openchange/GNUstep /root/
+    ln -s ~openchange/GNUstep /root/
 
 <br/>
 # Next: Configuring SOGo Web UI #

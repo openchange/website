@@ -45,6 +45,6 @@ Run `sogod` in one terminal as normal user:
 Open a browser and navigate to `${IP_ADDRESS}/SOGo/`.
 If you can see the login form, move to next step.
 
-# Next: Configuring Postgresql #
+# Next: Configuring Dovecot #
 
-Process to [Postgresql setup](postgresql.html).
+Process to [Dovecot setup](dovecot.html).
