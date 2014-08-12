@@ -1,11 +1,14 @@
-Mapistore HTTP API documentation
-================================
+Mapistore HTTP REST API
+=======================
+
+This documentation is work in progress.
 
 .. toctree::
    :maxdepth: 2
 
 Authentication
 --------------
+
 TBD
 
 Backend info
@@ -151,7 +154,7 @@ Folders
 
    .. sourcecode:: http
 
-      HTTP/1.1 204 DELTED
+      HTTP/1.1 204 No content
 
    :reqheader Authorization: auth token
    :statuscode 204: Ok
