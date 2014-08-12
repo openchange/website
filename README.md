@@ -34,6 +34,7 @@ Necessary source files include:
 
     src/        individual page content in markdown format
     templates/  templates for page content
+    api/	sphynx API documentation
 
 and the following content which is copied directly:
 
@@ -51,6 +52,7 @@ The build script assumes that
   and layout.) But the build.py script will indeed copy arbitrary files to the
   output dir, so it is possible to simply place .html, .pdf, and similar files
   to the src/ tree and they will be copied directly to ./out.
+- python-sphinx python-sphinxcontrib-httpdomain packages are installed
 
 ## Stylish Guide ##
 
