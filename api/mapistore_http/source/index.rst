@@ -23,7 +23,7 @@ Backend info
 
       GET /info/ HTTP/1.1
       Host: example.com
-      Accept: application/json, text/javascript
+      Accept: application/json
 
    **Example response**:
 
@@ -31,7 +31,7 @@ Backend info
 
       HTTP/1.1 200 OK
       Vary: Accept
-      Content-Type: text/javascript
+      Content-Type: application/json
 
       {
         "name": "My MAPISTORE Backend",
@@ -63,7 +63,7 @@ Folders
 
       POST /folders/ HTTP/1.1
       Host: example.com
-      Accept: application/json, text/javascript
+      Accept: application/json
 
       {
         "parent_id": "c7e77cc9999908ec54ae32f1faf17e0e",
@@ -75,6 +75,8 @@ Folders
    .. sourcecode:: http
 
       HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
 
       {
         "folder_id": "68b329da9893e34099c7d8ad5cb9c940"
@@ -93,7 +95,7 @@ Folders
 
       GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/ HTTP/1.1
       Host: example.com
-      Accept: application/json, text/javascript
+      Accept: application/json
 
    **Example response**:
 
@@ -101,7 +103,7 @@ Folders
 
       HTTP/1.1 200 OK
       Vary: Accept
-      Content-Type: text/javascript
+      Content-Type: application/json
 
       {
         "folder_id": "c7e77cc9999908ec54ae32f1faf17e0e",
@@ -171,7 +173,7 @@ Folders
 
       GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/messages HTTP/1.1
       Host: example.com
-      Accept: application/json, text/javascript
+      Accept: application/json
 
    **Example response**:
 
@@ -179,7 +181,7 @@ Folders
 
       HTTP/1.1 200 OK
       Vary: Accept
-      Content-Type: text/javascript
+      Content-Type: application/json
 
       [
         {
@@ -215,7 +217,7 @@ Folders
 
       GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/folders HTTP/1.1
       Host: example.com
-      Accept: application/json, text/javascript
+      Accept: application/json
 
    **Example response**:
 
@@ -223,7 +225,7 @@ Folders
 
       HTTP/1.1 200 OK
       Vary: Accept
-      Content-Type: text/javascript
+      Content-Type: application/json
 
       [
         {
@@ -258,7 +260,7 @@ Folders
 
       POST /folders/c7e77cc9999908ec54ae32f1faf17e0e/?action=empty HTTP/1.1
       Host: example.com
-      Accept: application/json, text/javascript
+      Accept: application/json
 
    **Example response**:
 
