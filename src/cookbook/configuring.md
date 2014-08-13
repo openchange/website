@@ -169,7 +169,7 @@ You need to have MySQL server installed:
 
 From master trunk directory run:
 
-    $ sudo PYTHONPATH=$PYTHONPATH ./setup/openchange_provision
+    $ sudo PYTHONPATH=$PYTHONPATH ./setup/openchange_provision --standalone
     NOTE: This operation can take several minutes
     [+] Step 1: Register Exchange OIDs
     [+] Step 2: Add Exchange attributes to Samba schema
