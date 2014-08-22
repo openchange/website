@@ -45,7 +45,7 @@ The return value of `list_backends` is a list with the available backends, while
 
 In order to add a new context, a context URI is provided. If this URI is not known beforehand, it can be found by calling `capabilities`. On success, the `add_context` method returns the URI's MAPIStore context as a Python object. 
 
-        >>> my_ctx = mstore.add_context('my_uri')
+        >>> my_ctx = mstore.add_context('example://my_uri')
 
 # Next: MAPIStore Contexts #
 
