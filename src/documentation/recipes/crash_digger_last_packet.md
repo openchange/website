@@ -80,8 +80,9 @@ command designed for this purpose. The format of this command is:
     dump binary memory <outfile> <start_addr> <end_addr>
 
 In our case:
-* start_addr is the address where the array of bytes starts: `call->ndr_pull->data`
-* end_addr is the address where the array of bytes ends: `(call->ndr_pull->data + call->ndr_pull->data_size)`
+
+- start_addr is the address where the array of bytes starts: `call->ndr_pull->data`
+- end_addr is the address where the array of bytes ends: `(call->ndr_pull->data + call->ndr_pull->data_size)`
 
 In summary to dump the network packet into a file, we run:
 
@@ -97,6 +98,7 @@ samba4 binary suite and the following command:
     $ ndrdump -l libmapi.so exchange_emsmdb 0xb in /tmp/pkt_in
 
 This tool takes the following argument:
+
 1. `-l libmapi.so` to tell ndrdump to load a DSO
 2. `exchange_emsmdb` to specify the dcerpc endpoint
 3. `0xb` to specify the RPC operation number (here EcDoRpcExt2)
