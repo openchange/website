@@ -185,8 +185,9 @@ We are going to use Samba4 Active Directory directly.
             baseDN = "DC=oc,DC=lan";
             bindDN = "CN=sogo,CN=Users,DC=oc,DC=lan";
             bindPassword = "NuzIgtKovyva04in8l02";
-            filter = "((((objectClass=person) AND (objectClass=contact) AND ((uidNumber>=2000) OR (mail=\'*\'))) AND (NOT isCriticalSystemObject='TRUE') AND (NOT showInAdvancedViewOnly='TRUE') AND (NOT uid
-=Guest)) OR (((objectClass=group) AND (gidNumber>=2000)) AND (NOT isCriticalSystemObject='TRUE') AND (NOT showInAdvancedViewOnly='TRUE')))";
+            filter = "((((objectClass=person) AND (objectClass=contact) AND ((uidNumber>=2000) OR (mail='*')))
+                     AND (NOT isCriticalSystemObject='TRUE') AND (NOT showInAdvancedViewOnly='TRUE') AND (NOT uid=Guest))
+                     OR (((objectClass=group) AND (gidNumber>=2000)) AND (NOT isCriticalSystemObject='TRUE') AND (NOT showInAdvancedViewOnly='TRUE')))";
             mapping = {
                 displayname = ("cn");
             };

@@ -6,3 +6,4 @@
 - [Brad Hards](mailto:bradh@openchange.org), (Developer)
 - [Mathieu Patou](mailto:mat@samba.org) (Developer)
 - [Kamen Mazdrashki](mailto:kamenim@openchange.org) (Developer)
+- [Jesús García Sáez](mailto:blaxter@openchange.org) (Developer)
