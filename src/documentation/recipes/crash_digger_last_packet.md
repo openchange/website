@@ -43,7 +43,7 @@ The first step is therefore to find a valid reference to the
 `dcesrv_call_state` structure. If the code has been compiled with
 optimization, you may encounter some references to `<optimized_out>`
 in some frames. You would therefore have to move up within the stack
-to find an previous reference.
+to find a previous reference.
 
 In general, the first visible and direct reference to this information
 is within the frame where `dcesrv_request` is called. In Samba,
