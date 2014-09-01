@@ -46,16 +46,30 @@ Now we need to edit `/etc/ocsmanager/ocsmanager.ini` and change, at least, the f
 * mapistore_data: probably you need
   `/usr/local/samba/private/mapistore`
 
+### AutoDiscovery ###
+
+The autodiscovery service can be adjusted 
+It is possible to adjust auto
+
 If you want to tune **autodiscover** settings to match your configuration,
 edit the following keys:
 
 * `[autodiscover]`
-    * internal_networks: set it if you want to prioritise RPC/Proxy settings
-      when you are outside the office. The network addresses are in
-      CIDR format and separated by commas, for
-      instance: `internal_networks = 192.168.2.0/24, 10.2.0.0/16`
+
+    * internal_networks: This setting is useful if you want to adjust
+      settings for users that need to access OpenChange using Outlook
+      Anywhere. The default configuration of the autodiscovery service
+      assumes the Internet to be the internal network and therefore
+      always give priority to MAPI/RPC over Outlook Anywhere. When
+      this parameter is defined, specified networks will have MAPI/RPC
+      prioritized over Outlook Anywhere while the non specified ones
+      will have RPC over HTTP specified over MAPI/RPC. To set this
+      parameter, specify network addresses using their CIDR format and
+      separate them with commas. For example: `internal_networks =
+      192.168.2.0/24, 10.2.0.0/16`
+
 * `[autodiscover:rpcproxy]`
-    * enabled: it is a pre-requisite to have RPC/Proxy service
+    * enabled: it is a requirement to have RPC/Proxy service
       configured.
     * external_hostname: if we want to set it statically since by
       default it is guessed from the client request. Most of the
