@@ -83,16 +83,18 @@ edit the following keys:
 
 ### Out of Office ###
 
-The Out of Office service stores the holidays reply in an IMAP server
-using SIEVE language. Two backends are provided to keep this sieve
-script. `file` to write it directly in the file system or
-`managesieve` to store it using *ManageSieve* protocol mainly at
-remote locations. The following options are available for each backend:
+The Out of Office service sets the reply automatically sent to your
+contacts when you receive an email. This reply is stored on the IMAP
+server using SIEVE language. Two backends are provided to manage this
+sieve script. Either `file` to write it directly on the file system or
+`managesieve` to store it using *ManageSieve* protocol (when dealing
+with remote IMAP services). The following options are available for
+each backend:
 
 * `[outofoffice:file]`
 
     * sieve_script_path: The path where the sieve script is
-      stored. The value is expanded using the user, domain or fulluser
+      stored. The value is expanded from the user, domain or full user
       variables.
     * sieve_script_path_mkdir: This option creates the directory
       hierarchy if it doesn't exist yet.
