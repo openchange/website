@@ -46,10 +46,12 @@ Now we need to edit `/etc/ocsmanager/ocsmanager.ini` and change, at least, the f
 * mapistore_data: probably you need
   `/usr/local/samba/private/mapistore`
 
+Take into account, along the file the commented key values are the
+default values when the option is not present.
+
 ### AutoDiscovery ###
 
-The autodiscovery service can be adjusted 
-It is possible to adjust auto
+The autodiscovery service can be adjusted.
 
 If you want to tune **autodiscover** settings to match your configuration,
 edit the following keys:
@@ -78,8 +80,32 @@ edit the following keys:
       presented SSL certificate's common name matches the hostname the
       client is asking for.
 
-Take into account, the commented key values are the default values
-when the option is not present.
+
+### Out of Office ###
+
+The Out of Office service stores the holidays reply in an IMAP server
+using SIEVE language. Two backends are provided to keep this sieve
+script. `file` to write it directly in the file system or
+`managesieve` to store it using *ManageSieve* protocol mainly at
+remote locations. The following options are available for each backend:
+
+* `[outofoffice:file]`
+
+    * sieve_script_path: The path where the sieve script is
+      stored. The value is expanded using the user, domain or fulluser
+      variables.
+    * sieve_script_path_mkdir: This option creates the directory
+      hierarchy if it doesn't exist yet.
+
+* `[outofoffice:managesieve]`
+
+    * server: the server IP or hostname where the ManageSieve server
+      is listening.
+    * ssl: if it uses STARTTLS or not.
+    * secret: it is required to have a master password to get into
+      every account or having a configuration where the password is
+      not required, for instance, validate a connection based on the
+      source IP address.
 
 ## Start ocsmanager ##
 
