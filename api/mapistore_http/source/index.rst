@@ -55,7 +55,7 @@ Folders
 
 .. http:post:: /folders/
 
-   Create a new folder and return it
+   :synopsis: Creates a new folder and returns its ID
 
    **Example request**:
 
@@ -79,15 +79,16 @@ Folders
       Content-Type: application/json
 
       {
-        "folder_id": "68b329da9893e34099c7d8ad5cb9c940"
+        "id": "68b329da9893e34099c7d8ad5cb9c940"
       }
 
    :reqheader Authorization: auth token
    :statuscode 200: Ok
 
-.. http:get:: /folders/(folder_id)/
 
-   Folder info for given `folder_id`
+.. http:get:: /folders/(id)/
+
+   :synopsis: Get all properties of the folder object identified by `id`
 
    **Example request**:
 
@@ -106,7 +107,7 @@ Folders
       Content-Type: application/json
 
       {
-        "folder_id": "c7e77cc9999908ec54ae32f1faf17e0e",
+        "id": "c7e77cc9999908ec54ae32f1faf17e0e",
         "item_count": 37,
       },
 
@@ -119,9 +120,36 @@ Folders
    :statuscode 404: Folder does not exist
 
 
-.. http:head:: /folders/(folder_id)/
+.. http:put:: /folders/(id)/
 
-   Check if the folder exists
+   :synopsis: Set properties on the folder object identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      PUT /folders/c7e77cc9999908ec54ae32f1faf17e0e/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+         "name": "UpdatedFolderName"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 201 No Content
+
+   :reqheader Authorization: auth token
+   :statuscode 201: No Content
+   :statuscode 400: Bad Request
+
+
+.. http:head:: /folders/(id)/
+
+   :synopsis: Check if the folder exists
 
    **Example request**:
 
@@ -141,9 +169,9 @@ Folders
    :statuscode 404: Folder does not exist
 
 
-.. http:delete:: /folders/(folder_id)/
+.. http:delete:: /folders/(id)/
 
-   Recursively delete the folder
+   :synopsis: Recursively delete the folder
 
    **Example request**:
 
@@ -165,7 +193,9 @@ Folders
 
 .. http:get:: /folders/(folder_id)/messages
 
-   List of messages inside the folder
+.. http:get:: /folders/(id)/messages
+
+   :synopsis: List of messages within specified folder
 
    **Example request**:
 
@@ -207,9 +237,9 @@ Folders
    :statuscode 404: Folder does not exist
 
 
-.. http:get:: /folders/(folder_id)/folders
+.. http:get:: /folders/(id)/folders
 
-   List of folders inside the folder
+   :synopsis: List of folders within specified folder
 
    **Example request**:
 
@@ -250,9 +280,10 @@ Folders
    :statuscode 200: Ok
    :statuscode 404: Folder does not exist
 
-.. http:post:: /folders/(folder_id)
 
-   Execute the given action on the folder
+.. http:post:: /folders/(id)
+
+   :synopsis: Execute the given action on the folder
 
    **Example request**:
 
