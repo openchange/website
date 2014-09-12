@@ -258,7 +258,7 @@ Folders
 
    .. sourcecode:: http
 
-      GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/messages HTTP/1.1
+      GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/messages?properties=id,type HTTP/1.1
       Host: example.com
       Accept: application/json
 
@@ -344,9 +344,9 @@ Folders
    :statuscode 404: Folder does not exist
 
 
-.. http:post:: /folders/(id)
+.. http:post:: /folders/(id)/?action=empty
 
-   :synopsis: Execute the given action on the folder
+   :synopsis: Empty folder identified by `id`
 
    **Example request**:
 
@@ -362,15 +362,42 @@ Folders
 
       HTTP/1.1 200 OK
 
-   :query action: Action to execute, see list of folder actions
+   :query action: empty folder
    :reqheader Authorization: auth token
    :statuscode 200: Ok
 
-Folder actions
-~~~~~~~~~~~~~~
 
- * empty - Recursively delete all the content of the folder
- * deletemessages -
+.. http:post:: /folders/(id)/?action=deletemessages
+
+   :synopsis: Delete messages within folder identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /folders/c7e77cc9999908ec54ae32f1faf17e0e/?action=deletemessages HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      [
+         {
+            "id": "7be92d92557702c8eb2e764266119346",
+         },
+         {
+            "id": "fa21ee2b607ac6e327ecb39021be5469",
+         },
+         ...
+      ]
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+   :query action: delete messages
+   :reqheader Authorization: auth token
+   :statuscode 200: Ok
 
 
 Emails
