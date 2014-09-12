@@ -344,7 +344,7 @@ Folders
    :statuscode 404: Folder does not exist
 
 
-.. http:post:: /folders/(id)/?action=empty
+.. http:post:: /folders/(id)/empty
 
    :synopsis: Empty folder identified by `id`
 
@@ -352,7 +352,7 @@ Folders
 
    .. sourcecode:: http
 
-      POST /folders/c7e77cc9999908ec54ae32f1faf17e0e/?action=empty HTTP/1.1
+      POST /folders/c7e77cc9999908ec54ae32f1faf17e0e/empty HTTP/1.1
       Host: example.com
       Accept: application/json
 
@@ -362,12 +362,11 @@ Folders
 
       HTTP/1.1 200 OK
 
-   :query action: empty folder
    :reqheader Authorization: auth token
    :statuscode 200: Ok
 
 
-.. http:post:: /folders/(id)/?action=deletemessages
+.. http:post:: /folders/(id)/deletemessages
 
    :synopsis: Delete messages within folder identified by `id`
 
@@ -375,7 +374,7 @@ Folders
 
    .. sourcecode:: http
 
-      POST /folders/c7e77cc9999908ec54ae32f1faf17e0e/?action=deletemessages HTTP/1.1
+      POST /folders/c7e77cc9999908ec54ae32f1faf17e0e/deletemessages HTTP/1.1
       Host: example.com
       Accept: application/json
 
@@ -395,7 +394,6 @@ Folders
 
       HTTP/1.1 200 OK
 
-   :query action: delete messages
    :reqheader Authorization: auth token
    :statuscode 200: Ok
 
