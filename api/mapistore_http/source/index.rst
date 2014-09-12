@@ -191,7 +191,53 @@ Folders
    :statuscode 404: Folder does not exist
 
 
-.. http:get:: /folders/(folder_id)/messages
+.. http:head:: /folders/(id)/messages
+
+   :synopsis: Retrieve the count of messages within specified folder
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /folders/c7e77cc9999908ec54ae32f1faf17e0e/messages HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 32
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the folder
+   :statuscode 200: Ok
+
+
+.. http:head:: /folders/(id)/folders
+
+   :synopsis: Retrieve the count of folders within specified folder
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /folders/c7e77cc9999908ec54ae32f1faf17e0e/folders HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the folder
+   :statuscode 200: Ok
+
 
 .. http:get:: /folders/(id)/messages
 
