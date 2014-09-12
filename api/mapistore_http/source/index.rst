@@ -67,8 +67,14 @@ Folders
 
       {
         "parent_id": "c7e77cc9999908ec54ae32f1faf17e0e",
-        "name": "new folder name"
+        "name": "new folder name",
+        "comment": "Comment about the folder"
       }
+
+   :<json string parent_id: Parent Folder Identifier
+   :<json string name: Name of the folder to create
+   :<json string comment: Comment associated to the folder
+
 
    **Example response**:
 
@@ -82,6 +88,7 @@ Folders
         "id": "68b329da9893e34099c7d8ad5cb9c940"
       }
 
+   :>json string id: Folder Identifier of the folder created
    :reqheader Authorization: auth token
    :statuscode 200: Ok
 
@@ -109,7 +116,11 @@ Folders
       {
         "id": "c7e77cc9999908ec54ae32f1faf17e0e",
         "item_count": 37,
+	"name": "MyFolderName",
+	"comment": "This is a sample folder"
       },
+
+   :>json string id: Folder identifier
 
    :reqheader Authorization: auth token
    :reqheader Accept: the response content type depends on
@@ -271,6 +282,9 @@ Folders
         ...
       ]
 
+   :>jsonarr string id: Message identifier
+   :>jsonarr string type: Type of the message
+
    :query properties: List of wanted properties, response will only
                       contain these. If not set all properties will
                       be returned.
@@ -314,6 +328,9 @@ Folders
         },
         ...
       ]
+
+   :>jsonarr string id: Folder identifier
+   :>jsonarr string type: Type of the folder
 
    :query properties: List of wanted properties, response will only
                       contain these. If not set all properties will
