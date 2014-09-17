@@ -29,7 +29,7 @@ Install the dependencies needed to build SOGo as superuser:
     sudo apt-get install gnustep-make gnustep-base-runtime devscripts       \
     debhelper libgnustep-base-dev gobjc libxml2-dev libldap2-dev libssl-dev \
     zlib1g-dev libmysqlclient-dev libmemcached-dev memcached libpq-dev      \
-    libcurl4-openssl-dev
+    libcurl4-openssl-dev libsbjson-dev libwbxml2-dev
 
 <br/>
 ## Source code ##
