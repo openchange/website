@@ -39,7 +39,7 @@ A MAPIStore object can display the available backends for its user and the conte
         >>> mstore.list_backends()
         >>> mstore.capabilities()
 
-The return value of `list_backends` is a list containging the available backends. The `capabilities` method returns a list of dictionaries, one for each available backend. Each dictionary has four entries with properties of a context: the name, the URI, the role and the main folder.
+The return value of `list_backends` is a list containing the available backends. The `capabilities` method returns a list of dictionaries, one for each available backend. Each dictionary has four entries with properties of a context: the name, the URI, the role and the main folder.
 
 ## Adding a Context ##
 
