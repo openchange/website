@@ -1,8 +1,8 @@
-[TOCg
+[TOC]
 
 # MAPIStore Folder #
 
-This object represents a folder and implements several methods to display its information and open and create messages and subfolders.
+This object represents a folder and implements several methods to display its information and open, create, move and delete  messages and subfolders.
 
 ## URI ##
 
