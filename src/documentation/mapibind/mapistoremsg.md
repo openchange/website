@@ -11,6 +11,16 @@ The `get_uri` method returns a string containing the URI of a message.
         >>> my_uri = my_msg.get_uri()
         >>> print my_uri
 
+## Message Data ##
+
+The `get_data` method takes no arguments and returns the message data stored in a dictionary. The entries in the dictionary are the following:
+
+ - `Subject prefix`: *String* with the subject prefix
+ - `Normalized priefix`: *String* with the normalized subject
+ - `Recipient columns`: *List of strings* containing the available properties for the recipients, each one represented by either its property tag name (e.g. 'PidTagSmtpAddress') or its property tag value in hexadecimal (e.g. '0x39FE001F')
+ - `Recipient count`: *Integer* with the number of recipients
+ - `Recipient data`: *List of dictionaries* with the data of each recipient. The entries contain the available properties' names/tags and values, plus the recipient's username (as a *string*) and it's type (as a *long integer*)
+ 
 ## Properties ##
 
 The properties of a message can be retrieved through the `get_properties` method. The method takes a list containing the requested properties (either the name of the property or the property tag) and returns a dictionary.
