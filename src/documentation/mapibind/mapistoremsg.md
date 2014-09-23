@@ -40,6 +40,14 @@ The properties of a message can be modified by using the `set_properties` method
         >>> prop_dict
         {'PidTagDisplayName': 'FOOMSG'}
 
+## Saving a message ##
+
+The `save` method commits the changes made to a message in MAPIStore.
+
+        >>> my_msg = my_fld.create_message(mapistore.CREATE_GENERIC)
+        >>> my_msg.set_properties({'PidTagSubject': 'mymsg', 'PidTagNormalizedSubject': 'mymsg', 'PidTagBody': 'Hello, World!'})
+        >>> my_msg.save()
+
 # Next: Next Section #
 
 You can now proceed to the [next](next.html) section.

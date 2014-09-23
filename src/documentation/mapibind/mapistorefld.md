@@ -115,8 +115,19 @@ Both of them take the message's URI as an argument (this way, a MAPIStore Messag
         >>> my_msg = my_fld.open_message('example://URI_of_msg1', mapistore.OPEN_WRITE)
         >>> my_fld.delete_message('example://URI_of_msg2', mapistore.PERMANENT_DELETE)
 
-Messages can be opened in read-only mode or in read-and-write mode. An optional argument in `open_message` specifies the permissions of the message object (`OPEN_READ`, by default, or `OPEN_WRITE`).
+Messages can be opened in read-only mode (which doesn't allow property modification) or in read-and-write mode. An optional argument in `open_message` specifies the permissions of the message object (`OPEN_READ`, by default, or `OPEN_WRITE`).
 If the backend implements soft deletion, a flag can be passed to `delete_message` to specify the type of deletion (`PERMANENT_DELETE`, by default, or `SOFT_DELETE`).
+
+Message creation is carried out by calling the `create_message` method, which takes a flag as an argument. 
+
+ - `MESSAGE_GENERIC` is equivalent to passing no arguments and results in the cration of a generic message.
+ - `MESSAGE_FAI` triggers the creation of a *Folder Associated Message*.
+
+The returned object can be used to modify the properties of the message before saving it. A message is not registered (and therefore doesn't appear as a child of its parent folder) until the `save` method is called (see the [MAPIStore Message](mapistoremsg.html) methods).
+
+        >>> my_msg = my_fld.create_message(mapistore.CREATE_GENERIC)
+        >>> my_msg.set_properties({'PidTagSubject': 'mymsg', 'PidTagNormalizedSubject': 'mymsg', 'PidTagBody': 'Hello, World!'})
+        >>> my_msg.save()
 
 ## Move and copy messages #
 
