@@ -15,7 +15,8 @@ miscellaneous information relating to the OpenChange Project.
  <p style="color:#888">
   <a style="text-decoration: none;color: #258AAF;font: 14px Roboto, sans-serif;" href="/cookbook/initializing.html">HowTo Setup OpenChange Server</a><br>
   <a style="text-decoration: none;color: #258AAF;font: 14px Roboto, sans-serif;" href="/documentation/howto/openchangeserver_CentOS_6.5.html">HowTo Setup OpenChange Server on CentOS 6.5</a><br>
-  <a style="text-decoration: none;color: #258AAF;font: 14px Roboto, sans-serif;" href="/documentation/howto/openchangeclient_setup.html">HowTo Setup OpenChange Client</a>
+  <a style="text-decoration: none;color: #258AAF;font: 14px Roboto, sans-serif;" href="/documentation/howto/openchangeclient_setup.html">HowTo Setup OpenChange Client</a><br>
+  <a style="text-decoration: none;color: #258AAF;font: 14px Roboto, sans-serif;" href="/documentation/howto/zentyal_developer.html">Howto Setup an OpenChange developer environment in Zentyal</a>
  </p>
 </div>
 
