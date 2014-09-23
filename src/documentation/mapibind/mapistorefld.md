@@ -32,7 +32,11 @@ The properties of a folder can be modified by using the `set_properties` method,
  
 ## Child Count ##
 
-The number children of a folder can be accessed by calling the `get_child_count` method. A flag argument specifies the kind of children taken into account:
+The number children of a folder can be accessed by calling the `get_child_count` method.
+
+        >>> fld_child_count = my_fld.get_child_count(mapistore.FOLDER_TABLE)
+
+A flag argument specifies the kind of children the return value refers to.
 
  - `FOLDER_TABLE` returns the number of *child folders*.
  - `MESSAGE_TABLE` returns the number of *child messages*.
@@ -40,10 +44,6 @@ The number children of a folder can be accessed by calling the `get_child_count`
  - `MAPISTORE_RULE_TABLE` returns the number of *child rule tables*.
  - `MAPISTORE_ATTACHMENT_TABLE` returns the number of *child attachment tables*.
  - `MAPISTORE_PERMISSIONS_TABLE` returns the number of *child permissions tables*.
-
-        >>> fld_child_count = my_fld.get_child_count(mapistore.FOLDER_TABLE)
-        >>> msg_child_count = my_fld.get_child_count(mapistore.MESSAGE_TABLE)
-        >>> at_table_child_count = my_fld.get_child_count(mapistore.MAPISTORE_ATTACHMENT_TABLE)
 
 ## Child Folders  ##
 
