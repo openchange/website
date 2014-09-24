@@ -52,6 +52,7 @@ installs openchange in different prefixes depending on the component.
         sudo make install
 
         sudo ldconfig
+        sudo cp mapiproxy/libmapistore/backends/python/sample.py /usr/lib/python2.7/dist-packages/openchange/backends/
         sudo service zentyal samba restart
 
 ## Get SOGo ##
@@ -108,7 +109,7 @@ by the `sample://` backend for the user **julien**.
 
 Using the mailbox_id retrieved in the previous query:
 
-        mysql> select id from folders; where SystemIdx=12 AND mailbox_id=3;
+        mysql> select id from folders where SystemIdx=12 AND mailbox_id=3;
         +----+
         | id |
         +----+
