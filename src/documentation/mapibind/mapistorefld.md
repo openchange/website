@@ -41,9 +41,9 @@ A flag argument specifies the kind of children the return value refers to.
  - `FOLDER_TABLE` returns the number of *child folders*.
  - `MESSAGE_TABLE` returns the number of *child messages*.
  - `MAPISTORE_FAI_TABLE` returns the number of *associated messages*.
- - `MAPISTORE_RULE_TABLE` returns the number of *child rule tables*.
- - `MAPISTORE_ATTACHMENT_TABLE` returns the number of *child attachment tables*.
- - `MAPISTORE_PERMISSIONS_TABLE` returns the number of *child permissions tables*.
+ - `RULE_TABLE` returns the number of *child rule tables*.
+ - `ATTACHMENT_TABLE` returns the number of *child attachment tables*.
+ - `PERMISSIONS_TABLE` returns the number of *child permissions tables*.
 
 ## Child Folders  ##
 
