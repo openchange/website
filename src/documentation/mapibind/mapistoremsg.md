@@ -40,7 +40,7 @@ The properties of a message can be modified by using the `set_properties` method
         >>> prop_dict
         {'PidTagDisplayName': 'FOOMSG'}
 
-## Saving a message ##
+## Save messages ##
 
 The `save` method commits the changes made to a message in MAPIStore.
 
@@ -48,7 +48,20 @@ The `save` method commits the changes made to a message in MAPIStore.
         >>> my_msg.set_properties({'PidTagSubject': 'mymsg', 'PidTagNormalizedSubject': 'mymsg', 'PidTagBody': 'Hello, World!'})
         >>> my_msg.save()
 
-# Next: Next Section #
 
-You can now proceed to the [next](next.html) section.
+## Attachment count ##
 
+The MAPIstore Message object has an attribute from which the number of attachments can be read.
+
+        >>> att_count = my_msg.attachment_count
+
+## Get attachment table ##
+
+Attachments' properties can also be visualised through a table (see the [MAPIStore Table](mapistoretbl.html) section).
+The `get_attachment_table` method returns a MAPIStore Table object with these properties.
+
+        >>> att_tbl = my_msg.open_attachment_table(mapistore.MESSAGE_TABLE)
+
+# Next: MAPIStore Tables #
+
+The section describes the [MAPIStore Table](mapistoretbl.html) implementation.

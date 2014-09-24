@@ -136,6 +136,15 @@ A parent folder can copy and move several messages at a time. Both `copy_message
         >>> my_fld.move_messages(['example://URI_of_msg1', 'example://URI_of_msg2'], my_other_fld)
         >>> my_other_fld.copy_messages(['example://URI_of_msg1_copy', 'example://URI_of_msg2_copy'], my_fld)
 
+## Open tables ##
+
+The properties of a folder's children can be visualised as tables (see the [MAPIStore Table](mapistoretbl.html) section).
+The `get_table` method returns a MAPIStore Table object with which these properties can be displayed.
+
+        >>> msg_tbl = my_fld.open_table(mapistore.MESSAGE_TABLE)
+
+The type of children taken into account are specified through the `table_type` argument, a flag which possible values are the same as in `get_child_count` (`FOLDER_TABLE`, `MESSAGE_TABLE`, `MAPISTORE_FAI_TABLE`, `RULE_TABLE`, `ATTACHMENT_TABLE` and `PERMISSIONS_TABLE`).
+
 # Next: MAPIStore Messages #
 
 The next section covers the [MAPIStore Message](mapistoremsg.html) implementation.
