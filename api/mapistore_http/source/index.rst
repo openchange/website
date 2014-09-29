@@ -565,7 +565,7 @@ Tasks
 
       {
         "parent_id": "95fc55f35da743bc9450ae694f38def0",
-        "PidTagSubject": "My sample appointment",
+        "PidTagSubject": "My sample task",
 	"PidTagBody": "Sample body"
       }
 
@@ -610,7 +610,7 @@ Tasks
       {
         "id": "b1f2726d32b44551b99f4a6adb61e112",
 	"parent_id": "95fc55f35da743bc9450ae694f38def0",
-	"PidTagSubject": "My sample appointment",
+	"PidTagSubject": "My sample task",
 	"PidTagBody": "Sample body"
       },
 
@@ -711,7 +711,7 @@ Contacts
 
       {
         "parent_id": "9175fe8d54da416a9cb1a946c50b7467",
-        "PidTagSubject": "My sample appointment",
+        "PidTagSubject": "My sample contact",
 	"PidTagBody": "Sample body"
       }
 
@@ -756,7 +756,7 @@ Contacts
       {
         "id": "d220314b8a374d2bbd7f43bf0819b5a0",
 	"parent_id": "9175fe8d54da416a9cb1a946c50b7467",
-	"PidTagSubject": "My sample appointment",
+	"PidTagSubject": "My sample contact",
 	"PidTagBody": "Sample body"
       },
 
@@ -856,7 +856,7 @@ Notes
 
       {
         "parent_id": "765dc8566f9e4baf94ee36e1b2763d50",
-        "PidTagSubject": "My sample appointment",
+        "PidTagSubject": "My sample note",
 	"PidTagBody": "Sample body"
       }
 
@@ -901,7 +901,7 @@ Notes
       {
         "id": "f07d68499c974a5bbffed5cc3ddcc31e",
 	"parent_id": "765dc8566f9e4baf94ee36e1b2763d50",
-	"PidTagSubject": "My sample appointment",
+	"PidTagSubject": "My sample note",
 	"PidTagBody": "Sample body"
       },
 
