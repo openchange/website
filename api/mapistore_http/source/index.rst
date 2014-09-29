@@ -67,13 +67,13 @@ Folders
 
       {
         "parent_id": "c7e77cc9999908ec54ae32f1faf17e0e",
-        "name": "new folder name",
-        "comment": "Comment about the folder"
+        "PidTagDisplayName": "new folder name",
+        "PidTagComment": "Comment about the folder"
       }
 
    :<json string parent_id: Parent Folder Identifier
-   :<json string name: Name of the folder to create
-   :<json string comment: Comment associated to the folder
+   :<json string PidTagDisplayName: Name of the folder to create
+   :<json string PidTagComment: Comment associated to the folder
 
 
    **Example response**:
@@ -116,8 +116,8 @@ Folders
       {
         "id": "c7e77cc9999908ec54ae32f1faf17e0e",
         "item_count": 37,
-	"name": "MyFolderName",
-	"comment": "This is a sample folder"
+	"PidTagDisplayName": "MyFolderName",
+	"PidTagComment": "This is a sample folder"
       },
 
    :>json string id: Folder identifier
@@ -154,7 +154,7 @@ Folders
       HTTP/1.1 201 No Content
 
    :reqheader Authorization: auth token
-   :statuscode 201: No Content
+   :statuscode 201: The update was successfully applied
    :statuscode 400: Bad Request
 
 
@@ -398,22 +398,595 @@ Folders
    :statuscode 200: Ok
 
 
-Emails
+Email
 ------
 TBD
 
-Calendars
----------
-TBD
+Calendar
+--------
+
+.. http:post:: /calendars/
+
+   :synopsis: Create a new calendar item and returns its ID
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /calendars/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "parent_id": "cea793f236334942bdae2c1e6c83607d",
+        "PidTagSubject": "My sample appointment",
+	"PidTagBody": "Sample body"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "15924213158245d0ad631c6a41a0e7c3"
+      }
+
+      :>json string id: Message identifier of the calendar item created
+      :reqheader Authorization: auth token
+      :statuscode 200: Ok
+
+
+.. http:get:: /calendars/(id)/
+
+   :synopsis: Retrieve all the properties of the calendar entry
+              identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /calendars/15924213158245d0ad631c6a41a0e7c3/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "15924213158245d0ad631c6a41a0e7c3",
+	"parent_id": "cea793f236334942bdae2c1e6c83607d",
+	"PidTagSubject": "My sample appointment",
+	"PidTagBody": "Sample body"
+      },
+
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content depends on on
+                      :mailheader:`Accept` header
+   :resheader Content-Type: this depends on :mailheader:`Accept`
+                            header of the request
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:put:: /calendars/(id)/
+
+   :synopsis: Set properties on the calendar item object identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      PUT /calendars/15924213158245d0ad631c6a41a0e7c3/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "PidTagBody": "Sample body v2"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 201 No Content
+
+   :reqheader Authorization: auth token
+   :statuscode 201: The update was successfully applied
+   :statuscode 400: Bad request
+
+
+.. http:head:: /calendars/(id)/
+
+   :synopsis: Check if the calendar item identified by `id` exists
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /calendars/15924213158245d0ad631c6a41a0e7c3/ HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+   :reqheader Authorization: auth token
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:delete:: /calendars/(id)/
+
+   :synopsis: Delete the calendar entry identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      DELETE /calendars/15924213158245d0ad631c6a41a0e7c3 HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No content
+
+   :reqheader Authorization: auth token
+   :statuscode 204: Ok
+   :statuscode 404: Item does not exist
+
 
 Tasks
 -----
-TBD
+
+.. http:post:: /tasks/
+
+   :synopsis: Create a new task item and returns its ID
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /tasks/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "parent_id": "95fc55f35da743bc9450ae694f38def0",
+        "PidTagSubject": "My sample appointment",
+	"PidTagBody": "Sample body"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "b1f2726d32b44551b99f4a6adb61e112"
+      }
+
+      :>json string id: Message identifier of the task item created
+      :reqheader Authorization: auth token
+      :statuscode 200: Ok
+
+
+.. http:get:: /tasks/(id)/
+
+   :synopsis: Retrieve all the properties of the task entry
+              identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /tasks/b1f2726d32b44551b99f4a6adb61e112/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "b1f2726d32b44551b99f4a6adb61e112",
+	"parent_id": "95fc55f35da743bc9450ae694f38def0",
+	"PidTagSubject": "My sample appointment",
+	"PidTagBody": "Sample body"
+      },
+
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content depends on on
+                      :mailheader:`Accept` header
+   :resheader Content-Type: this depends on :mailheader:`Accept`
+                            header of the request
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:put:: /tasks/(id)/
+
+   :synopsis: Set properties on the task item object identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      PUT /tasks/b1f2726d32b44551b99f4a6adb61e112/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "PidTagBody": "Sample body v2"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 201 No Content
+
+   :reqheader Authorization: auth token
+   :statuscode 201: The update was successfully applied
+   :statuscode 400: Bad request
+
+
+.. http:head:: /tasks/(id)/
+
+   :synopsis: Check if the task item identified by `id` exists
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /tasks/b1f2726d32b44551b99f4a6adb61e112/ HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+   :reqheader Authorization: auth token
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:delete:: /tasks/(id)/
+
+   :synopsis: Delete the task entry identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      DELETE /tasks/b1f2726d32b44551b99f4a6adb61e112 HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No content
+
+   :reqheader Authorization: auth token
+   :statuscode 204: Ok
+   :statuscode 404: Item does not exist
+
+
+Contacts
+--------
+
+.. http:post:: /contacts/
+
+   :synopsis: Create a new contact item and returns its ID
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /contacts/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "parent_id": "9175fe8d54da416a9cb1a946c50b7467",
+        "PidTagSubject": "My sample appointment",
+	"PidTagBody": "Sample body"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "d220314b8a374d2bbd7f43bf0819b5a0"
+      }
+
+      :>json string id: Message identifier of the contact item created
+      :reqheader Authorization: auth token
+      :statuscode 200: Ok
+
+
+.. http:get:: /contacts/(id)/
+
+   :synopsis: Retrieve all the properties of the contact entry
+              identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /contacts/d220314b8a374d2bbd7f43bf0819b5a0/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "d220314b8a374d2bbd7f43bf0819b5a0",
+	"parent_id": "9175fe8d54da416a9cb1a946c50b7467",
+	"PidTagSubject": "My sample appointment",
+	"PidTagBody": "Sample body"
+      },
+
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content depends on on
+                      :mailheader:`Accept` header
+   :resheader Content-Type: this depends on :mailheader:`Accept`
+                            header of the request
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:put:: /contacts/(id)/
+
+   :synopsis: Set properties on the contact item object identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      PUT /contacts/d220314b8a374d2bbd7f43bf0819b5a0/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "PidTagBody": "Sample body v2"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 201 No Content
+
+   :reqheader Authorization: auth token
+   :statuscode 201: The update was successfully applied
+   :statuscode 400: Bad request
+
+
+.. http:head:: /contacts/(id)/
+
+   :synopsis: Check if the contact item identified by `id` exists
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /contacts/d220314b8a374d2bbd7f43bf0819b5a0/ HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+   :reqheader Authorization: auth token
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:delete:: /contacts/(id)/
+
+   :synopsis: Delete the contact entry identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      DELETE /contacts/d220314b8a374d2bbd7f43bf0819b5a0 HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No content
+
+   :reqheader Authorization: auth token
+   :statuscode 204: Ok
+   :statuscode 404: Item does not exist
+
+
+Notes
+-----
+.. http:post:: /notes/
+
+   :synopsis: Create a new note item and returns its ID
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /notes/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "parent_id": "765dc8566f9e4baf94ee36e1b2763d50",
+        "PidTagSubject": "My sample appointment",
+	"PidTagBody": "Sample body"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "f07d68499c974a5bbffed5cc3ddcc31e"
+      }
+
+      :>json string id: Message identifier of the note item created
+      :reqheader Authorization: auth token
+      :statuscode 200: Ok
+
+
+.. http:get:: /notes/(id)/
+
+   :synopsis: Retrieve all the properties of the note entry
+              identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /notes/f07d68499c974a5bbffed5cc3ddcc31e/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "f07d68499c974a5bbffed5cc3ddcc31e",
+	"parent_id": "765dc8566f9e4baf94ee36e1b2763d50",
+	"PidTagSubject": "My sample appointment",
+	"PidTagBody": "Sample body"
+      },
+
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content depends on on
+                      :mailheader:`Accept` header
+   :resheader Content-Type: this depends on :mailheader:`Accept`
+                            header of the request
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:put:: /notes/(id)/
+
+   :synopsis: Set properties on the note item object identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      PUT /notes/f07d68499c974a5bbffed5cc3ddcc31e/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "PidTagBody": "Sample body v2"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 201 No Content
+
+   :reqheader Authorization: auth token
+   :statuscode 201: The update was successfully applied
+   :statuscode 400: Bad request
+
+
+.. http:head:: /notes/(id)/
+
+   :synopsis: Check if the note item identified by `id` exists
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /notes/f07d68499c974a5bbffed5cc3ddcc31e/ HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+   :reqheader Authorization: auth token
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:delete:: /notes/(id)/
+
+   :synopsis: Delete the note entry identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      DELETE /notes/f07d68499c974a5bbffed5cc3ddcc31e HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No content
+
+   :reqheader Authorization: auth token
+   :statuscode 204: Ok
+   :statuscode 404: Item does not exist
+
+
 
 Attachments
 -----------
 TBD
 
-Notes
------
-TBD
