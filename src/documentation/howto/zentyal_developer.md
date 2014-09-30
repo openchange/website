@@ -81,78 +81,121 @@ specific version.
         make
         sudo make install
 
+## Feature of the sample backend ##
+
+The sample backend is provisioned with static and fake data and only
+provide a volatile state, effective as long as the server is running.
+
+The set of data the backend provide are:
+
+### SampleMail ###
+
+This is a mail folder with one email item. This email item has an
+attachment which content is set to:
+
+      <html><head></head><h1>Attach me</h1></body></html>
+
+The SampleMail folder also holds a subfolder named DEAD-1001
+
+### SampleCalendar ###
+
+This is a calendar folder with:
+
+1. one floating single-instance appointment which starts at current
+time (server) and ends one hour later. If the event does not show up
+in the day view or if the date sounds incorrect, ensure the date is
+properly synchronized.
+
 ## Provisioning the sample backend ##
 
-Provisioning the sample backend yet require manual operations on the
-mysql backend. Fortunately they ar enot very complex and just require
-a small set of queries to be executed.
+The sample backend comes with an embedded setup script to manage
+provisioning and deprovisioning of backend data into openchange
+database.
 
-The objective is to create a "SampleFolder" underneath INBOX powered
-by the `sample://` backend for the user **julien**.
+      sudo python ./mapiproxy/libmapistore/backends/python/sample.py --help
+      Usage: sample.py [options]
 
-### Identify the mailbox  and organization identifiers ###
-
-        $ mysql -u openchange -h localhost -p
-        mysql> use openchange;
-        mysql> select id,ou_id from mailboxes where name="julien";
-        +----+-------+
-        | id | ou_id |
-        +----+-------+
-        |  3 |     1 |
-        +----+-------+
-        1 row in set (0.01 sec)
-
-* mailbox_id = 3
-* ou_id = 1
-
-### Identify the parent folder ID ###
-
-Using the mailbox_id retrieved in the previous query:
-
-        mysql> select id from folders where SystemIdx=12 AND mailbox_id=3;
-        +----+
-        | id |
-        +----+
-        | 66 |
-        +----+
-        1 row in set (0.00 sec)
-
-
-### Inserting the new folder in the table ###
-
-We now have:
-
-* ou_id =  1
-* mailbox_id = 3
-* parent_folder_id = 66
-
-All other parameters are hardcoded and should not be changed unless you know *exactly* what you are doing.
-
-       mysql> insert into folders (ou_id,folder_id,folder_class,mailbox_id,parent_folder_id,FolderType,SystemIdx,MAPIStoreURI) 
-           -> values (1, 1002855686318587905, "system", 3, 66, 1, -1, "sample://deadbeef0000001/");
+      Options:
+        -h, --help            show this help message and exit
+        --status              Status of sample backend for specified user
+        --provision           Provision sample backend for specified user
+        --deprovision         Deprovision sample backend for specified user
+        --username=USERNAME   User mailbox to update
       
-Then retrieve the ID of the created row
+        Samba Common Options:
+          -s FILE, --configfile=FILE
+                              Configuration file
+          -d DEBUGLEVEL, --debuglevel=DEBUGLEVEL
+                              debug level
+          --option=OPTION     set smb.conf option from command line
+          --realm=REALM       set the realm name
 
-       mysql> select MAX(id) from folders;
-       +---------+
-       | MAX(id) |
-       +---------+
-       |      86 |
-       +---------+
+If you are using Zentyal, `/etc/samba/openchange.conf` is not world
+readable and require root privileges.
 
-### Customizing folder attributes ###
+### The status command ###
 
-Using the ID of the created folder, we can now customize the folder name, class and content count
+This command gives you the status of the `sample://` backend for
+specified user. If the backend has been provisioned, the status will
+output the list of sample folders along with their identifier.
 
-        mysql> insert into folders_properties (folder_id, name, value) values (86, "PidTagDisplayName", "SampleFolder");
-        mysql> insert into folders_properties (folder_id, name, value) values (86, "PidTagContainerClass", "IPF.Note");
-        mysql> insert into folders_properties (folder_id, name, value) values (86, "PidTagFolderChildCount", "1");
+      sudo python /usr/lib/python2.7/dist-packages/openchange/backends/sample.py -d0 --status --username=julien
+      [PYTHON]: sample backend class __init__
+      [INFO] Sample backend is provisioned for user julien the following folders:
+	      * SampleMail                               (sample://deadbeef0000001/)
+	      * SampleCalendar                           (sample://cacabeef0000001/)
 
-### Index the sample folder and message ###
+If the user has not been provisioned, the tool will output something similar to:
 
-The sample backend comes with a sample folder and message. It is required to index it into the `mapistore_indexing` table to make it available to Outlook:
+      [PYTHON]: sample backend class __init__
+      [INFO] Sample backend is not provisioned for user julien
 
-        mysql> insert into mapistore_indexing (username, fmid, url, soft_deleted) values ("julien", 1002843665241997313, "sample://deadbeef0000001/dead10010000001/", 0);
+### The provision command ###
+
+This command will index all the root folder of the sample backend into
+openchange database for the specified user:
+
+      sudo python /usr/lib/python2.7/dist-packages/openchange/backends/sample.py -d0 --provision --username=julien
+      [PYTHON]: sample backend class __init__
+      [PYTHON]: sample backend.list_contexts(): username = julien
+      [PYTHON]: sample backend.create_context: uri = sample://deadbeef0000001/
+      [PYTHON]: sample context class __init__
+      [PYTHON]: sample context.get_root_folder
+      [PYTHON]: sample folder.__init__(fid=1002855686318587905)
+      [PYTHON]: sample folder.get_properties()
+      None
+      [PYTHON]: sample backend.create_context: uri = sample://cacabeef0000001/
+      [PYTHON]: sample context class __init__
+      [PYTHON]: sample context.get_root_folder
+      [PYTHON]: sample folder.__init__(fid=913293867166466049)
+      [PYTHON]: sample folder.get_properties()
+      None
+      [DONE]
+
+If openchange database has already been provisioned for the specified
+user and you still issue this command, an output similar to the one
+below will be displayed:
+
+      [PYTHON]: sample backend class __init__
+      [WARN] Sample backend is already provisioned for user julien
+
+### The deprovision command ###
+
+This command will remove any references to the sample backend into the
+openchange database for the specified user. In addition to this
+behavior, every sample backend messages and folders of **every** user
+will be deleted from the indexing database:
+
+      sudo python /usr/lib/python2.7/dist-packages/openchange/backends/sample.py -d0 --deprovision --username=julien
+      [PYTHON]: sample backend class __init__
+      [DONE]
+
+If the account has already been deprovisioned for the specified user
+and you still issue this command, an output similar to the one below
+will be displayed:
+
+      [PYTHON]: sample backend class __init__
+      [WARN] Sample backend is not provisioned for user julien
 
 
 ## Restart Outlook in Online Mode ##
