@@ -6,9 +6,9 @@ This object represents a folder and implements several methods to display its in
 
 ## URI ##
 
-The `get_uri` method returns a string containing the URI of a folder.
+The MAPIStore Folder object has an attribute that contains its URI.
 
-        >>> my_uri = my_fld.get_uri()
+        >>> my_uri = my_fld.uri
         >>> print my_uri
 
 ## Properties ##
@@ -47,17 +47,16 @@ A flag argument specifies the kind of children the return value refers to.
 
 ## Child Folders  ##
 
-It is possible to handle the child folders by calling the `get_child_folders` method, which returns an iterable object.
+The `subfolders` attribute of a folder object is an iterator with which child folders can be handled.
 
-        >>> it_fld = my_fld.get_child_folders()
-        >>> for f in it_fld:
+        >>> for f in my_fld.subfolders:
         >>>     f_name = f.get_properties(['PidTagDisplayName'])['PidTagDisplayName'] 
-        >>>     f_uri = f.get_uri() 
+        >>>     f_uri = f.uri 
         >>>     print 'FOLDER NAME: ' + f_name
         >>>     print 'URI: ' + f_uri
         >>>     print
  
-The child folders can be looped over through the returned object, and the implemented operations can be performed on them.
+The child folders can be looped over through the iterator, and the implemented operations can be performed on them.
 
 ## Open, create and destroy subfolders ##
 
@@ -98,11 +97,10 @@ Neither method returns a MAPIStore Folder object, so the `open_folder` method ne
 
 ## Child Messages ##
 
-In a similar way to `get_child_messages`, the child messages can be handled and iterated over by calling `get_child_messages`.
+In a similar way to the `subfolders` attribute, the child messages can be handled and iterated over by accessing the `messages` attribute.
 
-        >>> it_msg = my_fld.get_child_messages()
-        >>> for m in it_msg:
-        >>>     m_uri = m.get_uri()
+        >>> for m in my_fld.messages:
+        >>>     m_uri = m.uri
         >>>     print `URI: ` + m_uri
 
 *NOTE: When using the iterator returned by `get_child_messages`, the messages are opened in read-only mode.*

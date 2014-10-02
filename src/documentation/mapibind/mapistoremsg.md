@@ -6,9 +6,9 @@ The MAPIStore Message object represents a message. It implements seveal methods 
 
 ## URI ##
 
-The `get_uri` method returns a string containing the URI of a message.
+The MAPIStore Message object has an attribute that contains its URI.
 
-        >>> my_uri = my_msg.get_uri()
+        >>> my_uri = my_msg.uri()
         >>> print my_uri
 
 ## Message Data ##
