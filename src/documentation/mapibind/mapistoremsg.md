@@ -49,16 +49,23 @@ The `save` method commits the changes made to a message in MAPIStore.
         >>> my_msg.save()
 
 
-## Attachment count ##
+## Attachments ##
 
-The MAPIstore Message object has an attribute from which the number of attachments can be read.
+A MAPIstore Message object can handle its attachments and iterate over them (see the [MAPIStore Attachment](mapistoreatt.html) section). 
+The `create_attachment` method, which takes no arguments, creates an attachment for the message and returns a MAPIStore message object.
+In a similar way, an attachment can be opened by calling the `open_attachment` method, which takes an integer with the attachment number as an argument.
+The MAPIStore Message object has an attribute from which the number of attachments can be read.
 
-        >>> att_count = my_msg.attachment_count
+        >>> print my_msg.attachment_count
+        1L
+        >>> existing_att = my_msg.open_attachment(0)
+        >>> new_att = my_msg.create_attachment()
+        >>> print my_msg.attachment_count
+        2L
 
 ## Get attachment table ##
 
-Attachments' properties can also be visualised through a table (see the [MAPIStore Table](mapistoretbl.html) section).
-The `get_attachment_table` method returns a MAPIStore Table object with these properties.
+Attachments' properties can be visualised through a table by calling the `get_attachment_table` method, which returns a MAPIStore Table object with these properties.
 
         >>> att_tbl = my_msg.open_attachment_table(mapistore.MESSAGE_TABLE)
 
