@@ -116,8 +116,8 @@ Folders
       {
         "id": "c7e77cc9999908ec54ae32f1faf17e0e",
         "item_count": 37,
-	"PidTagDisplayName": "MyFolderName",
-	"PidTagComment": "This is a sample folder"
+        "PidTagDisplayName": "MyFolderName",
+        "PidTagComment": "This is a sample folder"
       },
 
    :>json string id: Folder identifier
