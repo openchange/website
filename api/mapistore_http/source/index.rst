@@ -55,7 +55,9 @@ Folders
 
 .. http:post:: /folders/
 
-   :synopsis: Creates a new folder and returns its ID
+   :synopsis: Creates a new folder and returns its ID.
+              ``parent_id`` and ``PidTagDisplayName``` are required.
+              Other folder attributes are optional.
 
    **Example request**:
 
@@ -91,6 +93,7 @@ Folders
    :>json string id: Folder Identifier of the folder created
    :reqheader Authorization: auth token
    :statuscode 200: Ok
+   :statuscode 422: The request was well-formed but was unable to be followed due to semantic errors
 
 
 .. http:get:: /folders/(id)/
