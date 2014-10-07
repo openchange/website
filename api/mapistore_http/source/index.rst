@@ -144,7 +144,7 @@ Folders
       Accept: application/json
 
       {
-         "name": "UpdatedFolderName"
+         "PidTagDisplayName": "UpdatedFolderName"
       }
 
    **Example response**:
