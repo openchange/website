@@ -285,9 +285,9 @@ Folders
    :>jsonarr string id: Message identifier
    :>jsonarr string type: Type of the message
 
-   :query properties: List of wanted properties, response will only
-                      contain these. If not set all properties will
-                      be returned.
+   :query properties: Comma separated list of properties to return
+                      for every folder. If not set all properties will
+                      be returned. E.g: ``id,type``
    :reqheader Authorization: auth token
    :reqheader Accept: the response content type depends on
                       :mailheader:`Accept` header
@@ -332,9 +332,9 @@ Folders
    :>jsonarr string id: Folder identifier
    :>jsonarr string type: Type of the folder
 
-   :query properties: List of wanted properties, response will only
-                      contain these. If not set all properties will
-                      be returned.
+   :query properties: Comma separated list of properties to return
+                      for every folder. If not set all properties will
+                      be returned. E.g: ``id,type``
    :reqheader Authorization: auth token
    :reqheader Accept: the response content type depends on
                       :mailheader:`Accept` header
