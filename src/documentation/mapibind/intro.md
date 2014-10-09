@@ -5,17 +5,28 @@
 <br/>
 ## Purpose and Scope ##
 
-The MAPIStore bindings aim to provide a way to access and test the 
+The MAPIStore Python bindings aim to provide a way to access and test the 
 [MAPIStore C library](../programming/mapistore_python/concepts.html) using 
 Python. 
 
-## Source Code ##
+## Source Code & Installation ##
 
 MAPIStore is the *SAL* (Storage Abstraction Layer) of the OpenChange project, 
 which is placed on <https://github.com/openchange/openchange>. The source 
 code of the bindings can be found at
 
         /path/to/openchange/pyopenchange/mapistore
+
+After [initialising the environment][initialising] and [downloading the source][downloading],
+the MAPIStore Python Bindings can be installed by [building the source regularly][building],
+but changing the configure command:
+
+        CFLAGS='-g -O0' LDFLAGS=-Wl,--as-needed ./configure  --prefix=/usr --mandir=/usr/share/man -- enable-pyopenchange --with-modulesdir=/usr/lib/x86_64-linux-gnu/openchange --libdir=/usr/lib/x86_64-linux-gnu; sed -i -e 's/site-packages/dist-packages/' config.mk
+
+[initialising]: http://openchange.org/cookbook/initializing.html
+[downloading]: http://openchange.org/cookbook/downloading.html
+[building]: http://openchange.org/cookbook/building.html
+
 
 ## Useful background ##
 
