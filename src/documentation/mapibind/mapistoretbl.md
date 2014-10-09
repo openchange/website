@@ -47,4 +47,5 @@ Is equivalent to
 
 # Next: MAPIStore Attchments #
 
-The next section describes the [MAPIStore Attachment](mapistoreatt.html) implementation.
+The next section describes the [MAPIStore Attachment](mapistoreatt.html)
+implementation.
