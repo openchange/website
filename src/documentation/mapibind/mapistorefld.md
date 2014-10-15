@@ -68,7 +68,7 @@ folders can be handled.
 The child folders can be looped over through the iterator, and the implemented
 operations can be performed on them.
 
-## Open, create and destroy subfolders ##
+## Open, create and delete folders ##
 
 Subfolders can be created by calling the `create_folder` method, which takes a
 string with the name of the folder as an argument. Optionally, a string with a
