@@ -276,17 +276,17 @@ Folders
       [
         {
           "id": "7be92d92557702c8eb2e764266119346",
-          "type": "email",
+          "collection": "mails",
         },
         {
           "id": "fa21ee2b607ac6e327ecb39021be5469",
-          "type": "calendar",
+          "collection": "calendars",
         },
         ...
       ]
 
    :>jsonarr string id: Message identifier
-   :>jsonarr string type: Type of the message
+   :>jsonarr string collection: Collection the message belongs to
 
    :query properties: Comma separated list of properties to return
                       for every folder. If not set all properties will
@@ -323,17 +323,17 @@ Folders
       [
         {
           "id": "7be92d92557702c8eb2e764266119346",
-          "type": "folder",
+          "collection": "folders",
         },
         {
           "id": "fa21ee2b607ac6e327ecb39021be5469",
-          "type": "folder",
+          "collection": "folders",
         },
         ...
       ]
 
    :>jsonarr string id: Folder identifier
-   :>jsonarr string type: Type of the folder
+   :>jsonarr string type: Collection of the folder
 
    :query properties: Comma separated list of properties to return
                       for every folder. If not set all properties will
@@ -401,9 +401,10 @@ Folders
    :statuscode 200: Ok
 
 
-Email
+Mail
 ------
 TBD
+
 
 Calendar
 --------
@@ -581,10 +582,12 @@ Tasks
       Content-Type: application/json
 
       {
-        "id": "b1f2726d32b44551b99f4a6adb61e112"
+        "id": "b1f2726d32b44551b99f4a6adb61e112",
+        "collection": "tasks"
       }
 
       :>json string id: Message identifier of the task item created
+      :>json string collection: Collection the task belongs to
       :reqheader Authorization: auth token
       :statuscode 200: Ok
 
@@ -612,9 +615,10 @@ Tasks
 
       {
         "id": "b1f2726d32b44551b99f4a6adb61e112",
-	"parent_id": "95fc55f35da743bc9450ae694f38def0",
-	"PidTagSubject": "My sample task",
-	"PidTagBody": "Sample body"
+        "collection": "tasks",
+        "parent_id": "95fc55f35da743bc9450ae694f38def0",
+        "PidTagSubject": "My sample task",
+        "PidTagBody": "Sample body"
       },
 
    :reqheader Authorization: auth token
@@ -727,10 +731,12 @@ Contacts
       Content-Type: application/json
 
       {
-        "id": "d220314b8a374d2bbd7f43bf0819b5a0"
+        "id": "d220314b8a374d2bbd7f43bf0819b5a0",
+        "collection": "contacts"
       }
 
       :>json string id: Message identifier of the contact item created
+      :>json string collection: Collection the contact belongs to
       :reqheader Authorization: auth token
       :statuscode 200: Ok
 
@@ -758,9 +764,10 @@ Contacts
 
       {
         "id": "d220314b8a374d2bbd7f43bf0819b5a0",
-	"parent_id": "9175fe8d54da416a9cb1a946c50b7467",
-	"PidTagSubject": "My sample contact",
-	"PidTagBody": "Sample body"
+        "collection": "contacts",
+        "parent_id": "9175fe8d54da416a9cb1a946c50b7467",
+        "PidTagSubject": "My sample contact",
+        "PidTagBody": "Sample body"
       },
 
    :reqheader Authorization: auth token
@@ -872,7 +879,8 @@ Notes
       Content-Type: application/json
 
       {
-        "id": "f07d68499c974a5bbffed5cc3ddcc31e"
+        "id": "f07d68499c974a5bbffed5cc3ddcc31e",
+        "collection": "notes"
       }
 
       :>json string id: Message identifier of the note item created
@@ -903,9 +911,10 @@ Notes
 
       {
         "id": "f07d68499c974a5bbffed5cc3ddcc31e",
-	"parent_id": "765dc8566f9e4baf94ee36e1b2763d50",
-	"PidTagSubject": "My sample note",
-	"PidTagBody": "Sample body"
+        "collection": "notes",
+        "parent_id": "765dc8566f9e4baf94ee36e1b2763d50",
+        "PidTagSubject": "My sample note",
+        "PidTagBody": "Sample body"
       },
 
    :reqheader Authorization: auth token
