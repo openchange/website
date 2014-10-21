@@ -55,7 +55,9 @@ Folders
 
 .. http:post:: /folders/
 
-   :synopsis: Creates a new folder and returns its ID
+   :synopsis: Creates a new folder and returns its ID.
+              ``parent_id`` and ``PidTagDisplayName``` are required.
+              Other folder attributes are optional.
 
    **Example request**:
 
@@ -91,6 +93,7 @@ Folders
    :>json string id: Folder Identifier of the folder created
    :reqheader Authorization: auth token
    :statuscode 200: Ok
+   :statuscode 422: The request was well-formed but was unable to be followed due to semantic errors
 
 
 .. http:get:: /folders/(id)/
@@ -116,8 +119,8 @@ Folders
       {
         "id": "c7e77cc9999908ec54ae32f1faf17e0e",
         "item_count": 37,
-	"PidTagDisplayName": "MyFolderName",
-	"PidTagComment": "This is a sample folder"
+        "PidTagDisplayName": "MyFolderName",
+        "PidTagComment": "This is a sample folder"
       },
 
    :>json string id: Folder identifier
@@ -144,7 +147,7 @@ Folders
       Accept: application/json
 
       {
-         "name": "UpdatedFolderName"
+         "PidTagDisplayName": "UpdatedFolderName"
       }
 
    **Example response**:
@@ -285,9 +288,9 @@ Folders
    :>jsonarr string id: Message identifier
    :>jsonarr string type: Type of the message
 
-   :query properties: List of wanted properties, response will only
-                      contain these. If not set all properties will
-                      be returned.
+   :query properties: Comma separated list of properties to return
+                      for every folder. If not set all properties will
+                      be returned. E.g: ``id,type``
    :reqheader Authorization: auth token
    :reqheader Accept: the response content type depends on
                       :mailheader:`Accept` header
@@ -332,9 +335,9 @@ Folders
    :>jsonarr string id: Folder identifier
    :>jsonarr string type: Type of the folder
 
-   :query properties: List of wanted properties, response will only
-                      contain these. If not set all properties will
-                      be returned.
+   :query properties: Comma separated list of properties to return
+                      for every folder. If not set all properties will
+                      be returned. E.g: ``id,type``
    :reqheader Authorization: auth token
    :reqheader Accept: the response content type depends on
                       :mailheader:`Accept` header
