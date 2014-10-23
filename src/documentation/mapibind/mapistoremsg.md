@@ -66,6 +66,8 @@ The `save` method commits the changes made to a message in MAPIStore.
         >>> my_fld.get_child_count(mapistore.MESSAGE_TABLE) 
         1L
 
+*NOTE: When a message is created, the effects it produces in its parent folder
+    (e.g. in the child count) don't take place until it is saved.*
 
 ## Attachments ##
 
@@ -74,11 +76,16 @@ the [MAPIStore Attachment](mapistoreatt.html) section). The `create_attachment`
 method, which takes no arguments, creates an attachment for the message and
 returns a MAPIStore message object. In a similar way, an attachment can be
 opened by calling the `open_attachment` method, which takes an integer with the
-attachment number as an argument. The MAPIStore Message object has an attribute
+attachment ID as an argument. The MAPIStore Message object has an attribute
 from which the number of attachments can be read.
 
         >>> print my_msg.attachment_count
-        1L
+        2L
+        >>> id_list = []
+        >>> for att in my_msg.attachments:
+        >>>     id_list.append(att.aid)
+        >>> id_list
+        [0L, 1L]
         >>> existing_att = my_msg.open_attachment(0)
         >>> new_att = my_msg.create_attachment()
         >>> print my_msg.attachment_count

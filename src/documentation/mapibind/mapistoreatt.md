@@ -11,6 +11,13 @@ Furthermore, the IDs of the attachments created in a message are consecutive,
 starting from 0. The IDs aren't reused, so the deletion of attachments can
 alter this order.
 
+## Attachment ID ##
+
+The MAPIStore Attachment object has an attribute that contains its AID.
+
+        >>> my_aid = my_att.aid
+        >>> print my_aid
+
 ## Properties ##
 
 Attachments have properties as well, and these can be set and displayed by
@@ -21,3 +28,16 @@ way as in MAPIStore folders or messages.
         >>> prop_dict = my_att.get_properties(['PidTagAttachFilename'])
         >>> prop_dict
         {'PidTagAttachFilename': 'foo.txt'}
+
+## Save ##
+
+Saving attachments works the same way as message saving: the `save` method
+commits the changes made in an existing attachment and updates the parent
+message information when the attachment has been created.
+
+        >>> my_att = my_msg.create_attachment()
+        >>> my_msg.attachment_count
+        0L
+        >>> my_att.save()
+        >>> my_msg.attachment_count
+        1L
