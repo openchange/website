@@ -60,7 +60,11 @@ The `save` method commits the changes made to a message in MAPIStore.
 
         >>> my_msg = my_fld.create_message(mapistore.CREATE_GENERIC)
         >>> my_msg.set_properties({'PidTagSubject': 'mymsg', 'PidTagNormalizedSubject': 'mymsg', 'PidTagBody': 'Hello, World!'})
+        >>> my_fld.get_child_count(mapistore.MESSAGE_TABLE)
+        0L
         >>> my_msg.save()
+        >>> my_fld.get_child_count(mapistore.MESSAGE_TABLE) 
+        1L
 
 
 ## Attachments ##
