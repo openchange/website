@@ -4,3 +4,5 @@
 - [MAPIStore Context](/documentation/mapibind/mapistorectx.html)
 - [MAPIStore Folder](/documentation/mapibind/mapistorefld.html)
 - [MAPIStore Message](/documentation/mapibind/mapistoremsg.html)
+- [MAPIStore Table](/documentation/mapibind/mapistoretbl.html)
+- [MAPIStore Attachment](/documentation/mapibind/mapistoreatt.html)
