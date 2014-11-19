@@ -3,6 +3,10 @@
 - [Wiki](http://tracker.openchange.org/projects/openchange/wiki) (off-site)
 - [Papers and Slides](/documentation/slides.html)
 
+# Hackathon #
+
+- [REST API #1](/documentation/programming/hackathon/2014_nov_19/index.html)
+
 # Conferences #
 - <img src="/images/uk.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [Microsoft Plugfest June 2014](/documentation/conferences/microsoftplugfest_june2014.html)
 - <img src="/images/uk.png" style="style="border: 0pt none; vertical-align: middle; margin-right: 8px;" /> [SambaXP 2014](/documentation/conferences/sambaxp_2014.html)

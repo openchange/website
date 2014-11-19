@@ -76,6 +76,22 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+     <h2>OpenChange Hackathon #1</h2>
+     <div class="date">Wednesday, 19th November 2014</div>
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" all=""
+src="/images/openchange_logo_v2.png" />
+
+Today we are having a hackathon dedicated to the OpenChange REST
+API. <br/><br/>The list of project, progress, results and resources canbe found
+on the [Hackathon
+webpage](documentation/programming/hackathon/2014_nov_19/index.html)
+and will be updated all along the event. Work in Progress!
+<br/>
+</div>
+
+
+<div class="news">
      <h2>OpenChange 2.2 NANOPROBE Released!</h2>
      <div class="date">Monday, 11th August 2014</div>
 <img border="0" width="96" height="96" style="border: 0pt none;
