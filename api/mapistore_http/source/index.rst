@@ -55,7 +55,7 @@ Folders
 
 .. http:post:: /folders/
 
-   :synopsis: Creates a new folder and returns its ID.
+   :synopsis: Create a new folder and return its ID.
               ``parent_id`` and ``PidTagDisplayName``` are required.
               Other folder attributes are optional.
 
@@ -261,7 +261,7 @@ Folders
 
    .. sourcecode:: http
 
-      GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/messages?properties=id,type HTTP/1.1
+      GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/messages?properties=id,collection HTTP/1.1
       Host: example.com
       Accept: application/json
 
@@ -290,7 +290,7 @@ Folders
 
    :query properties: Comma separated list of properties to return
                       for every folder. If not set all properties will
-                      be returned. E.g: ``id,type``
+                      be returned. E.g: ``id,collection``
    :reqheader Authorization: auth token
    :reqheader Accept: the response content type depends on
                       :mailheader:`Accept` header
@@ -308,7 +308,7 @@ Folders
 
    .. sourcecode:: http
 
-      GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/folders HTTP/1.1
+      GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/folders?properties=id,PidTagDisplayName HTTP/1.1
       Host: example.com
       Accept: application/json
 
@@ -323,21 +323,21 @@ Folders
       [
         {
           "id": "7be92d92557702c8eb2e764266119346",
-          "collection": "folders",
+          "PidTagDisplayName": "Folder a"
         },
         {
           "id": "fa21ee2b607ac6e327ecb39021be5469",
-          "collection": "folders",
+          "PidTagDisplayName": "Folder b"
         },
         ...
       ]
 
    :>jsonarr string id: Folder identifier
-   :>jsonarr string type: Collection of the folder
+   :>jsonarr string PidTagDisplayName: Folder display name
 
    :query properties: Comma separated list of properties to return
                       for every folder. If not set all properties will
-                      be returned. E.g: ``id,type``
+                      be returned. E.g: ``id,collection``
    :reqheader Authorization: auth token
    :reqheader Accept: the response content type depends on
                       :mailheader:`Accept` header
@@ -622,7 +622,7 @@ Calendar
 
 .. http:post:: /calendars/
 
-   :synopsis: Create a new calendar item and returns its ID
+   :synopsis: Create a new calendar item and return its ID
 
    **Example request**:
 
@@ -838,7 +838,7 @@ Tasks
 
 .. http:post:: /tasks/
 
-   :synopsis: Create a new task item and returns its ID
+   :synopsis: Create a new task item and return its ID
 
    **Example request**:
 
@@ -1057,7 +1057,7 @@ Contacts
 
 .. http:post:: /contacts/
 
-   :synopsis: Create a new contact item and returns its ID
+   :synopsis: Create a new contact item and return its ID
 
    **Example request**:
 
@@ -1275,7 +1275,7 @@ Notes
 -----
 .. http:post:: /notes/
 
-   :synopsis: Create a new note item and returns its ID
+   :synopsis: Create a new note item and return its ID
 
    **Example request**:
 
