@@ -403,7 +403,148 @@ Folders
 
 Mail
 ------
-TBD
+
+.. http:post:: /mails/
+
+   :synopsis: Create a new mail item and return its ID
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /mails/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "parent_id": "7ac34cce50903fe1e306ab0ede13bcf6e2ebc8e3",
+        "PidTagSubject": "My sample mail",
+        "PidTagBody": "Sample body"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "51c3187152d0a0daa5e0de4d6e3132cb561135e7"
+      }
+
+      :>json string id: Message identifier of the mail item created
+      :reqheader Authorization: auth token
+      :statuscode 200: Ok
+
+
+.. http:get:: /mails/(id)/
+
+   :synopsis: Retrieve all the properties of the mail entry
+              identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "51c3187152d0a0daa5e0de4d6e3132cb561135e7",
+        "parent_id": "7ac34cce50903fe1e306ab0ede13bcf6e2ebc8e3"
+        "PidTagSubject": "My sample mail",
+        "PidTagBody": "Sample body"
+      },
+
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content depends on on
+                      :mailheader:`Accept` header
+   :resheader Content-Type: this depends on :mailheader:`Accept`
+                            header of the request
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:put:: /mails/(id)/
+
+   :synopsis: Set properties on the mail item object identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      PUT /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "PidTagBody": "Sample body v2"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 201 No Content
+
+   :reqheader Authorization: auth token
+   :statuscode 201: The update was successfully applied
+   :statuscode 400: Bad request
+
+
+.. http:head:: /mails/(id)/
+
+   :synopsis: Check if the mail item identified by `id` exists
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/ HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+   :reqheader Authorization: auth token
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:delete:: /mails/(id)/
+
+   :synopsis: Delete the mail entry identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      DELETE /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/ HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No content
+
+   :reqheader Authorization: auth token
+   :statuscode 204: Ok
+   :statuscode 404: Item does not exist
 
 
 Calendar
