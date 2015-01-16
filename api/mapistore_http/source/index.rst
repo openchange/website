@@ -439,6 +439,52 @@ Mail
       :statuscode 200: Ok
 
 
+.. http:post:: /mails/submit/
+
+   :synopsis: Submit an E-mail message to its recipients.
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /mails/submit/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "msg": {
+                  "PidTagSubject": "My sample mail",
+                  "PidTagBody": "Sample body"
+                  "recipients": [
+                                  {
+                                    "PidTagEmailAddress": "recipient1@sample.mail"
+                                  },
+                                  {
+                                    "PidTagEmailAddress": "recipient2@sample.mail"
+                                  },
+                                  ...
+                                ]
+        },
+        "serv_spool": None
+      }
+
+   :<json dict msg: E-mail properties. The "recipients" field (a list with each
+                    recipient's properties) is required.
+   :<json bool serv_spool: Request for processing by the server or a spooler
+                           client. If the value is None, no processing is required.
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+      :reqheader Authorization: auth token
+      :statuscode 200: Ok
+      :statuscode 422: The request was well-formed but was unable to be followed
+                       due to semantic errors (e.g. missing required parameters)
+
+
 .. http:get:: /mails/(id)/
 
    :synopsis: Retrieve all the properties of the mail entry
