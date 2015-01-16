@@ -546,6 +546,76 @@ Mail
    :statuscode 204: Ok
    :statuscode 404: Item does not exist
 
+.. http:head:: /mails/(id)/attachments
+
+   :synopsis: Retrieve the count of attachments within specified mail
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the mail
+   :statuscode 200: Ok
+
+
+.. http:get:: /mails/(id)/attachments
+
+   :synopsis: List of attachments within specified mail
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments?properties=id,PidTagAttachFilename HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      [
+        {
+          "id": "2cc32afdcba1491d704d02c2eeda57ae3a9bd35e",
+          "PidTagAttachFilename": "attach1.foo"
+        },
+        {
+          "id": "d4d6301939fd0d832292c112925a1056a24f8b4e",
+          "PidTagAttachFilename": "attach2.foo"
+        },
+        ...
+      ]
+
+   :>jsonarr string id: Attachment identifier
+   :>jsonarr string PidTagAttachFilename: Attachment filename
+
+   :query properties: Comma separated list of properties to return
+                      for every mail. If not set all properties will
+                      be returned. E.g: ``id,PidTagAttachFilename``
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content type depends on
+                      :mailheader:`Accept` header
+   :resheader Content-Type: this depends on :mailheader:`Accept`
+                            header of request
+   :statuscode 200: Ok
+   :statuscode 404: Folder does not exist
+
 
 Calendar
 --------
@@ -691,6 +761,76 @@ Calendar
    :reqheader Authorization: auth token
    :statuscode 204: Ok
    :statuscode 404: Item does not exist
+
+.. http:head:: /calendars/(id)/attachments
+
+   :synopsis: Retrieve the count of attachments within specified calendar
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /calendars/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the calendar
+   :statuscode 200: Ok
+
+
+.. http:get:: /calendars/(id)/attachments
+
+   :synopsis: List of attachments within specified calendar
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /calendars/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments?properties=id,PidTagAttachFilename HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      [
+        {
+          "id": "2cc32afdcba1491d704d02c2eeda57ae3a9bd35e",
+          "PidTagAttachFilename": "attach1.foo"
+        },
+        {
+          "id": "d4d6301939fd0d832292c112925a1056a24f8b4e",
+          "PidTagAttachFilename": "attach2.foo"
+        },
+        ...
+      ]
+
+   :>jsonarr string id: Attachment identifier
+   :>jsonarr string PidTagAttachFilename: Attachment filename
+
+   :query properties: Comma separated list of properties to return
+                      for every calendar. If not set all properties will
+                      be returned. E.g: ``id,PidTagAttachFilename``
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content type depends on
+                      :calendarheader:`Accept` header
+   :resheader Content-Type: this depends on :calendarheader:`Accept`
+                            header of request
+   :statuscode 200: Ok
+   :statuscode 404: Folder does not exist
 
 
 Tasks
@@ -841,6 +981,76 @@ Tasks
    :statuscode 204: Ok
    :statuscode 404: Item does not exist
 
+.. http:head:: /tasks/(id)/attachments
+
+   :synopsis: Retrieve the count of attachments within specified task
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /tasks/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the task
+   :statuscode 200: Ok
+
+
+.. http:get:: /tasks/(id)/attachments
+
+   :synopsis: List of attachments within specified task
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /tasks/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments?properties=id,PidTagAttachFilename HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      [
+        {
+          "id": "2cc32afdcba1491d704d02c2eeda57ae3a9bd35e",
+          "PidTagAttachFilename": "attach1.foo",
+        },
+        {
+          "id": "d4d6301939fd0d832292c112925a1056a24f8b4e",
+          "PidTagAttachFilename": "attach2.foo",
+        },
+        ...
+      ]
+
+   :>jsonarr string id: Attachment identifier
+   :>jsonarr string PidTagAttachFilename: Attachment filename
+
+   :query properties: Comma separated list of properties to return
+                      for every task. If not set all properties will
+                      be returned. E.g: ``id,PidTagAttachFilename``
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content type depends on
+                      :taskheader:`Accept` header
+   :resheader Content-Type: this depends on :taskheader:`Accept`
+                            header of request
+   :statuscode 200: Ok
+   :statuscode 404: Folder does not exist
+
 
 Contacts
 --------
@@ -990,6 +1200,76 @@ Contacts
    :statuscode 204: Ok
    :statuscode 404: Item does not exist
 
+.. http:head:: /contacts/(id)/attachments
+
+   :synopsis: Retrieve the count of attachments within specified contact
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /contacts/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the contact
+   :statuscode 200: Ok
+
+
+.. http:get:: /contacts/(id)/attachments
+
+   :synopsis: List of attachments within specified contact
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /contacts/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments?properties=id,PidTagAttachFilename HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      [
+        {
+          "id": "2cc32afdcba1491d704d02c2eeda57ae3a9bd35e",
+          "PidTagAttachFilename": "attach1.foo",
+        },
+        {
+          "id": "d4d6301939fd0d832292c112925a1056a24f8b4e",
+          "PidTagAttachFilename": "attach2.foo",
+        },
+        ...
+      ]
+
+   :>jsonarr string id: Attachment identifier
+   :>jsonarr string PidTagAttachFilename: Attachment filename
+
+   :query properties: Comma separated list of properties to return
+                      for every contact. If not set all properties will
+                      be returned. E.g: ``id,PidTagAttachFilename``
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content type depends on
+                      :contactheader:`Accept` header
+   :resheader Content-Type: this depends on :contactheader:`Accept`
+                            header of request
+   :statuscode 200: Ok
+   :statuscode 404: Folder does not exist
+
 
 Notes
 -----
@@ -1137,9 +1417,216 @@ Notes
    :statuscode 204: Ok
    :statuscode 404: Item does not exist
 
+.. http:head:: /notes/(id)/attachments
+
+   :synopsis: Retrieve the count of attachments within specified note
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /notes/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the note
+   :statuscode 200: Ok
+
+
+.. http:get:: /notes/(id)/attachments
+
+   :synopsis: List of attachments within specified note
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /notes/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments?properties=id,PidTagAttachFilename HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      [
+        {
+          "id": "2cc32afdcba1491d704d02c2eeda57ae3a9bd35e",
+          "PidTagAttachFilename": "attach1.foo",
+        },
+        {
+          "id": "d4d6301939fd0d832292c112925a1056a24f8b4e",
+          "PidTagAttachFilename": "attach2.foo",
+        },
+        ...
+      ]
+
+   :>jsonarr string id: Attachment identifier
+   :>jsonarr string PidTagAttachFilename: Attachment filename
+
+   :query properties: Comma separated list of properties to return
+                      for every note. If not set all properties will
+                      be returned. E.g: ``id,type``
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content type depends on
+                      :noteheader:`Accept` header
+   :resheader Content-Type: this depends on :noteheader:`Accept`
+                            header of request
+   :statuscode 200: Ok
+   :statuscode 404: Folder does not exist
 
 
 Attachments
 -----------
-TBD
 
+.. http:post:: /attachments/
+
+   :synopsis: Create a new attachment item and return its ID
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /attachments/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "parent_id": "51c3187152d0a0daa5e0de4d6e3132cb561135e7",
+        "PidTagAttachFilename": "sample attachment.foo",
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "12fd85ba7440cc17d2be3957c371c5d3b42270d0",
+      }
+
+      :>json string id: Message identifier of the attachment item created
+      :reqheader Authorization: auth token
+      :statuscode 200: Ok
+
+
+.. http:get:: /attachments/(id)/
+
+   :synopsis: Retrieve all the properties of the attachment entry
+              identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /attachments/12fd85ba7440cc17d2be3957c371c5d3b42270d0/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "12fd85ba7440cc17d2be3957c371c5d3b42270d0",
+        "parent_id": "765dc8566f9e4baf94ee36e1b2763d50",
+        "PidTagAttachFilename": "sample attachment.foo",
+      },
+
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content depends on on
+                      :mailheader:`Accept` header
+   :resheader Content-Type: this depends on :mailheader:`Accept`
+                            header of the request
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:put:: /attachments/(id)/
+
+   :synopsis: Set properties on the attachment item object identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      PUT /attachments/12fd85ba7440cc17d2be3957c371c5d3b42270d0/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "PidTagDisplayName": "Sample"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 201 No Content
+
+   :reqheader Authorization: auth token
+   :statuscode 201: The update was successfully applied
+   :statuscode 400: Bad request
+
+
+.. http:head:: /attachments/(id)/
+
+   :synopsis: Check if the attachment item identified by `id` exists
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /attachments/12fd85ba7440cc17d2be3957c371c5d3b42270d0/ HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+   :reqheader Authorization: auth token
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:delete:: /attachments/(id)/
+
+   :synopsis: Delete the attachment entry identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      DELETE /attachments/12fd85ba7440cc17d2be3957c371c5d3b42270d0 HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No content
+
+   :reqheader Authorization: auth token
+   :statuscode 204: Ok
+   :statuscode 404: Item does not exist
