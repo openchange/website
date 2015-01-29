@@ -76,6 +76,17 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+     <h2>Lightning talk at FOSDEM15</h2>
+     <div class="date">Thursday, 29th January 2015</div>
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" all=""
+src="/images/openchange_logo_v2.png" />
+We will give a lightning talk at FOSDEM15 on how to write an Exchange compatible backend using OpenChange REST API. <br/><br/>The talk is scheduled in <b>room H.2215 at 10.40 on Sunday, Feb 1st.</b>
+<br/><br/>The abstract of the talk along with scheduling information can be found at the following URL: <a href="https://fosdem.org/2015/schedule/event/openchange_rest_api/">https://fosdem.org/2015/schedule/event/openchange_rest_api/</a>
+<br/><br/>
+</div>
+
+<div class="news">
      <h2>OpenChange Hackathon #1</h2>
      <div class="date">Wednesday, 19th November 2014</div>
 <img border="0" width="96" height="96" style="border: 0pt none;
@@ -129,24 +140,6 @@ Connect](https://connect.microsoft.com/site216/Downloads/DownloadDetails.aspx?Do
 
 </div>
 </div>
-
-<div class="news">
-   <h2>OpenChangeSim 1.0 released</h2>
-   <div class="date">Friday, 13th June 2014</div>
-
-<img border="0" width=96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" all=""
-src="/images/openchange_logo_v2.png" />
-
-The OpenChange project team has just released the first version of
-[OpenChangeSim](/documentation/openchangesim/index.html). It
-implements a simulator able to reproduce the behavior of thousands of
-Outlok clients talking to an Exchange server at the same time. The
-tool will be demonstrated during the [Outlook automation
-talk](http://blogs.msdn.com/b/officeinteroperability/archive/2014/05/30/redmond-interoperability-plugfest-agenda-available-now.aspx)
-of Julien Kerihuel at [Microsoft Redmond Protocols Interoperability
-Plugfest
-2014](http://channel9.msdn.com/Events/Open-Specifications-Plugfests/Redmond-Interoperability-Protocols-Plugfest-2014).
 
 <br/><br/>
 
