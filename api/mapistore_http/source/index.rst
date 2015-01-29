@@ -55,7 +55,7 @@ Folders
 
 .. http:post:: /folders/
 
-   :synopsis: Creates a new folder and returns its ID.
+   :synopsis: Create a new folder and return its ID.
               ``parent_id`` and ``PidTagDisplayName``` are required.
               Other folder attributes are optional.
 
@@ -261,7 +261,7 @@ Folders
 
    .. sourcecode:: http
 
-      GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/messages?properties=id,type HTTP/1.1
+      GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/messages?properties=id,collection HTTP/1.1
       Host: example.com
       Accept: application/json
 
@@ -290,7 +290,7 @@ Folders
 
    :query properties: Comma separated list of properties to return
                       for every folder. If not set all properties will
-                      be returned. E.g: ``id,type``
+                      be returned. E.g: ``id,collection``
    :reqheader Authorization: auth token
    :reqheader Accept: the response content type depends on
                       :mailheader:`Accept` header
@@ -308,7 +308,7 @@ Folders
 
    .. sourcecode:: http
 
-      GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/folders HTTP/1.1
+      GET /folders/c7e77cc9999908ec54ae32f1faf17e0e/folders?properties=id,PidTagDisplayName HTTP/1.1
       Host: example.com
       Accept: application/json
 
@@ -323,21 +323,21 @@ Folders
       [
         {
           "id": "7be92d92557702c8eb2e764266119346",
-          "collection": "folders",
+          "PidTagDisplayName": "Folder a"
         },
         {
           "id": "fa21ee2b607ac6e327ecb39021be5469",
-          "collection": "folders",
+          "PidTagDisplayName": "Folder b"
         },
         ...
       ]
 
    :>jsonarr string id: Folder identifier
-   :>jsonarr string type: Collection of the folder
+   :>jsonarr string PidTagDisplayName: Folder display name
 
    :query properties: Comma separated list of properties to return
                       for every folder. If not set all properties will
-                      be returned. E.g: ``id,type``
+                      be returned. E.g: ``id,collection``
    :reqheader Authorization: auth token
    :reqheader Accept: the response content type depends on
                       :mailheader:`Accept` header
@@ -403,7 +403,264 @@ Folders
 
 Mail
 ------
-TBD
+
+.. http:post:: /mails/
+
+   :synopsis: Create a new mail item and return its ID
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /mails/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "parent_id": "7ac34cce50903fe1e306ab0ede13bcf6e2ebc8e3",
+        "PidTagSubject": "My sample mail",
+        "PidTagBody": "Sample body"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "51c3187152d0a0daa5e0de4d6e3132cb561135e7"
+      }
+
+      :>json string id: Message identifier of the mail item created
+      :reqheader Authorization: auth token
+      :statuscode 200: Ok
+
+
+.. http:post:: /mails/submit/
+
+   :synopsis: Submit an E-mail message to its recipients.
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /mails/submit/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "msg": {
+                  "PidTagSubject": "My sample mail",
+                  "PidTagBody": "Sample body"
+                  "recipients": [
+                                  {
+                                    "PidTagEmailAddress": "recipient1@sample.mail"
+                                  },
+                                  {
+                                    "PidTagEmailAddress": "recipient2@sample.mail"
+                                  },
+                                  ...
+                                ]
+        },
+        "serv_spool": None
+      }
+
+   :<json dict msg: E-mail properties. The "recipients" field (a list with each
+                    recipient's properties) is required.
+   :<json bool serv_spool: Request for processing by the server or a spooler
+                           client. If the value is None, no processing is required.
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+      :reqheader Authorization: auth token
+      :statuscode 200: Ok
+      :statuscode 422: The request was well-formed but was unable to be followed
+                       due to semantic errors (e.g. missing required parameters)
+
+
+.. http:get:: /mails/(id)/
+
+   :synopsis: Retrieve all the properties of the mail entry
+              identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "51c3187152d0a0daa5e0de4d6e3132cb561135e7",
+        "parent_id": "7ac34cce50903fe1e306ab0ede13bcf6e2ebc8e3"
+        "PidTagSubject": "My sample mail",
+        "PidTagBody": "Sample body"
+      },
+
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content depends on on
+                      :mailheader:`Accept` header
+   :resheader Content-Type: this depends on :mailheader:`Accept`
+                            header of the request
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:put:: /mails/(id)/
+
+   :synopsis: Set properties on the mail item object identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      PUT /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "PidTagBody": "Sample body v2"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 201 No Content
+
+   :reqheader Authorization: auth token
+   :statuscode 201: The update was successfully applied
+   :statuscode 400: Bad request
+
+
+.. http:head:: /mails/(id)/
+
+   :synopsis: Check if the mail item identified by `id` exists
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/ HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+   :reqheader Authorization: auth token
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:delete:: /mails/(id)/
+
+   :synopsis: Delete the mail entry identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      DELETE /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/ HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No content
+
+   :reqheader Authorization: auth token
+   :statuscode 204: Ok
+   :statuscode 404: Item does not exist
+
+.. http:head:: /mails/(id)/attachments
+
+   :synopsis: Retrieve the count of attachments within specified mail
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the mail
+   :statuscode 200: Ok
+
+
+.. http:get:: /mails/(id)/attachments
+
+   :synopsis: List of attachments within specified mail
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /mails/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments?properties=id,PidTagAttachFilename HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      [
+        {
+          "id": "2cc32afdcba1491d704d02c2eeda57ae3a9bd35e",
+          "PidTagAttachFilename": "attach1.foo"
+        },
+        {
+          "id": "d4d6301939fd0d832292c112925a1056a24f8b4e",
+          "PidTagAttachFilename": "attach2.foo"
+        },
+        ...
+      ]
+
+   :>jsonarr string id: Attachment identifier
+   :>jsonarr string PidTagAttachFilename: Attachment filename
+
+   :query properties: Comma separated list of properties to return
+                      for every mail. If not set all properties will
+                      be returned. E.g: ``id,PidTagAttachFilename``
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content type depends on
+                      :mailheader:`Accept` header
+   :resheader Content-Type: this depends on :mailheader:`Accept`
+                            header of request
+   :statuscode 200: Ok
+   :statuscode 404: Folder does not exist
 
 
 Calendar
@@ -411,7 +668,7 @@ Calendar
 
 .. http:post:: /calendars/
 
-   :synopsis: Create a new calendar item and returns its ID
+   :synopsis: Create a new calendar item and return its ID
 
    **Example request**:
 
@@ -551,13 +808,83 @@ Calendar
    :statuscode 204: Ok
    :statuscode 404: Item does not exist
 
+.. http:head:: /calendars/(id)/attachments
+
+   :synopsis: Retrieve the count of attachments within specified calendar
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /calendars/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the calendar
+   :statuscode 200: Ok
+
+
+.. http:get:: /calendars/(id)/attachments
+
+   :synopsis: List of attachments within specified calendar
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /calendars/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments?properties=id,PidTagAttachFilename HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      [
+        {
+          "id": "2cc32afdcba1491d704d02c2eeda57ae3a9bd35e",
+          "PidTagAttachFilename": "attach1.foo"
+        },
+        {
+          "id": "d4d6301939fd0d832292c112925a1056a24f8b4e",
+          "PidTagAttachFilename": "attach2.foo"
+        },
+        ...
+      ]
+
+   :>jsonarr string id: Attachment identifier
+   :>jsonarr string PidTagAttachFilename: Attachment filename
+
+   :query properties: Comma separated list of properties to return
+                      for every calendar. If not set all properties will
+                      be returned. E.g: ``id,PidTagAttachFilename``
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content type depends on
+                      :calendarheader:`Accept` header
+   :resheader Content-Type: this depends on :calendarheader:`Accept`
+                            header of request
+   :statuscode 200: Ok
+   :statuscode 404: Folder does not exist
+
 
 Tasks
 -----
 
 .. http:post:: /tasks/
 
-   :synopsis: Create a new task item and returns its ID
+   :synopsis: Create a new task item and return its ID
 
    **Example request**:
 
@@ -700,13 +1027,83 @@ Tasks
    :statuscode 204: Ok
    :statuscode 404: Item does not exist
 
+.. http:head:: /tasks/(id)/attachments
+
+   :synopsis: Retrieve the count of attachments within specified task
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /tasks/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the task
+   :statuscode 200: Ok
+
+
+.. http:get:: /tasks/(id)/attachments
+
+   :synopsis: List of attachments within specified task
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /tasks/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments?properties=id,PidTagAttachFilename HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      [
+        {
+          "id": "2cc32afdcba1491d704d02c2eeda57ae3a9bd35e",
+          "PidTagAttachFilename": "attach1.foo",
+        },
+        {
+          "id": "d4d6301939fd0d832292c112925a1056a24f8b4e",
+          "PidTagAttachFilename": "attach2.foo",
+        },
+        ...
+      ]
+
+   :>jsonarr string id: Attachment identifier
+   :>jsonarr string PidTagAttachFilename: Attachment filename
+
+   :query properties: Comma separated list of properties to return
+                      for every task. If not set all properties will
+                      be returned. E.g: ``id,PidTagAttachFilename``
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content type depends on
+                      :taskheader:`Accept` header
+   :resheader Content-Type: this depends on :taskheader:`Accept`
+                            header of request
+   :statuscode 200: Ok
+   :statuscode 404: Folder does not exist
+
 
 Contacts
 --------
 
 .. http:post:: /contacts/
 
-   :synopsis: Create a new contact item and returns its ID
+   :synopsis: Create a new contact item and return its ID
 
    **Example request**:
 
@@ -849,12 +1246,82 @@ Contacts
    :statuscode 204: Ok
    :statuscode 404: Item does not exist
 
+.. http:head:: /contacts/(id)/attachments
+
+   :synopsis: Retrieve the count of attachments within specified contact
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /contacts/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the contact
+   :statuscode 200: Ok
+
+
+.. http:get:: /contacts/(id)/attachments
+
+   :synopsis: List of attachments within specified contact
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /contacts/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments?properties=id,PidTagAttachFilename HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      [
+        {
+          "id": "2cc32afdcba1491d704d02c2eeda57ae3a9bd35e",
+          "PidTagAttachFilename": "attach1.foo",
+        },
+        {
+          "id": "d4d6301939fd0d832292c112925a1056a24f8b4e",
+          "PidTagAttachFilename": "attach2.foo",
+        },
+        ...
+      ]
+
+   :>jsonarr string id: Attachment identifier
+   :>jsonarr string PidTagAttachFilename: Attachment filename
+
+   :query properties: Comma separated list of properties to return
+                      for every contact. If not set all properties will
+                      be returned. E.g: ``id,PidTagAttachFilename``
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content type depends on
+                      :contactheader:`Accept` header
+   :resheader Content-Type: this depends on :contactheader:`Accept`
+                            header of request
+   :statuscode 200: Ok
+   :statuscode 404: Folder does not exist
+
 
 Notes
 -----
 .. http:post:: /notes/
 
-   :synopsis: Create a new note item and returns its ID
+   :synopsis: Create a new note item and return its ID
 
    **Example request**:
 
@@ -996,9 +1463,216 @@ Notes
    :statuscode 204: Ok
    :statuscode 404: Item does not exist
 
+.. http:head:: /notes/(id)/attachments
+
+   :synopsis: Retrieve the count of attachments within specified note
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /notes/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      X-mapistore-rowcount: 2
+
+   :reqheader Authorization: auth token
+   :resheader X-mapistore-rowcount: The number of specified items within the note
+   :statuscode 200: Ok
+
+
+.. http:get:: /notes/(id)/attachments
+
+   :synopsis: List of attachments within specified note
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /notes/51c3187152d0a0daa5e0de4d6e3132cb561135e7/attachments?properties=id,PidTagAttachFilename HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      [
+        {
+          "id": "2cc32afdcba1491d704d02c2eeda57ae3a9bd35e",
+          "PidTagAttachFilename": "attach1.foo",
+        },
+        {
+          "id": "d4d6301939fd0d832292c112925a1056a24f8b4e",
+          "PidTagAttachFilename": "attach2.foo",
+        },
+        ...
+      ]
+
+   :>jsonarr string id: Attachment identifier
+   :>jsonarr string PidTagAttachFilename: Attachment filename
+
+   :query properties: Comma separated list of properties to return
+                      for every note. If not set all properties will
+                      be returned. E.g: ``id,type``
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content type depends on
+                      :noteheader:`Accept` header
+   :resheader Content-Type: this depends on :noteheader:`Accept`
+                            header of request
+   :statuscode 200: Ok
+   :statuscode 404: Folder does not exist
 
 
 Attachments
 -----------
-TBD
 
+.. http:post:: /attachments/
+
+   :synopsis: Create a new attachment item and return its ID
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /attachments/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "parent_id": "51c3187152d0a0daa5e0de4d6e3132cb561135e7",
+        "PidTagAttachFilename": "sample attachment.foo",
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "12fd85ba7440cc17d2be3957c371c5d3b42270d0",
+      }
+
+      :>json string id: Message identifier of the attachment item created
+      :reqheader Authorization: auth token
+      :statuscode 200: Ok
+
+
+.. http:get:: /attachments/(id)/
+
+   :synopsis: Retrieve all the properties of the attachment entry
+              identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      GET /attachments/12fd85ba7440cc17d2be3957c371c5d3b42270d0/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+      Vary: Accept
+      Content-Type: application/json
+
+      {
+        "id": "12fd85ba7440cc17d2be3957c371c5d3b42270d0",
+        "parent_id": "765dc8566f9e4baf94ee36e1b2763d50",
+        "PidTagAttachFilename": "sample attachment.foo",
+      },
+
+   :reqheader Authorization: auth token
+   :reqheader Accept: the response content depends on on
+                      :mailheader:`Accept` header
+   :resheader Content-Type: this depends on :mailheader:`Accept`
+                            header of the request
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:put:: /attachments/(id)/
+
+   :synopsis: Set properties on the attachment item object identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      PUT /attachments/12fd85ba7440cc17d2be3957c371c5d3b42270d0/ HTTP/1.1
+      Host: example.com
+      Accept: application/json
+
+      {
+        "PidTagDisplayName": "Sample"
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 201 No Content
+
+   :reqheader Authorization: auth token
+   :statuscode 201: The update was successfully applied
+   :statuscode 400: Bad request
+
+
+.. http:head:: /attachments/(id)/
+
+   :synopsis: Check if the attachment item identified by `id` exists
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      HEAD /attachments/12fd85ba7440cc17d2be3957c371c5d3b42270d0/ HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 200 OK
+
+   :reqheader Authorization: auth token
+   :statuscode 200: Ok
+   :statuscode 404: Item does not exist
+
+
+.. http:delete:: /attachments/(id)/
+
+   :synopsis: Delete the attachment entry identified by `id`
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      DELETE /attachments/12fd85ba7440cc17d2be3957c371c5d3b42270d0 HTTP/1.1
+      Host: example.com
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No content
+
+   :reqheader Authorization: auth token
+   :statuscode 204: Ok
+   :statuscode 404: Item does not exist
