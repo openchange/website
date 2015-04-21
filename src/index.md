@@ -76,6 +76,31 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
+     <h2>Meet with the OpenChange Team in May 2015!</h2>
+     <div class="date">Tuesday, 21st April 2015</div>
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" all=""
+src="images/icon_plugfestcon_400x400.png" />
+
+The OpenChange team will be at the <b><a
+href="http://www.protocolsplugfest.com">Protocols Plugfest Europe
+2015</a></b> conference and will give talks about OpenChange
+architecture, latest development and features, and a keynote on the
+next evolution steps of interoperability.
+<br/>
+
+This <a
+href="http://www.protocolsplugfest.com/europe/purchase/"><b>FREE
+conference</b></a> will be hosted in Spain, Zaragoza and will be held
+on May 12th-14th 2015. It will cover Open Source offerings, Microsoft
+interoperable products and technologies, and interoperable industry
+solutions. We are thrilled to attend this event and hope to meet you
+there!<a href="http://www.protocolsplugfest.com">http://www.protocolsplugfest.com</a>
+<br/><br/>
+<a href="http://www.protocolsplugfest.com/europe/purchase/"><b>Register for free here</b></a>
+</div>
+
+<div class="news">
      <h2>Lightning talk at FOSDEM15</h2>
      <div class="date">Thursday, 29th January 2015</div>
 <img border="0" width="96" height="96" style="border: 0pt none;
