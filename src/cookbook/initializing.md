@@ -1,8 +1,7 @@
 # Initializing a build environment #
 
 The "Getting Started" section describes how to set up your local work
-environment. To build the OpenChange source files, you will need to
-use Linux.
+environment. You will need to use Linux to build the OpenChange source files.
 
 [TOC]
 
@@ -11,7 +10,7 @@ use Linux.
 Installing OpenChange and Samba4 from sources requires several
 dependencies. You may already have installed some (or all of them) as
 part of previous development. However this guide has been written
-using fresh installed (and often minimal) Linux
+using fresh installed and minimal Linux
 distributions. Installing the list of packages described below ensures
 your environment is compliant with OpenChange requirements.
 
@@ -29,8 +28,9 @@ The instructions have been updated and tested with `12.04.1 LTS`.
 ### OpenChange dependencies ###
 
     $ sudo apt-get install libpopt-dev libical-dev libmagic-dev libboost-thread-dev zlib1g-dev libmysqlclient-dev
+    $ sudo apt-get install libsqlite3-dev libmemcached-dev mysql-server python-mysqldb
 
-### OpenChange documentation tools ###
+### OpenChange documentation tools (Optionnal) ###
 
     $ sudo apt-get install doxygen
 
@@ -70,6 +70,17 @@ location:
     $ echo 'PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/samba/lib/pkgconfig; export PKG_CONFIG_PATH' | sudo tee /etc/profile.d/samba4-env-build.sh
     $ echo 'PYTHONPATH=$PYTHONPATH:/usr/local/samba/lib/python2.7/site-packages;export PYTHONPATH' | sudo tee -a /etc/profile.d/samba4-env-build.sh
     $ . /etc/profile.d/samba4-env-build.sh
+
+# Setting up OpenChange dependencies #
+
+You will need Nanomsg to compile Openchange.
+
+    $ wget http://download.nanomsg.org/nanomsg-0.5-beta.tar.gz
+    $ tar -xvf nanomsg-0.5-beta.tar.gz
+    $ cd nanomsg-0.5-beta
+    $ ./configure
+    $ sudo make install
+    $ sudo ldconfig
 
 # Next: Download the Source #
 
