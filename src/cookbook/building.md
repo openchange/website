@@ -55,11 +55,16 @@ You should have an output similar to the following:
            * OpenChange Tools:
              - openchangeclient:        yes
              - mapiprofile:             yes
+             - ocnotify:                yes
              - openchangepfadmin:       yes
              - exchange2mbox:           yes
              - exchange2ical:           yes
              - openchangemapidump:      yes
              - schemaIDGUID:            yes
+
+           * Protocol Analysis:
+             - mapipropsdump:           yes
+             - rpcextract:              no
 
            * Unit and functional testing
              - mapitest:                yes
