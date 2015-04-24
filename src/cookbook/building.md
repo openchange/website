@@ -65,7 +65,7 @@ You should have an output similar to the following:
              - mapitest:                yes
              - mapitest (subunit):      no
              - openchange-testsuite:    no
-             - coverage tests:		no           
+             - coverage tests:          no           
 
            * OpenChange Documentation:  yes
 

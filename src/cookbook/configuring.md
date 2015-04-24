@@ -314,7 +314,7 @@ First on chosen `realm`:
     Name:   oc.local
     Address: 192.168.102.48
 
-Next on server's hostname:
+Next on server's hostname (for the example: precog):
 
     $ nslookup precog
     Server:             192.168.102.48
