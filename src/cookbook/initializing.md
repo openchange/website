@@ -28,7 +28,7 @@ The instructions have been updated and tested with `12.04.1 LTS`.
 ### OpenChange dependencies ###
 
     $ sudo apt-get install libpopt-dev libical-dev libmagic-dev libboost-thread-dev zlib1g-dev libmysqlclient-dev
-    $ sudo apt-get install libsqlite3-dev libmemcached-dev mysql-server python-mysqldb
+    $ sudo apt-get install libsqlite3-dev mysql-server python-mysqldb libevent-dev
 
 ### OpenChange documentation tools (Optionnal) ###
 
@@ -75,12 +75,18 @@ location:
 
 You will need Nanomsg to compile Openchange.
 
-    $ wget http://download.nanomsg.org/nanomsg-0.5-beta.tar.gz
+    $ wget http://download.nanomsg.org/nanomsg-0.5-beta.tar.gz memcached.org/files/memcached-1.4.23.tar.gz
     $ tar -xvf nanomsg-0.5-beta.tar.gz
+    $ tar -xvf memcached-1.4.23.tar.gz
     $ cd nanomsg-0.5-beta
     $ ./configure
     $ sudo make install
+    $ cd ../memcached-1.4.23
+    $ ./configure
+    $ sudo make install
     $ sudo ldconfig
+    $
+
 
 # Next: Download the Source #
 
