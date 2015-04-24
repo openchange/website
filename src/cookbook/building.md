@@ -58,18 +58,18 @@ You should have an output similar to the following:
              - openchangepfadmin:       yes
              - exchange2mbox:           yes
              - exchange2ical:           yes
-             - mapitest:                yes
              - openchangemapidump:      yes
              - schemaIDGUID:            yes
 
-           * subunit format (mapitest): no
+           * Unit and functional testing
+             - mapitest:                yes
+             - mapitest (subunit):      no
+             - openchange-testsuite:    no
+             - coverage tests:		no           
 
            * OpenChange Documentation:  yes
 
-           * Coverage Tests:            no
-
            * OpenChange Bindings:
-             - Python:                  no
              - Qt4:                     no
 
            * Installation prefix:       /usr/local/samba

@@ -44,8 +44,9 @@ follow the internal DNS server setup subsection below.</p> </div>
 
 Provision Samba4 server as a domain controller.
 
-    $ sudo PYTHONPATH=$PYTHONPATH samba-tool domain provision \
-      --realm=oc.local --domain=OC --adminpass='openchange1!' --server-role='dc'
+    $ sudo PYTHONPATH=$PYTHONPATH /usr/local/samba/bin/samba-tool \
+      domain provision --realm=oc.local --domain=OC \
+      --adminpass='openchange1!' --server-role='dc'
 
 ### Create new user ###
 
@@ -54,7 +55,8 @@ extend it in OpenChange. However we need to create other users. To
 perform this task, use the following command:
 
 
-    $ sudo PYTHONPATH=$PYTHONPATH samba-tool user add JohnDoe 'openchange2!'
+    $ sudo PYTHONPATH=$PYTHONPATH /usr/local/samba/bin/samba-tool \
+      user add JohnDoe 'openchange2!'
     User 'JohnDoe' created successfully
 
 ### Edit Samba configuration ###
@@ -80,7 +82,7 @@ functional, for both GSS-TSIG-signed and unsigned updates.
 To enable the internal DNS server, edit your `smb.conf` file and add
 **dnsserver** to the list of `dcerpc endpoint servers`:
 
-    dcerpc endpoint servers = epmapper, mapiproxy, dnsserver
+    dcerpc endpoint servers = +epmapper, +mapiproxy, +dnsserver
 
 <br>
 ## Configuration 2: Samba4 with Bind9 DNS server ##
