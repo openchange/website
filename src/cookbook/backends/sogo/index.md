@@ -221,7 +221,7 @@ privileged user, so will the sogo code called from OpenChange
 server. SOGo backend and server are relying on the same configuration
 and so need to be accessible both from openchange and root user:
 
-    ln -s ~openchange/GNUstep /root/
+    ln -s ~/openchange/GNUstep /root/
 
 <br/>
 # Next: Configuring SOGo Web UI #
