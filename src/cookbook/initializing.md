@@ -31,7 +31,7 @@ The instructions have been updated and tested with `12.04.1 LTS`.
     $ sudo apt-get install libsqlite3-dev mysql-server python-mysqldb libevent-dev
     $ sudo apt-get install libncurses5 libncurses5-dev libpcap0.8 libpcap0.8-dev
 
-### OpenChange documentation tools (Optionnal) ###
+### OpenChange documentation and testing tools (Optionnal) ###
 
     $ sudo apt-get install doxygen
     $ sudo apt-get install libsubunit-dev libcppunit-dev check gawk
