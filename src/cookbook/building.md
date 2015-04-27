@@ -64,7 +64,7 @@ You should have an output similar to the following:
 
            * Protocol Analysis:
              - mapipropsdump:           yes
-             - rpcextract:              no
+             - rpcextract:              yes
 
            * Unit and functional testing
              - mapitest:                yes
