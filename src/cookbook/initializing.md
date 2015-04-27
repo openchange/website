@@ -34,6 +34,7 @@ The instructions have been updated and tested with `12.04.1 LTS`.
 ### OpenChange documentation tools (Optionnal) ###
 
     $ sudo apt-get install doxygen
+    $ sudo apt-get install libsubunit-dev libcppunit-dev check gawk
 
 ## Fedora ##
 
