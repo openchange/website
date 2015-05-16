@@ -1,13 +1,11 @@
 # Mailing Lists #
 
 - [devel](http://mailman.openchange.org/listinfo/devel) (off-site)
-- [svn](http://mailman.openchange.org/listinfo/devel) (off-site)
-- [trac](http://mailman.openchange.org/listinfo/trac) (off-site)
+- [commits](http://mailman.openchange.org/listinfo/commits) (off-site)
 
-# Discussion Groups #
-- [Development - General](http://tracker.openchange.org/projects/openchange/boards/1) (off-site)
-- [Development - Server](http://tracker.openchange.org/projects/openchange/boards/2) (off-site)
-- [Help](http://tracker.openchange.org/projects/openchange/boards/3) (off-site)
+# Report a bug #
+
+- [bug tracker](https://github.com/openchange/openchange/issues) (off-site)
 
 # IRC #
 

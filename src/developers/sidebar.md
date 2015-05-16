@@ -4,4 +4,4 @@
 - [Git Web interface](https://github.com/openchange/openchange) (off-site)
 
 # Contributing #
-- [Reporting Bugs](http://tracker.openchange.org) (off-site)
+- [Reporting Bugs](https://github.com/openchange/openchange/issues) (off-site)
