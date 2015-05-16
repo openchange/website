@@ -1,6 +1,5 @@
 # Documentation #
 
-- [Wiki](http://tracker.openchange.org/projects/openchange/wiki) (off-site)
 - [Papers and Slides](/documentation/slides.html)
 
 # Hackathon #

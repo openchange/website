@@ -15,25 +15,15 @@ Join the mailing lists
     - subscribe: [http://mailman.openchange.org/listinfo/devel](http://mailman.openchange.org/listinfo/devel)
     - archives: [http://mailman.openchange.org/pipermail/devel](http://mailman.openchange.org/pipermail/devel)
 
-- *svn@lists.openchange.org*: Subscribe to this list to get notified each time a new commit is made to OpenChange repository (trunk and branches).
-    - subscribe: [http://mailman.openchange.org/listinfo/svn](http://mailman.openchange.org/listinfo/svn)
-    - archives: [http://mailman.openchange.org/pipermail/svn](http://mailman.openchange.org/pipermail/svn)
+- *commits@lists.openchange.org*: Subscribe to this list to get notified each time a new commit is made to OpenChange repository (master and branches).
+    - subscribe: [http://mailman.openchange.org/listinfo/commits](http://mailman.openchange.org/listinfo/commits)
+    - archives: [http://mailman.openchange.org/pipermail/commits](http://mailman.openchange.org/pipermail/commits)
 
-- *trac@lists.openchange.org*: Subscribe to this list to get notified of bug tracker changes (new issue, update or content changes)
-    - subscribe: [http://mailman.openchange.org/listinfo/trac](http://mailman.openchange.org/listinfo/trac)
-    - archives: [http://mailman.openchange.org/pipermail/trac](http://mailman.openchange.org/pipermail/trac)
+## Report a bug ##
 
-## Discussion Groups ##
+OpenChange is using GitHub to report issues and bugs:
 
-To access OpenChange discussion groups, you first need to [register on
-the tracker](http://tracker.openchange.org/account/register) and login
-on the tracker.
-
-- *[Development - General](http://tracker.openchange.org/projects/openchange/boards/1)*
-
-- *[Development - Server](http://tracker.openchange.org/projects/openchange/boards/2)*
-
-- *[Help](http://tracker.openchange.org/projects/openchange/boards/3)*
+- [https://github.com/openchange/openchange/issues](https://github.com/openchange/openchange/issues)
 
 ## OpenChange on IRC ##
 
