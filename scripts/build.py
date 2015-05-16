@@ -39,6 +39,8 @@ SOURCES_DIR= '_sources'
 SRC_DIR = 'src'
 # directory to look in for html templates
 TEMPLATE_DIR = 'templates'
+# directory to look in for api
+API_DIR = 'api'
 
 # filenames of templates to load, in order
 TEMPLATE_LIST = ['includes', 'header', 'sidebar', 'main', 'footer']
@@ -139,5 +141,13 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
     else:
       shutil.copy(absfilename, os.path.join(outdir, f))
   print
+
+# Step 4, Create the Sphynx API
+for curdir, subdirs, files in os.walk(API_DIR):
+  if 'Makefile' in files:
+    cwd = os.getcwd()
+    os.chdir(curdir)
+    os.system('make html')
+    os.chdir(cwd)
 
 print 'Done.'

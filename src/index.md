@@ -18,14 +18,13 @@
   </table>
   </div>
   <div class="rebox" style="float: left; width: 90%; margin: 0em; margin-bottom: 1em;"> 
-    <h2 style="color: white; background-color: #95C0D0; border: 0px;">Download OpenChange 2.2 NANOPROBE</h2>
+    <h2 style="color: white; background-color: #95C0D0; border: 0px;">Download OpenChange 2.3 VULCAN</h2>
     <div class="p" style="margin-left: 5px; margin-right: 5px"> 
       <p><img src="images/openchanGe.png" alt="" style="margin: 1em; margin-bottom: 2em; padding-right: 8px;"/>
-      OpenChange 2.2 NANOPROBE is the latest release available for download. Download packages for your Linux distributions, sources and GPG signature: </p>
+      OpenChange 2.3 VULCAN is the latest release available for download. Download packages for your Linux distributions, sources and GPG signature: </p>
       <ul>
-      <li><a href="/download/index.html">OpenChange 2.2 NANOPROBE platform packages for Linux hosts</a>
-      <li><a href="http://tracker.openchange.org/attachments/download/246/openchange-2.2-NANOPROBE.tar.gz">OpenChange 2.2 NANOPROBE (gzipped) &raquo;</a></li>
-      <li><a href="http://tracker.openchange.org/attachments/download/248/openchange-2.2-NANOPROBE.tar.asc">GPG Signature &raquo;</a></li>
+      <li><a href="/download/index.html">OpenChange 2.3 VULCAN platform packages for Linux hosts</a>
+      <li><a href="https://github.com/openchange/openchange/archive/openchange-2.3-VULCAN.tar.gz">OpenChange 2.3 VULCAN (gzipped) &raquo;</a></li>
       </ul></p> 
     </div> 
   </div>
@@ -76,61 +75,73 @@ OpenChange is a member project of the [Software Freedom Conservancy](http://sfco
 # Latest News #
 
 <div class="news">
-     <h2>OpenChange 2.2 NANOPROBE Released!</h2>
-     <div class="date">Monday, 11th August 2014</div>
+     <h2>OpenChange 2.3 VULCAN Released!</h2>
+     <div class="date">Saturday, 16th May 2014</div>
 <img border="0" width="96" height="96" style="border: 0pt none;
 margin: -5px 5px 5px; float: left;" all=""
 src="/images/openchange_logo_v2.png" />
 
-**The OpenChange project team is happy to announce a new release [(2.2
-  &quot;Nanoprobe&quot;)](/download/index.html) is now available for
+**The OpenChange project team is happy to announce a new release [(2.3
+  &quot;Vulcan&quot;)](/download/index.html) is now available for
   download.** <br/><br/>
 
 This release is a major OpenChange release. It is designed to work
-with &quot;4.1.11&quot; release of Samba4 and a version of SOGo
-strictly superior to 2.2.7. [See the release notes for more info
-&raquo;](/developers/relnotes/2.2-nanoprobe.html)
+with &quot;4.1.18&quot; release of Samba4 and a version of SOGo
+strictly superior to 2.2.17a. <br/>[See the release notes for more info
+&raquo;](/developers/relnotes/2.3-vulcan.html)
 
 </div>
 
 <div class="news">
-   <h2>Microsoft Plugfest 2014 slides available</h2>
-   <div class="date">Friday, 4th July 2014</div>
+     <h2>Meet with the OpenChange Team in May 2015!</h2>
+     <div class="date">Tuesday, 21st April 2015</div>
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" all=""
+src="images/icon_plugfestcon_400x400.png" />
 
+The OpenChange team will be at the <b><a
+href="http://www.protocolsplugfest.com">Protocols Plugfest Europe
+2015</a></b> conference and will give talks about OpenChange
+architecture, latest development and features, and a keynote on the
+next evolution steps of interoperability.
+<br/>
+
+This <a
+href="http://www.protocolsplugfest.com/europe/purchase/"><b>FREE
+conference</b></a> will be hosted in Spain, Zaragoza and will be held
+on May 12th-14th 2015. It will cover Open Source offerings, Microsoft
+interoperable products and technologies, and interoperable industry
+solutions. We are thrilled to attend this event and hope to meet you
+there!<a href="http://www.protocolsplugfest.com">http://www.protocolsplugfest.com</a>
+<br/><br/>
+<a href="http://www.protocolsplugfest.com/europe/purchase/"><b>Register for free here</b></a>
+</div>
+
+<div class="news">
+     <h2>Lightning talk at FOSDEM15</h2>
+     <div class="date">Thursday, 29th January 2015</div>
+<img border="0" width="96" height="96" style="border: 0pt none;
+margin: -5px 5px 5px; float: left;" all=""
+src="/images/openchange_logo_v2.png" />
+We will give a lightning talk at FOSDEM15 on how to write an Exchange compatible backend using OpenChange REST API. <br/><br/>The talk is scheduled in <b>room H.2215 at 10.40 on Sunday, Feb 1st.</b>
+<br/><br/>The abstract of the talk along with scheduling information can be found at the following URL: <a href="https://fosdem.org/2015/schedule/event/openchange_rest_api/">https://fosdem.org/2015/schedule/event/openchange_rest_api/</a>
+<br/><br/>
+</div>
+
+<div class="news">
+     <h2>OpenChange Hackathon #1</h2>
+     <div class="date">Wednesday, 19th November 2014</div>
 <img border="0" width="96" height="96" style="border: 0pt none;
 margin: -5px 5px 5px; float: left;" all=""
 src="/images/openchange_logo_v2.png" />
 
-The slides of the OpenChangeSim presentation (MAPI stress testing
-tool) given at Microsoft Redmond Protocols Interoperability plugfest (June 2014)
-are now available. You can download them either in ODP or PDF from 2 different locations:
-
-<div style="padding-left:8em;">
-
-* OpenOffice version directly from the [OpenChange Website](/documentation/conferences/microsoftplugfest_june2014.html)</li>
-* PDF version directly from [Microsoft
-Connect](https://connect.microsoft.com/site216/Downloads/DownloadDetails.aspx?DownloadID=53701)</li>
-
+Today we are having a hackathon dedicated to the OpenChange REST
+API. <br/><br/>The list of project, progress, results and resources canbe found
+on the [Hackathon
+webpage](documentation/programming/hackathon/2014_nov_19/index.html)
+and will be updated all along the event. Work in Progress!
+<br/>
 </div>
-</div>
-
-<div class="news">
-   <h2>OpenChangeSim 1.0 released</h2>
-   <div class="date">Friday, 13th June 2014</div>
-
-<img border="0" width=96" height="96" style="border: 0pt none;
-margin: -5px 5px 5px; float: left;" all=""
-src="/images/openchange_logo_v2.png" />
-
-The OpenChange project team has just released the first version of
-[OpenChangeSim](/documentation/openchangesim/index.html). It
-implements a simulator able to reproduce the behavior of thousands of
-Outlok clients talking to an Exchange server at the same time. The
-tool will be demonstrated during the [Outlook automation
-talk](http://blogs.msdn.com/b/officeinteroperability/archive/2014/05/30/redmond-interoperability-plugfest-agenda-available-now.aspx)
-of Julien Kerihuel at [Microsoft Redmond Protocols Interoperability
-Plugfest
-2014](http://channel9.msdn.com/Events/Open-Specifications-Plugfests/Redmond-Interoperability-Protocols-Plugfest-2014).
 
 <br/><br/>
 
