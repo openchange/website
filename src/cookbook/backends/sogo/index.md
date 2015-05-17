@@ -215,13 +215,13 @@ We are going to use Samba4 Active Directory directly.
 <br/>
 ## Give root access to user's GNUstep environment ##
 
-Assuming your local user is named openchange, we will create a symlink
-to openchange's GNUstep environment for root. Since samba is run as a
-privileged user, so will the sogo code called from OpenChange
-server. SOGo backend and server are relying on the same configuration
-and so need to be accessible both from openchange and root user:
+We will create a symlink to openchange's GNUstep environment for root. 
+Since samba is run as a privileged user, so will the sogo code called 
+from OpenChange server. SOGo backend and server are relying on the same
+configuration and so need to be accessible both from openchange and root 
+user:
 
-    ln -s ~openchange/GNUstep /root/
+    ln -s ~/GNUstep /root/
 
 <br/>
 # Next: Configuring SOGo Web UI #

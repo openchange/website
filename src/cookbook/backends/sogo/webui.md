@@ -13,7 +13,7 @@ Install the dependencies needed to run SOGo Web UI:
 Copy `SOGo.conf` template from your `sogo/Apache/` source directory
 into `/etc/apache2/conf.d/` folder.
 
-    # cp ~openchange/sogo/Apache/SOGo.conf /etc/apache2/conf.d/SOGo.conf
+    # cp ~/sogo/Apache/SOGo.conf /etc/apache2/conf.d/SOGo.conf
 
 Edit `/etc/apache2/conf.d/SOGo.conf`:
 
