@@ -1,6 +1,6 @@
 # Download Sources #
 - [Latest release](/download/index.html)
-- [All releases](http://tracker.openchange.org/projects/openchange/files/)
+- [All releases](https://github.com/openchange/openchange/releases)
 
 # Download Linux Packages #
 - [RHEL 5/6 - CentOS](/download/el.html)
