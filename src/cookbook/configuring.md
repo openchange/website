@@ -71,6 +71,8 @@ Add the following lines within the `[global]` section of the file:
 	dcerpc endpoint servers = +epmapper, +mapiproxy
 	dcerpc_mapiproxy:server = true
 	dcerpc_mapiproxy:interfaces = exchange_emsmdb, exchange_nsp, exchange_ds_rfr
+
+	dsdb:schema update allowed = true
 	### Configuration required by OpenChange server ###
 
 
