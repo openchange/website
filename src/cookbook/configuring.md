@@ -387,8 +387,6 @@ Profile information can be dumped using the command below:
 	domain          == OC
 	server          == 192.168.102.48
 
-# Next: Setting the Backends #
+# Next: Configure OCSManager #
 
-OpenChange server up and running! It is now time to choose, install
-and configure backends and their dependencies. Proceed to [deploying
-the backends](/cookbook/backends/index.html)
+Proceed to [OCSManager deployment](/cookbook/ocsmanager.html) section.

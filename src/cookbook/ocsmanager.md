@@ -113,3 +113,9 @@ each backend:
 
     $ sudo PYTHONPATH=$PYTHONPATH paster serve /etc/ocsmanager/ocsmanager.ini --pid-file /var/run/ocsmanager.pid --log-file /var/log/ocsmanager.log
     $ sudo service apache2 restart
+
+# Next: Setting the Backends #
+
+OpenChange server up and running! It is now time to choose, install
+and configure backends and their dependencies. Proceed to [deploying
+the backends](/cookbook/backends/index.html)
