@@ -86,6 +86,7 @@ You will need Nanomsg and Libmemcached to compile Openchange.
     $ ./configure
     $ sudo make install
     $ sudo ldconfig
+    $ cd ..
 
 
 # Next: Download the Source #
