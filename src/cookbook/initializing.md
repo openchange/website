@@ -78,11 +78,12 @@ location:
 You will need Nanomsg and Libmemcached to compile Openchange.
 
     $ wget http://download.nanomsg.org/nanomsg-0.5-beta.tar.gz https://launchpadlibrarian.net/165454254/libmemcached-1.0.18.tar.gz
-    $ tar -xvf nanomsg-0.5-beta.tar.gz libmemcached-1.0.18.tar.gz
+    $ tar -xvf nanomsg-0.5-beta.tar.gz
+    $ tar -xvf libmemcached-1.0.18.tar.gz
     $ cd nanomsg-0.5-beta
     $ ./configure
     $ sudo make install
-    $ cd ../memcached-1.0.18
+    $ cd ../libmemcached-1.0.18
     $ ./configure
     $ sudo make install
     $ sudo ldconfig
